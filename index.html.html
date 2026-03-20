@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>FichaRA — Sistema de Fichaje para Empresas</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --blue: #1d4ed8;
+    --blue-dark: #1e3a8a;
+    --blue-light: #eff6ff;
+    --text: #111827;
+    --text2: #6b7280;
+    --border: #e5e7eb;
+    --white: #ffffff;
+    --bg: #f9fafb;
+  }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; color: var(--text); background: var(--white); line-height: 1.6; }
+  a { color: var(--blue); text-decoration: none; }
+
+  /* NAV */
+  nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: 1px solid var(--border); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .nav-brand { font-size: 22px; font-weight: 800; color: var(--blue); letter-spacing: -0.5px; }
+  .nav-links { display: flex; gap: 2rem; align-items: center; }
+  .nav-links a { font-size: 14px; color: var(--text2); font-weight: 500; }
+  .nav-links a:hover { color: var(--blue); }
+  .btn-nav { background: var(--blue); color: var(--white) !important; padding: 8px 20px; border-radius: 8px; font-weight: 600 !important; }
+  .btn-nav:hover { opacity: 0.9; }
+
+  /* HERO */
+  .hero { background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 60%, #3b82f6 100%); color: var(--white); padding: 100px 2rem; text-align: center; }
+  .hero-badge { display: inline-block; background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3); padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 600; margin-bottom: 1.5rem; letter-spacing: 0.5px; }
+  .hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; letter-spacing: -1px; margin-bottom: 1.25rem; line-height: 1.1; }
+  .hero h1 span { color: #93c5fd; }
+  .hero p { font-size: 1.2rem; opacity: 0.85; max-width: 600px; margin: 0 auto 2.5rem; }
+  .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .btn-primary { background: var(--white); color: var(--blue); padding: 14px 32px; border-radius: 10px; font-weight: 700; font-size: 15px; display: inline-block; }
+  .btn-primary:hover { background: #f0f9ff; }
+  .btn-secondary { background: transparent; color: var(--white); padding: 14px 32px; border-radius: 10px; font-weight: 600; font-size: 15px; border: 2px solid rgba(255,255,255,0.4); display: inline-block; }
+  .btn-secondary:hover { background: rgba(255,255,255,0.1); }
+
+  /* STATS */
+  .stats { background: var(--white); border-bottom: 1px solid var(--border); padding: 2.5rem 2rem; }
+  .stats-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 2rem; text-align: center; }
+  .stat-num { font-size: 2.5rem; font-weight: 900; color: var(--blue); line-height: 1; }
+  .stat-label { font-size: 13px; color: var(--text2); margin-top: 4px; }
+
+  /* SECTION */
+  section { padding: 80px 2rem; }
+  .container { max-width: 1100px; margin: 0 auto; }
+  .section-tag { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--blue); margin-bottom: 12px; }
+  .section-title { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800; letter-spacing: -0.5px; margin-bottom: 1rem; }
+  .section-sub { font-size: 1.1rem; color: var(--text2); max-width: 560px; }
+
+  /* FEATURES */
+  .features-bg { background: var(--bg); }
+  .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+  .feature-card { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 1.75rem; }
+  .feature-icon { width: 48px; height: 48px; border-radius: 12px; background: var(--blue-light); display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 1rem; }
+  .feature-title { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+  .feature-desc { font-size: 14px; color: var(--text2); line-height: 1.6; }
+
+  /* HOW IT WORKS */
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; margin-top: 3rem; }
+  .step { text-align: center; }
+  .step-num { width: 52px; height: 52px; border-radius: 50%; background: var(--blue); color: var(--white); display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 800; margin: 0 auto 1rem; }
+  .step-title { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
+  .step-desc { font-size: 14px; color: var(--text2); }
+
+  /* PRICING */
+  .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 3rem; max-width: 700px; }
+  .price-card { border: 2px solid var(--border); border-radius: 16px; padding: 2rem; }
+  .price-card.featured { border-color: var(--blue); background: var(--blue-light); }
+  .price-badge { display: inline-block; background: var(--blue); color: var(--white); font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 20px; margin-bottom: 1rem; }
+  .price-name { font-size: 18px; font-weight: 800; margin-bottom: 0.5rem; }
+  .price-amount { font-size: 3rem; font-weight: 900; color: var(--blue); line-height: 1; }
+  .price-amount span { font-size: 1rem; font-weight: 500; color: var(--text2); }
+  .price-desc { font-size: 13px; color: var(--text2); margin: 0.75rem 0 1.25rem; }
+  .price-features { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .price-features li { font-size: 14px; display: flex; align-items: flex-start; gap: 8px; }
+  .price-features li::before { content: '✓'; color: var(--blue); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+  /* CTA */
+  .cta-section { background: linear-gradient(135deg, #1e3a8a, #1d4ed8); color: var(--white); text-align: center; padding: 80px 2rem; }
+  .cta-section h2 { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800; margin-bottom: 1rem; }
+  .cta-section p { font-size: 1.1rem; opacity: 0.85; margin-bottom: 2rem; }
+
+  /* CONTACT */
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 2rem; }
+  .contact-info p { font-size: 15px; color: var(--text2); margin-bottom: 1.5rem; }
+  .contact-detail { display: flex; align-items: center; gap: 12px; margin-bottom: 1rem; font-size: 15px; }
+  .contact-detail .icon { width: 40px; height: 40px; border-radius: 10px; background: var(--blue-light); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+  form { display: flex; flex-direction: column; gap: 1rem; }
+  input, textarea { padding: 12px 16px; border: 1px solid var(--border); border-radius: 10px; font-size: 14px; font-family: inherit; width: 100%; }
+  input:focus, textarea:focus { outline: none; border-color: var(--blue); }
+  textarea { min-height: 120px; resize: vertical; }
+  .btn-submit { background: var(--blue); color: var(--white); padding: 14px; border-radius: 10px; font-weight: 700; font-size: 15px; border: none; cursor: pointer; width: 100%; }
+  .btn-submit:hover { opacity: 0.9; }
+
+  /* FOOTER */
+  footer { background: var(--text); color: rgba(255,255,255,0.6); text-align: center; padding: 2rem; font-size: 13px; }
+  footer strong { color: var(--white); }
+
+  @media(max-width: 640px) {
+    .nav-links { display: none; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .stats-inner { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-brand">FichaRA</div>
+  <div class="nav-links">
+    <a href="#funcionalidades">Funcionalidades</a>
+    <a href="#como-funciona">Cómo funciona</a>
+    <a href="#precios">Precios</a>
+    <a href="#contacto">Contacto</a>
+    <a href="#contacto" class="btn-nav">Solicitar demo</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-badge">Sistema de fichaje profesional</div>
+  <h1>Fichaje digital para tu empresa,<br/><span>sin complicaciones</span></h1>
+  <p>FichaRA es un sistema de fichaje web accesible desde cualquier dispositivo. Tus trabajadores fichan con un PIN, tú controlas todo desde el panel de administración.</p>
+  <div class="hero-btns">
+    <a href="#contacto" class="btn-primary">Solicitar demo gratuita</a>
+    <a href="#funcionalidades" class="btn-secondary">Ver funcionalidades</a>
+  </div>
+</div>
+
+<div class="stats">
+  <div class="stats-inner">
+    <div><div class="stat-num">PIN</div><div class="stat-label">Fichaje rápido con código</div></div>
+    <div><div class="stat-num">100%</div><div class="stat-label">Accesible desde móvil</div></div>
+    <div><div class="stat-num">RGPD</div><div class="stat-label">Cumplimiento normativo</div></div>
+    <div><div class="stat-num">24h</div><div class="stat-label">Disponible siempre</div></div>
+  </div>
+</div>
+
+<section class="features-bg" id="funcionalidades">
+  <div class="container">
+    <div class="section-tag">Funcionalidades</div>
+    <h2 class="section-title">Todo lo que necesita tu empresa</h2>
+    <p class="section-sub">FichaRA cubre el ciclo completo de control horario sin necesidad de hardware adicional.</p>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🔢</div>
+        <div class="feature-title">Fichaje por PIN</div>
+        <div class="feature-desc">Cada trabajador tiene un PIN de 4 dígitos. El sistema detecta automáticamente si es entrada o salida.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📍</div>
+        <div class="feature-title">Geolocalización voluntaria</div>
+        <div class="feature-desc">El trabajador puede compartir su ubicación al fichar. Se muestra el nombre de la calle, no coordenadas.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📝</div>
+        <div class="feature-title">Incidencias y notas</div>
+        <div class="feature-desc">En cada fichaje se puede añadir una nota o incidencia: retraso, baja médica, motivo de ausencia...</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🏖️</div>
+        <div class="feature-title">Solicitudes de vacaciones</div>
+        <div class="feature-desc">Los trabajadores solicitan vacaciones, permisos o cambios de turno desde la app. El admin aprueba o rechaza con respuesta.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📄</div>
+        <div class="feature-title">Gestión de documentos</div>
+        <div class="feature-desc">Sube nóminas, contratos y partes de baja. Los trabajadores pueden subir sus bajas médicas y descargar sus documentos.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <div class="feature-title">Exportación a Excel y PDF</div>
+        <div class="feature-desc">Exporta todos los registros de fichaje filtrados por fecha o trabajador en formato Excel o PDF con un clic.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="como-funciona">
+  <div class="container">
+    <div class="section-tag">Cómo funciona</div>
+    <h2 class="section-title">En marcha en menos de 24 horas</h2>
+    <p class="section-sub">Sin instalaciones, sin hardware, sin complicaciones técnicas para tu empresa.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-title">Realizas el pago</div>
+        <div class="step-desc">Pago único de 300€. Sin permanencia ni costes ocultos.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-title">Configuramos tu sistema</div>
+        <div class="step-desc">Instalamos FichaRA con tu logo, nombre de empresa y tu propio dominio si lo tienes.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-title">Añadimos a tus trabajadores</div>
+        <div class="step-desc">Damos de alta a cada trabajador con su PIN. O te enseñamos a hacerlo tú desde el panel de admin.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-title">¡A fichar!</div>
+        <div class="step-desc">Tus trabajadores acceden desde cualquier dispositivo y empiezan a fichar desde el primer día.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="features-bg" id="precios">
+  <div class="container">
+    <div class="section-tag">Precios</div>
+    <h2 class="section-title">Sencillo y transparente</h2>
+    <p class="section-sub">Sin sorpresas. Pagas una vez y el sistema es tuyo.</p>
+    <div class="pricing-grid">
+      <div class="price-card featured">
+        <div class="price-badge">MÁS POPULAR</div>
+        <div class="price-name">Licencia FichaRA</div>
+        <div class="price-amount">300€ <span>pago único</span></div>
+        <div class="price-desc">Todo lo que necesitas para empezar a controlar el fichaje de tu equipo.</div>
+        <ul class="price-features">
+          <li>Instalación y configuración completa</li>
+          <li>Personalización con tu logo y nombre</li>
+          <li>Dominio propio (si dispones de él)</li>
+          <li>Trabajadores ilimitados</li>
+          <li>Todas las funcionalidades incluidas</li>
+          <li>Soporte inicial de puesta en marcha</li>
+        </ul>
+      </div>
+      <div class="price-card">
+        <div class="price-name">Mantenimiento anual</div>
+        <div class="price-amount">100€ <span>/ año (opcional)</span></div>
+        <div class="price-desc">Mantén tu sistema siempre actualizado y con soporte técnico.</div>
+        <ul class="price-features">
+          <li>Actualizaciones del software</li>
+          <li>Soporte técnico por email</li>
+          <li>Resolución de incidencias en 5 días</li>
+          <li>Nuevas funcionalidades incluidas</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-section">
+  <h2>¿Listo para digitalizar el fichaje de tu empresa?</h2>
+  <p>Solicita una demo gratuita y te mostramos el sistema en funcionamiento.</p>
+  <a href="#contacto" class="btn-primary">Solicitar demo gratuita</a>
+</div>
+
+<section id="contacto">
+  <div class="container">
+    <div class="section-tag">Contacto</div>
+    <h2 class="section-title">Hablemos</h2>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <p>¿Tienes dudas o quieres ver FichaRA en acción? Escríbenos y te respondemos en menos de 24 horas.</p>
+        <div class="contact-detail">
+          <div class="icon">📧</div>
+          <div><strong>Email</strong><br/><span style="color:#6b7280">davidcaste43@gmail.com</span></div>
+        </div>
+        <div class="contact-detail">
+          <div class="icon">📱</div>
+          <div><strong>WhatsApp / Teléfono</strong><br/><span style="color:#6b7280">669 926 158</span></div>
+        </div>
+        <div class="contact-detail">
+          <div class="icon">🕐</div>
+          <div><strong>Horario</strong><br/><span style="color:#6b7280">Lunes a viernes, 9:00 - 18:00</span></div>
+        </div>
+      </div>
+      <form onsubmit="handleForm(event)">
+        <input type="text" placeholder="Nombre y empresa" required />
+        <input type="email" placeholder="Email de contacto" required />
+        <input type="tel" placeholder="Teléfono (opcional)" />
+        <textarea placeholder="¿Cuántos trabajadores tiene tu empresa? ¿Tienes alguna pregunta?"></textarea>
+        <button type="submit" class="btn-submit">Enviar solicitud</button>
+        <div id="form-msg" style="font-size:13px;text-align:center;color:#15803d;display:none;">¡Mensaje enviado! Te contactamos en breve.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <strong>FichaRA</strong> — Sistema de fichaje para empresas<br/>
+  <span style="margin-top:4px;display:block;">© 2026 FichaRA · Todos los derechos reservados</span>
+  <span style="margin-top:8px;display:block;">
+    <a href="#" onclick="document.getElementById('modal-privacidad').style.display='flex';return false;" style="color:rgba(255,255,255,0.5);text-decoration:underline;margin:0 8px;">Política de privacidad</a>
+    <a href="#" onclick="document.getElementById('modal-aviso').style.display='flex';return false;" style="color:rgba(255,255,255,0.5);text-decoration:underline;margin:0 8px;">Aviso legal</a>
+    <a href="#" onclick="document.getElementById('modal-cookies').style.display='flex';return false;" style="color:rgba(255,255,255,0.5);text-decoration:underline;margin:0 8px;">Política de cookies</a>
+  </span>
+</footer>
+
+<!-- MODAL PRIVACIDAD -->
+<div id="modal-privacidad" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:9999;align-items:center;justify-content:center;padding:1rem;" onclick="if(event.target===this)this.style.display='none'">
+  <div style="background:#fff;border-radius:16px;padding:2rem;max-width:560px;width:100%;max-height:85vh;overflow-y:auto;">
+    <h2 style="font-size:18px;font-weight:800;margin-bottom:1rem;color:#111827;">Política de privacidad</h2>
+    <div style="font-size:14px;color:#6b7280;line-height:1.7;">
+      <p style="margin-bottom:1rem;">En FichaRA nos comprometemos a proteger la privacidad de nuestros clientes y usuarios conforme al Reglamento (UE) 2016/679 (RGPD) y la Ley Orgánica 3/2018 de Protección de Datos Personales (LOPDGDD).</p>
+      <h4 style="color:#111827;font-size:15px;font-weight:700;margin:1rem 0 0.5rem;">Responsable del tratamiento</h4>
+      <p>FichaRA · davidcaste43@gmail.com · 669 926 158</p>
+      <h4 style="color:#111827;font-size:15px;font-weight:700;margin:1rem 0 0.5rem;">Datos recogidos en este sitio web</h4>
+      <p>A través del formulario de contacto recogemos nombre, empresa, email y teléfono con la única finalidad de atender tu solicitud de información o demo. No cedemos estos datos a terceros.</p>
+      <h4 style="color:#111827;font-size:15px;font-weight:700;margin:1rem 0 0.5rem;">Datos tratados por el software FichaRA</h4>
+      <p>El software FichaRA trata datos de trabajadores (nombre, horarios, ubicación voluntaria) bajo la responsabilidad exclusiva de la empresa cliente, que actúa como Responsable del Tratamiento. FichaRA actúa como Encargado del Tratamiento.</p>
+      <h4 style="color:#111827;font-size:15px;font-weight:700;margin:1rem 0 0.5rem;">Conservación de datos</h4>
+      <p>Los datos del formulario de contacto se conservan el tiempo necesario para atender tu solicitud. Los datos de fichaje se conservan conforme a la normativa laboral vigente.</p>
+      <h4 style="color:#111827;font-size:15px;font-weight:700;margin:1rem 0 0.5rem;">Tus derechos</h4>
+      <p>Puedes ejercer tus derechos de acceso, rectificación, supresión, oposición y portabilidad escribiendo a davidcaste43@gmail.com.</p>
+    </div>
+    <button onclick="document.getElementById('modal-privacidad').style.display='none'" style="margin-top:1.5rem;background:#1d4ed8;color:#fff;padding:10px 24px;border-radius:8px;border:none;font-weight:700;cursor:pointer;font-size:14px;">Cerrar</button>
+  </div>
+</div>
+
+<!-- MODAL AVISO LEGAL -->
+<div id="modal-aviso" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:9999;align-items:center;justify-content:center;padding:1rem;" onclick="if(event.target===this)this.style.display='none'">
+  <div style="background:#fff;border-radius:16px;padding:2rem;max-width:560px;width:100%;max-height:85vh;overflow-y:auto;">
+    <h2 style="font-size:18px;font-weight:800;margin-bottom:1rem;color:#111827;">Aviso legal</h2>
+    <div style="font-size:14px;color:#6b7280;line-height:1.7;">
+      <h4 style="color:#111827;font-size:15px;font-weight:700;margin:0 0 0.5rem;">Titular del sitio web</h4>
+      <p style="margin-bottom:1rem;">FichaRA · Email: davidcaste43@gmail.com · Teléfono: 669 926 158</p>
+      <h4 style="color:#111827;font-size:15px;font-weight:700;margin:1rem 0 0.5rem;">Objeto</h4>
+      <p>Este sitio web tiene como finalidad la presentación y comercialización del software de control de presencia laboral FichaRA. El acceso y uso de este sitio web implica la aceptación de las presentes condiciones legales.</p>
+      <h4 style="color:#111827;font-size:15px;font-weight:700;margin:1rem 0 0.5rem;">Propiedad intelectual</h4>
+      <p>El nombre FichaRA, su logotipo, el diseño de este sitio web y el software que lo sustenta son propiedad de FichaRA. Queda prohibida su reproducción total o parcial sin autorización expresa.</p>
+      <h4 style="color:#111827;font-size:15px;font-weight:700;margin:1rem 0 0.5rem;">Responsabilidad</h4>
+      <p>FichaRA no garantiza la disponibilidad continua del sitio web ni se responsabiliza de los daños que pudieran derivarse de su uso. Los precios y condiciones pueden modificarse sin previo aviso.</p>
+      <h4 style="color:#111827;font-size:15px;font-weight:700;margin:1rem 0 0.5rem;">Legislación aplicable</h4>
+      <p>Este aviso legal se rige por la legislación española. Para cualquier controversia, las partes se someten a los Juzgados y Tribunales de Sevilla.</p>
+    </div>
+    <button onclick="document.getElementById('modal-aviso').style.display='none'" style="margin-top:1.5rem;background:#1d4ed8;color:#fff;padding:10px 24px;border-radius:8px;border:none;font-weight:700;cursor:pointer;font-size:14px;">Cerrar</button>
+  </div>
+</div>
+
+<!-- MODAL COOKIES -->
+<div id="modal-cookies" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:9999;align-items:center;justify-content:center;padding:1rem;" onclick="if(event.target===this)this.style.display='none'">
+  <div style="background:#fff;border-radius:16px;padding:2rem;max-width:560px;width:100%;max-height:85vh;overflow-y:auto;">
+    <h2 style="font-size:18px;font-weight:800;margin-bottom:1rem;color:#111827;">Política de cookies</h2>
+    <div style="font-size:14px;color:#6b7280;line-height:1.7;">
+      <p style="margin-bottom:1rem;">Este sitio web no utiliza cookies de seguimiento ni publicidad. Únicamente se utilizan cookies técnicas estrictamente necesarias para el funcionamiento del formulario de contacto.</p>
+      <h4 style="color:#111827;font-size:15px;font-weight:700;margin:1rem 0 0.5rem;">Cookies utilizadas</h4>
+      <p><strong style="color:#111827;">Cookies técnicas:</strong> Necesarias para el funcionamiento básico del sitio. No requieren consentimiento.</p>
+      <p style="margin-top:0.75rem;">No se instalan cookies de terceros, analytics ni publicidad comportamental.</p>
+      <h4 style="color:#111827;font-size:15px;font-weight:700;margin:1rem 0 0.5rem;">Más información</h4>
+      <p>Para más información puedes contactarnos en davidcaste43@gmail.com</p>
+    </div>
+    <button onclick="document.getElementById('modal-cookies').style.display='none'" style="margin-top:1.5rem;background:#1d4ed8;color:#fff;padding:10px 24px;border-radius:8px;border:none;font-weight:700;cursor:pointer;font-size:14px;">Cerrar</button>
+  </div>
+</div>
+
+<!-- BANNER COOKIES -->
+<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#1e3a8a;color:#fff;padding:14px 2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;z-index:9998;flex-wrap:wrap;">
+  <span style="font-size:13px;flex:1;min-width:200px;">Este sitio usa cookies técnicas necesarias para su funcionamiento. <a href="#" onclick="document.getElementById('modal-cookies').style.display='flex';return false;" style="color:#93c5fd;text-decoration:underline;">Más información</a></span>
+  <button onclick="aceptarCookies()" style="background:#fff;color:#1d4ed8;padding:8px 20px;border-radius:8px;border:none;font-weight:700;cursor:pointer;font-size:13px;white-space:nowrap;">Aceptar</button>
+</div>
+
+<script>
+function aceptarCookies() {
+  localStorage.setItem('cookies_ok','1');
+  document.getElementById('cookie-banner').style.display='none';
+}
+window.addEventListener('DOMContentLoaded', () => {
+  if (!localStorage.getItem('cookies_ok')) {
+    document.getElementById('cookie-banner').style.display='flex';
+  }
+});
+</script>
+
+<script>
+function handleForm(e) {
+  e.preventDefault();
+  document.getElementById('form-msg').style.display = 'block';
+  e.target.reset();
+}
+</script>
+</body>
+</html>
