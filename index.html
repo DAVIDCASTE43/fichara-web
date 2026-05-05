@@ -445,7 +445,7 @@
   <div class="section-tag">&#9654; Ver en acción</div>
   <h2>¿Qué pasa cuando llega inspección<br>y no tienes los fichajes?</h2>
   <p>Mira este vídeo antes de que te pase a ti.</p>
-  <div class="video-wrapper" id="videoWrapper">
+  <div class="video-wrapper" id="videoWrapper" style="max-width:400px;aspect-ratio:9/16;">
     <div class="video-placeholder" id="videoPlaceholder">
       <div class="play-btn" onclick="loadVideo()">
         <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
@@ -585,19 +585,13 @@
     entries.forEach(el => {
       if (el.isIntersecting) { el.target.classList.add('visible'); }
     });
-  }, { threshold: 0.15 });
+  }, { thre0shold: 0.15 });
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
   // Video placeholder - reemplaza con tu URL de YouTube cuando tengas el vídeo
   function loadVideo() {
     const wrapper = document.getElementById('videoWrapper');
-    // SUSTITUYE "TU_VIDEO_ID" por el ID de tu vídeo de YouTube cuando lo tengas
-    const videoId = 'TU_VIDEO_ID';
-    if (videoId === 'TU_VIDEO_ID') {
-      wrapper.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;width:100%;height:100%;color:#666;font-size:16px;flex-direction:column;gap:12px;"><div style="font-size:40px;">🎬</div><p>Aquí irá tu vídeo de YouTube</p><p style="font-size:13px;color:#444;">Sustituye TU_VIDEO_ID en el código cuando tengas el enlace</p></div>';
-    } else {
-      wrapper.innerHTML = '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/' + videoId + '?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
-    }
+    wrapper.innerHTML = '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/yW1HfNjAS98?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="border-radius:12px;"></iframe>';
   }
 
   // Smooth nav highlight
