@@ -1,55 +1,185 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Política de Privacidad - FichaRA</title>
-    <style>
-        body { font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #333; line-height: 1.7; }
-        h1 { color: #c62828; }
-        h2 { color: #c62828; margin-top: 30px; }
-        p { margin-bottom: 15px; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Política de Privacidad — FichaRA</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@400;450;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --rojo: #CC1B1B; --rojo-oscuro: #991212; --negro: #0F0F0F;
+    --blanco: #FFFFFF; --gris-claro: #F5F5F5; --gris-medio: #CCCCCC; --gris-texto: #555555;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Barlow', sans-serif; background: var(--blanco); color: var(--negro); }
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: var(--negro); display: flex; align-items: center; justify-content: space-between;
+    padding: 0 5vw; height: 68px; border-bottom: 2px solid var(--rojo);
+  }
+  .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .nav-logo span { font-family: 'Barlow Condensed', sans-serif; font-size: 24px; font-weight: 800; color: var(--blanco); letter-spacing: 1px; }
+  .nav-logo span em { color: var(--rojo); font-style: normal; }
+  nav ul { list-style: none; display: flex; gap: 36px; }
+  nav ul a { color: var(--gris-medio); text-decoration: none; font-size: 14px; font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase; transition: color 0.2s; }
+  nav ul a:hover { color: var(--rojo); }
+  .nav-cta { background: var(--rojo); color: var(--blanco) !important; padding: 8px 20px; border-radius: 4px; font-weight: 600 !important; }
+  .nav-cta:hover { background: #E62020 !important; }
+  .hero-legal { background: var(--negro); padding: 120px 5vw 60px; text-align: center; border-bottom: 1px solid #1A1A1A; }
+  .hero-legal .tag { display: inline-block; background: var(--rojo); color: var(--blanco); font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 5px 14px; border-radius: 2px; margin-bottom: 20px; }
+  .hero-legal h1 { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(36px, 5vw, 60px); font-weight: 900; color: var(--blanco); text-transform: uppercase; margin-bottom: 12px; }
+  .hero-legal h1 span { color: var(--rojo); }
+  .hero-legal p { color: #888; font-size: 16px; }
+  .contenido { max-width: 860px; margin: 0 auto; padding: 60px 5vw 80px; }
+  .seccion { margin-bottom: 48px; padding-bottom: 48px; border-bottom: 1px solid #EEEEEE; }
+  .seccion:last-child { border-bottom: none; }
+  .seccion h2 { font-family: 'Barlow Condensed', sans-serif; font-size: 26px; font-weight: 800; text-transform: uppercase; color: var(--negro); margin-bottom: 16px; padding-left: 16px; border-left: 4px solid var(--rojo); }
+  .seccion p { font-size: 16px; color: var(--gris-texto); line-height: 1.8; margin-bottom: 12px; }
+  .seccion ul { margin: 12px 0; padding: 0; list-style: none; }
+  .seccion ul li { font-size: 16px; color: var(--gris-texto); line-height: 1.7; padding: 6px 0 6px 24px; position: relative; }
+  .seccion ul li::before { content: '→'; position: absolute; left: 0; color: var(--rojo); font-weight: 700; }
+  .info-box { background: var(--gris-claro); border-left: 4px solid var(--rojo); border-radius: 0 8px 8px 0; padding: 20px 24px; margin: 20px 0; }
+  .info-box p { margin: 0; font-size: 15px; color: #444; }
+  .tabla-datos { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 15px; }
+  .tabla-datos th { background: var(--negro); color: var(--blanco); padding: 12px 16px; text-align: left; font-family: 'Barlow Condensed', sans-serif; font-size: 14px; letter-spacing: 0.5px; text-transform: uppercase; }
+  .tabla-datos td { padding: 11px 16px; border-bottom: 1px solid #E5E5E5; color: var(--gris-texto); vertical-align: top; }
+  .tabla-datos tr:last-child td { border-bottom: none; }
+  .tabla-datos tr:nth-child(even) td { background: var(--gris-claro); }
+  footer { background: #080808; padding: 40px 5vw; border-top: 1px solid #1A1A1A; }
+  .footer-inner { max-width: 860px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+  .footer-logo { font-family: 'Barlow Condensed', sans-serif; font-size: 20px; font-weight: 800; color: #444; }
+  .footer-logo em { color: var(--rojo); font-style: normal; }
+  .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+  .footer-links a { color: #555; font-size: 13px; text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover, .footer-links a.activo { color: var(--rojo); }
+  .footer-copy { color: #444; font-size: 13px; width: 100%; text-align: center; margin-top: 16px; border-top: 1px solid #1A1A1A; padding-top: 16px; }
+  @media (max-width: 768px) { nav ul { display: none; } .tabla-datos { font-size: 13px; } .tabla-datos th, .tabla-datos td { padding: 8px 10px; } }
+</style>
 </head>
 <body>
-    <h1>Política de Privacidad de FichaRA</h1>
-    <p><strong>Última actualización:</strong> 14 de abril de 2026</p>
 
-    <p>FichaRA , con domicilio en Utrera, Sevilla, España, es el responsable del tratamiento de los datos personales recogidos a través de la aplicación FichaRA.</p>
+<nav>
+  <a href="/" class="nav-logo"><span>Ficha<em>RA</em></span></a>
+  <ul>
+    <li><a href="/#problema">El problema</a></li>
+    <li><a href="/#funciones">Funciones</a></li>
+    <li><a href="/#precio">Precio</a></li>
+    <li><a href="/#contacto">Contacto</a></li>
+    <li><a href="https://demofichara-production.up.railway.app" class="nav-cta">Ver demo</a></li>
+  </ul>
+</nav>
+<div class="hero-legal">
+  <div class="tag">Legal</div>
+  <h1>Política de <span>Privacidad</span></h1>
+  <p>Última actualización: mayo de 2026</p>
+</div>
+<div class="contenido">
+  <div class="seccion">
+    <h2>1. Responsable del Tratamiento</h2>
+    <div class="info-box"><p><strong>Titular:</strong> David Castellano Medina (FichaRA)<br>
+    <strong>Actividad:</strong> Servicio SaaS de registro horario digital<br>
+    <strong>Domicilio:</strong> Utrera, Sevilla (España)<br>
+    <strong>Email:</strong> administracion@fichara.com</p></div>
+    <p>En cumplimiento del Reglamento (UE) 2016/679 (RGPD) y la Ley Orgánica 3/2018 (LOPDGDD), le informamos sobre el tratamiento de sus datos personales a través del sitio web fichara.com y del servicio FichaRA.</p>
+  </div>
 
-    <h2>1. Datos que recogemos</h2>
-    <p>FichaRA recoge los siguientes datos para el correcto funcionamiento del servicio:</p>
+  <div class="seccion">
+    <h2>2. Datos que recogemos y para qué</h2>
+    <table class="tabla-datos">
+      <thead><tr><th>Quién</th><th>Datos recogidos</th><th>Finalidad</th><th>Base legal</th><th>Conservación</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Clientes (admins)</strong></td>
+          <td>Nombre empresa, CIF, dirección, email, teléfono, contraseña cifrada</td>
+          <td>Prestación del servicio y gestión de la suscripción</td>
+          <td>Ejecución de contrato (art. 6.1.b RGPD)</td>
+          <td>Vigencia del contrato + 5 años</td>
+        </tr>
+        <tr>
+          <td><strong>Trabajadores</strong></td>
+          <td>Nombre, email opcional, PIN cifrado, registros de jornada, pausas, tipo de hora, ubicación solo con autorización</td>
+          <td>Registro de jornada laboral (art. 34.9 ET)</td>
+          <td>Obligación legal (art. 6.1.c RGPD) y consentimiento para ubicación (art. 6.1.a RGPD)</td>
+          <td>4 años conforme a normativa de registro horario</td>
+        </tr>
+        <tr>
+          <td><strong>Visitantes web</strong></td>
+          <td>Datos de navegación mediante cookies técnicas esenciales</td>
+          <td>Funcionamiento técnico del sitio</td>
+          <td>Interés legítimo (art. 6.1.f RGPD)</td>
+          <td>Duración de la sesión</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="seccion">
+    <h2>3. Comunicación de datos a terceros</h2>
+    <p>Sus datos no se cederán a terceros salvo en los siguientes supuestos:</p>
     <ul>
-        <li>Nombre y apellidos del trabajador</li>
-        <li>Dirección de correo electrónico</li>
-        <li>Registros de entrada y salida (fichajes)</li>
-        <li>Ubicación aproximada en el momento del fichaje (si el usuario lo autoriza)</li>
-        <li>Incidencias y notas registradas durante el fichaje</li>
+      <li><strong>Obligación legal:</strong> la Inspección de Trabajo y Seguridad Social (ITSS) y la Representación Legal de los Trabajadores (RLT) pueden acceder a los registros de jornada conforme al art. 34.9 ET.</li>
+      <li><strong>Railway (Render Inc.):</strong> proveedor de hosting y almacenamiento. EE.UU. con DPA vigente y cláusulas contractuales tipo.</li>
+      <li><strong>Brevo (Sendinblue):</strong> envío de emails transaccionales. Establecido en la UE, conforme al RGPD.</li>
+      <li><strong>GitHub (Microsoft):</strong> almacenamiento de código fuente. EE.UU. con DPA vigente.</li>
     </ul>
+  </div>
 
-    <h2>2. Finalidad del tratamiento</h2>
-    <p>Los datos se recogen exclusivamente para el control del registro de jornada laboral, conforme a lo establecido en el Real Decreto-ley 8/2019 sobre el registro obligatorio de la jornada laboral en España.</p>
+  <div class="seccion">
+    <h2>4. Transferencias internacionales</h2>
+    <p>Algunos proveedores (Railway, GitHub) están en Estados Unidos. Las transferencias se realizan bajo las garantías del art. 46 RGPD mediante cláusulas contractuales tipo aprobadas por la Comisión Europea.</p>
+  </div>
 
-    <h2>3. Base legal</h2>
-    <p>El tratamiento de los datos se basa en la relación laboral existente entre el trabajador y la empresa, así como en el cumplimiento de obligaciones legales.</p>
+  <div class="seccion">
+    <h2>5. Sus derechos</h2>
+    <p>Puede ejercer los siguientes derechos escribiendo a <strong>administracion@fichara.com</strong>:</p>
+    <ul>
+      <li><strong>Acceso:</strong> conocer qué datos tratamos sobre usted</li>
+      <li><strong>Rectificación:</strong> corregir datos inexactos o incompletos</li>
+      <li><strong>Supresión:</strong> solicitar el borrado cuando ya no sean necesarios</li>
+      <li><strong>Oposición:</strong> oponerse al tratamiento en determinadas circunstancias</li>
+      <li><strong>Limitación:</strong> solicitar que suspendamos el tratamiento en ciertos casos</li>
+      <li><strong>Portabilidad:</strong> recibir sus datos en formato estructurado y legible por máquina</li>
+    </ul>
+    <p>Responderemos en el plazo máximo de un mes. Si no queda satisfecho, puede reclamar ante la <strong>Agencia Española de Protección de Datos</strong> (www.aepd.es).</p>
+  </div>
 
-    <h2>4. Conservación de los datos</h2>
-    <p>Los registros de jornada se conservan durante un mínimo de 4 años, conforme a la normativa vigente.</p>
+  <div class="seccion">
+    <h2>6. Seguridad</h2>
+    <p>Aplicamos las siguientes medidas técnicas para proteger sus datos:</p>
+    <ul>
+      <li>Cifrado de contraseñas con salt + hash (HMAC-SHA256)</li>
+      <li>Tokens de sesión firmados digitalmente (JWT-HS256)</li>
+      <li>Aislamiento completo de datos por empresa</li>
+      <li>Registro de auditoría inmutable de todas las modificaciones</li>
+      <li>Hash SHA-256 encadenado por cada registro de jornada</li>
+      <li>Copias de seguridad automáticas diarias</li>
+      <li>Comunicaciones cifradas mediante HTTPS/TLS</li>
+    </ul>
+  </div>
 
-    <h2>5. Destinatarios</h2>
-    <p>Los datos no se ceden a terceros salvo obligación legal. El acceso a los datos está restringido al responsable de la empresa y al propio trabajador.</p>
+  <div class="seccion">
+    <h2>7. Cookies</h2>
+    <p>FichaRA utiliza únicamente <strong>cookies técnicas estrictamente necesarias</strong> para la gestión de sesión. No usamos cookies de publicidad ni de seguimiento de terceros.</p>
+  </div>
 
-    <h2>6. Derechos del usuario</h2>
-    <p>El trabajador puede ejercer sus derechos de acceso, rectificación, supresión, limitación y portabilidad de sus datos contactando con:</p>
-    <p><strong>Email:</strong> administracion@fichara.com</p>
+  <div class="seccion">
+    <h2>8. Modificaciones</h2>
+    <p>Podemos actualizar esta política en cualquier momento. Los cambios sustanciales se notificarán por email con al menos 30 días de antelación.</p>
+    <div class="info-box"><p>¿Preguntas? Escríbanos a <strong>administracion@fichara.com</strong> — respondemos personalmente.</p></div>
+  </div>
+</div>
 
-    <h2>7. Seguridad</h2>
-    <p>FichaRA aplica medidas técnicas y organizativas para proteger los datos personales frente a accesos no autorizados, pérdida o destrucción.</p>
-
-    <h2>8. Contacto</h2>
-    <p>Para cualquier consulta sobre esta política de privacidad puede contactar con nosotros en:</p>
-    <p><strong>FichaRA </strong><br>
-    Utrera, Sevilla, España<br>
-    Email: administracion@fichara.com</p>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Ficha<em>RA</em></div>
+    <div class="footer-links">
+      <a href="/privacidad.html" class="activo">Política de privacidad</a>
+      <a href="/aviso-legal.html">Aviso legal</a>
+      <a href="/condiciones.html">Condiciones de servicio</a>
+    </div>
+    <p class="footer-copy">© 2026 FichaRA · Todos los derechos reservados · Utrera, Sevilla</p>
+  </div>
+</footer>
 </body>
 </html>
