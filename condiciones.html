@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Condiciones de Servicio — FichaRA</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@400;450;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --rojo: #CC1B1B; --rojo-oscuro: #991212; --negro: #0F0F0F;
+    --blanco: #FFFFFF; --gris-claro: #F5F5F5; --gris-medio: #CCCCCC; --gris-texto: #555555;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Barlow', sans-serif; background: var(--blanco); color: var(--negro); }
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: var(--negro); display: flex; align-items: center; justify-content: space-between;
+    padding: 0 5vw; height: 68px; border-bottom: 2px solid var(--rojo);
+  }
+  .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .nav-logo span { font-family: 'Barlow Condensed', sans-serif; font-size: 24px; font-weight: 800; color: var(--blanco); letter-spacing: 1px; }
+  .nav-logo span em { color: var(--rojo); font-style: normal; }
+  nav ul { list-style: none; display: flex; gap: 36px; }
+  nav ul a { color: var(--gris-medio); text-decoration: none; font-size: 14px; font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase; transition: color 0.2s; }
+  nav ul a:hover { color: var(--rojo); }
+  .nav-cta { background: var(--rojo); color: var(--blanco) !important; padding: 8px 20px; border-radius: 4px; font-weight: 600 !important; }
+  .nav-cta:hover { background: #E62020 !important; }
+  .hero-legal { background: var(--negro); padding: 120px 5vw 60px; text-align: center; border-bottom: 1px solid #1A1A1A; }
+  .hero-legal .tag { display: inline-block; background: var(--rojo); color: var(--blanco); font-family: 'Barlow Condensed', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 5px 14px; border-radius: 2px; margin-bottom: 20px; }
+  .hero-legal h1 { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(36px, 5vw, 60px); font-weight: 900; color: var(--blanco); text-transform: uppercase; margin-bottom: 12px; }
+  .hero-legal h1 span { color: var(--rojo); }
+  .hero-legal p { color: #888; font-size: 16px; }
+  .contenido { max-width: 860px; margin: 0 auto; padding: 60px 5vw 80px; }
+  .seccion { margin-bottom: 48px; padding-bottom: 48px; border-bottom: 1px solid #EEEEEE; }
+  .seccion:last-child { border-bottom: none; }
+  .seccion h2 { font-family: 'Barlow Condensed', sans-serif; font-size: 26px; font-weight: 800; text-transform: uppercase; color: var(--negro); margin-bottom: 16px; padding-left: 16px; border-left: 4px solid var(--rojo); }
+  .seccion p { font-size: 16px; color: var(--gris-texto); line-height: 1.8; margin-bottom: 12px; }
+  .seccion ul { margin: 12px 0; padding: 0; list-style: none; }
+  .seccion ul li { font-size: 16px; color: var(--gris-texto); line-height: 1.7; padding: 6px 0 6px 24px; position: relative; }
+  .seccion ul li::before { content: '→'; position: absolute; left: 0; color: var(--rojo); font-weight: 700; }
+  .info-box { background: var(--gris-claro); border-left: 4px solid var(--rojo); border-radius: 0 8px 8px 0; padding: 20px 24px; margin: 20px 0; }
+  .info-box p { margin: 0; font-size: 15px; color: #444; }
+  .tabla-datos { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 15px; }
+  .tabla-datos th { background: var(--negro); color: var(--blanco); padding: 12px 16px; text-align: left; font-family: 'Barlow Condensed', sans-serif; font-size: 14px; letter-spacing: 0.5px; text-transform: uppercase; }
+  .tabla-datos td { padding: 11px 16px; border-bottom: 1px solid #E5E5E5; color: var(--gris-texto); vertical-align: top; }
+  .tabla-datos tr:last-child td { border-bottom: none; }
+  .tabla-datos tr:nth-child(even) td { background: var(--gris-claro); }
+  footer { background: #080808; padding: 40px 5vw; border-top: 1px solid #1A1A1A; }
+  .footer-inner { max-width: 860px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+  .footer-logo { font-family: 'Barlow Condensed', sans-serif; font-size: 20px; font-weight: 800; color: #444; }
+  .footer-logo em { color: var(--rojo); font-style: normal; }
+  .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+  .footer-links a { color: #555; font-size: 13px; text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover, .footer-links a.activo { color: var(--rojo); }
+  .footer-copy { color: #444; font-size: 13px; width: 100%; text-align: center; margin-top: 16px; border-top: 1px solid #1A1A1A; padding-top: 16px; }
+  @media (max-width: 768px) { nav ul { display: none; } .tabla-datos { font-size: 13px; } .tabla-datos th, .tabla-datos td { padding: 8px 10px; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo"><span>Ficha<em>RA</em></span></a>
+  <ul>
+    <li><a href="/#problema">El problema</a></li>
+    <li><a href="/#funciones">Funciones</a></li>
+    <li><a href="/#precio">Precio</a></li>
+    <li><a href="/#contacto">Contacto</a></li>
+    <li><a href="https://demofichara-production.up.railway.app" class="nav-cta">Ver demo</a></li>
+  </ul>
+</nav>
+<div class="hero-legal">
+  <div class="tag">Legal</div>
+  <h1>Condiciones de <span>Servicio</span></h1>
+  <p>Última actualización: mayo de 2026</p>
+</div>
+<div class="contenido">
+  <div class="seccion">
+    <h2>1. Objeto</h2>
+    <p>Las presentes Condiciones Generales de Servicio (CGS) regulan la contratación y uso del servicio FichaRA, sistema SaaS de registro horario digital, prestado por David Castellano Medina a empresas y autónomos (el "Cliente").</p>
+    <p>La aceptación de estas CGS es requisito indispensable para el acceso y uso del servicio. Al contratar FichaRA, el Cliente declara haber leído y aceptado íntegramente estas condiciones.</p>
+  </div>
+
+  <div class="seccion">
+    <h2>2. Descripción del servicio</h2>
+    <p>FichaRA es un sistema SaaS de registro horario digital que incluye:</p>
+    <ul>
+      <li>Registro de entrada y salida de trabajadores mediante PIN o email</li>
+      <li>Gestión de jornada laboral: pausas, tipo de hora, incidencias</li>
+      <li>Panel de administración para gestión de trabajadores y documentos</li>
+      <li>Informes de horas en Excel y PDF</li>
+      <li>Exportación del registro oficial de jornada conforme al RDL 8/2019</li>
+      <li>Acceso de solo lectura para Inspección de Trabajo y RLT</li>
+      <li>Aplicación móvil Android disponible en Google Play Store</li>
+    </ul>
+  </div>
+
+  <div class="seccion">
+    <h2>3. Contratación y alta</h2>
+    <p>La contratación se formaliza mediante acuerdo entre FichaRA y el Cliente, ya sea por escrito, por email o mediante el proceso de alta habilitado. FichaRA creará una cuenta de empresa con acceso de administrador para el Cliente.</p>
+    <p>El Cliente es responsable de facilitar información veraz y actualizada en el momento de la contratación.</p>
+  </div>
+
+  <div class="seccion">
+    <h2>4. Precio y forma de pago</h2>
+    <div class="info-box"><p><strong>Precio: 350 € + IVA por año (período anual)</strong>, salvo acuerdo expreso distinto entre las partes.</p></div>
+    <p>El pago se realizará por los medios acordados (transferencia bancaria, domiciliación u otro). FichaRA emitirá la correspondiente factura.</p>
+    <p>El impago en los 15 días siguientes al vencimiento faculta a FichaRA a suspender el acceso hasta regularizar la situación.</p>
+  </div>
+
+  <div class="seccion">
+    <h2>5. Duración y renovación</h2>
+    <p>El contrato tiene una duración de <strong>12 meses</strong> desde la fecha de alta. Se renovará automáticamente por períodos anuales salvo que cualquiera de las partes comunique su voluntad de no renovar con al menos <strong>30 días de antelación</strong> al vencimiento.</p>
+  </div>
+
+  <div class="seccion">
+    <h2>6. Obligaciones de FichaRA</h2>
+    <p>FichaRA se compromete a:</p>
+    <ul>
+      <li>Prestar el servicio con diligencia y conforme a estas CGS</li>
+      <li>Mantener el servicio disponible con un objetivo del 99% mensual</li>
+      <li>Notificar con antelación razonable cualquier mantenimiento que implique interrupción</li>
+      <li>Proteger los datos del Cliente conforme al contrato DPA</li>
+      <li>Notificar cualquier incidente de seguridad en el plazo máximo de 72 horas</li>
+      <li>Proporcionar soporte técnico por email en horario laboral (L-V, 9:00-18:00 hora peninsular)</li>
+    </ul>
+  </div>
+
+  <div class="seccion">
+    <h2>7. Obligaciones del Cliente</h2>
+    <p>El Cliente se compromete a:</p>
+    <ul>
+      <li>Usar el servicio de conformidad con la ley y estas CGS</li>
+      <li>Mantener la confidencialidad de las credenciales de acceso</li>
+      <li>Informar a sus trabajadores sobre el uso del sistema y el tratamiento de sus datos</li>
+      <li>No ceder el acceso al servicio a terceros no autorizados</li>
+      <li>Abonar puntualmente el precio del servicio</li>
+      <li>Notificar a FichaRA cualquier uso no autorizado de su cuenta</li>
+    </ul>
+  </div>
+
+  <div class="seccion">
+    <h2>8. Limitación de responsabilidad</h2>
+    <p>FichaRA no será responsable de daños derivados de:</p>
+    <ul>
+      <li>Interrupciones del servicio por causas de fuerza mayor o fallos de terceros proveedores</li>
+      <li>El uso inadecuado del servicio por el Cliente o sus trabajadores</li>
+      <li>Incumplimientos del Cliente de sus obligaciones legales laborales o de protección de datos</li>
+      <li>Pérdida de datos causada por actuaciones del propio Cliente</li>
+    </ul>
+    <p>La responsabilidad máxima de FichaRA queda limitada al importe de las cuotas abonadas en los <strong>12 meses anteriores</strong> al hecho generador del daño.</p>
+  </div>
+
+  <div class="seccion">
+    <h2>9. Propiedad intelectual</h2>
+    <p>El servicio FichaRA es propiedad intelectual de David Castellano Medina. El contrato otorga al Cliente una licencia de uso <strong>limitada, no exclusiva, intransferible y revocable</strong> durante la vigencia del contrato.</p>
+    <p>Los datos introducidos por el Cliente en el sistema son de su exclusiva propiedad. FichaRA no adquiere ningún derecho sobre ellos más allá del necesario para prestar el servicio.</p>
+  </div>
+
+  <div class="seccion">
+    <h2>10. Confidencialidad</h2>
+    <p>Ambas partes se comprometen a mantener la confidencialidad de toda la información a la que accedan con motivo de la prestación del servicio, y a no divulgarla a terceros sin consentimiento previo y por escrito. Esta obligación se mantiene vigente durante <strong>3 años</strong> tras la extinción del contrato.</p>
+  </div>
+
+  <div class="seccion">
+    <h2>11. Modificación de las condiciones</h2>
+    <p>FichaRA se reserva el derecho a modificar estas CGS en cualquier momento. Los cambios se notificarán por email con al menos <strong>30 días de antelación</strong>. Si el Cliente no acepta los nuevos términos, podrá resolver el contrato antes de la fecha de entrada en vigor sin penalización.</p>
+  </div>
+
+  <div class="seccion">
+    <h2>12. Resolución del contrato</h2>
+    <p>Cualquiera de las partes podrá resolver el contrato:</p>
+    <ul>
+      <li>Por vencimiento del plazo sin renovación, comunicándolo con 30 días de antelación</li>
+      <li>Por incumplimiento grave de la otra parte, previo requerimiento con 15 días de plazo de subsanación</li>
+      <li>FichaRA podrá resolver inmediatamente en caso de impago reiterado, uso fraudulento o actividades ilícitas</li>
+    </ul>
+    <p>Tras la resolución, FichaRA pondrá los datos del Cliente a su disposición durante <strong>30 días</strong> para su descarga, tras los cuales procederá a su eliminación definitiva.</p>
+  </div>
+
+  <div class="seccion">
+    <h2>13. Ley aplicable y resolución de conflictos</h2>
+    <p>Estas CGS se rigen por la legislación española. Para cualquier controversia, las partes se someten a los Juzgados y Tribunales de <strong>Sevilla</strong>.</p>
+    <p>Antes de acudir a la vía judicial, las partes se comprometen a intentar resolver cualquier disputa de forma amistosa en un plazo de 30 días desde la notificación del conflicto.</p>
+    <div class="info-box"><p>¿Alguna pregunta sobre estas condiciones? Escríbanos a <strong>administracion@fichara.com</strong></p></div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Ficha<em>RA</em></div>
+    <div class="footer-links">
+      <a href="/privacidad.html">Política de privacidad</a>
+      <a href="/aviso-legal.html">Aviso legal</a>
+      <a href="/condiciones.html" class="activo">Condiciones de servicio</a>
+    </div>
+    <p class="footer-copy">© 2026 FichaRA · Todos los derechos reservados · Utrera, Sevilla</p>
+  </div>
+</footer>
+</body>
+</html>
