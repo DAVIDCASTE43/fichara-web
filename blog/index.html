@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog FichaRA | Gestión de Personal y Control Horario para PYMEs</title>
+<meta name="description" content="Guías, consejos y novedades sobre control horario, fichaje digital y gestión de personal para PYMEs españolas. Todo lo que necesitas saber para cumplir la ley.">
+<meta name="keywords" content="blog fichaje digital, control horario pyme, registro jornada laboral, gestión personal pyme, ley control horario España">
+<link rel="canonical" href="https://fichara.com/blog/">
+<meta property="og:title" content="Blog FichaRA — Control Horario y Gestión de Personal para PYMEs">
+<meta property="og:description" content="Guías prácticas sobre fichaje digital, normativa laboral y gestión de equipos para PYMEs españolas.">
+<meta property="og:url" content="https://fichara.com/blog/">
+<meta property="og:image" content="https://fichara.com/logo192.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --rojo:#CC1B1B; --negro:#0F0F0F; --gris:#F5F5F5; --texto:#333333; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Barlow',sans-serif; color:var(--texto); background:#fff; }
+
+  nav { background:var(--negro); padding:0 5vw; height:64px; display:flex; align-items:center; justify-content:space-between; border-bottom:2px solid var(--rojo); position:sticky; top:0; z-index:100; }
+  .nav-logo { font-family:'Barlow Condensed',sans-serif; font-size:22px; font-weight:900; color:#fff; text-decoration:none; }
+  .nav-logo em { color:var(--rojo); font-style:normal; }
+  nav ul { list-style:none; display:flex; gap:28px; align-items:center; }
+  nav ul a { color:#aaa; text-decoration:none; font-size:14px; font-weight:500; text-transform:uppercase; letter-spacing:0.5px; transition:color 0.2s; }
+  nav ul a:hover, nav ul a.active { color:#fff; }
+  .nav-cta { background:var(--rojo) !important; color:#fff !important; padding:8px 18px; border-radius:4px; font-weight:600 !important; }
+
+  /* HERO */
+  .blog-hero { background:var(--negro); padding:80px 5vw 60px; text-align:center; border-bottom:2px solid var(--rojo); }
+  .blog-tag { display:inline-block; background:var(--rojo); color:#fff; font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; padding:5px 14px; border-radius:2px; margin-bottom:20px; }
+  .blog-hero h1 { font-family:'Barlow Condensed',sans-serif; font-size:clamp(36px,6vw,64px); font-weight:900; color:#fff; text-transform:uppercase; line-height:1.05; margin-bottom:16px; }
+  .blog-hero h1 span { color:var(--rojo); }
+  .blog-hero p { color:#888; font-size:18px; max-width:600px; margin:0 auto; }
+
+  /* ARTÍCULOS */
+  .blog-body { max-width:1100px; margin:0 auto; padding:60px 5vw; }
+  .blog-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:28px; }
+
+  .article-card { border:2px solid #eee; border-radius:12px; overflow:hidden; transition:border-color 0.2s, transform 0.2s; text-decoration:none; color:inherit; display:flex; flex-direction:column; }
+  .article-card:hover { border-color:var(--rojo); transform:translateY(-4px); }
+  .card-img { background:var(--negro); padding:32px 24px; min-height:120px; display:flex; align-items:center; }
+  .card-icon { font-size:48px; }
+  .card-body { padding:24px; flex:1; display:flex; flex-direction:column; }
+  .card-tag { display:inline-block; background:var(--gris); color:#888; font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:3px 10px; border-radius:10px; margin-bottom:12px; }
+  .card-title { font-family:'Barlow Condensed',sans-serif; font-size:22px; font-weight:900; color:var(--negro); text-transform:uppercase; line-height:1.15; margin-bottom:12px; }
+  .card-desc { font-size:15px; color:#666; line-height:1.6; flex:1; margin-bottom:16px; }
+  .card-leer { color:var(--rojo); font-size:14px; font-weight:700; text-transform:uppercase; letter-spacing:1px; display:flex; align-items:center; gap:6px; }
+  .card-leer::after { content:'→'; }
+
+  /* ARTÍCULO DESTACADO */
+  .article-card.destacado { grid-column:span 3; flex-direction:row; }
+  .article-card.destacado .card-img { min-width:280px; min-height:auto; }
+  .article-card.destacado .card-icon { font-size:72px; }
+  .article-card.destacado .card-title { font-size:30px; }
+  .article-card.destacado .card-desc { font-size:16px; }
+
+  /* CTA */
+  .blog-cta { background:var(--negro); border-radius:12px; padding:48px; text-align:center; margin-top:60px; }
+  .blog-cta h2 { font-family:'Barlow Condensed',sans-serif; font-size:36px; font-weight:900; color:#fff; text-transform:uppercase; margin-bottom:12px; }
+  .blog-cta p { color:#aaa; font-size:17px; margin-bottom:28px; }
+  .btn-red { background:var(--rojo); color:#fff; padding:14px 32px; border-radius:4px; font-family:'Barlow Condensed',sans-serif; font-size:18px; font-weight:700; text-transform:uppercase; text-decoration:none; display:inline-block; letter-spacing:1px; }
+  .btn-red:hover { background:#E62020; }
+
+  footer { background:var(--negro); padding:40px 5vw; text-align:center; border-top:2px solid var(--rojo); margin-top:0; }
+  footer p { color:#555; font-size:14px; margin-bottom:8px; }
+  footer a { color:var(--rojo); text-decoration:none; }
+
+  @media(max-width:900px) {
+    .blog-grid { grid-template-columns:1fr 1fr; }
+    .article-card.destacado { grid-column:span 2; flex-direction:column; }
+    .article-card.destacado .card-img { min-width:auto; }
+  }
+  @media(max-width:600px) {
+    .blog-grid { grid-template-columns:1fr; }
+    .article-card.destacado { grid-column:span 1; }
+    nav ul { display:none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="https://fichara.com" class="nav-logo">Ficha<em>RA</em></a>
+  <ul>
+    <li><a href="https://fichara.com/#problema">El problema</a></li>
+    <li><a href="https://fichara.com/#funciones">Funciones</a></li>
+    <li><a href="https://fichara.com/#precio">Precio</a></li>
+    <li><a href="https://fichara.com/blog/" class="active">Blog</a></li>
+    <li><a href="https://demofichara-production.up.railway.app" class="nav-cta">Ver demo</a></li>
+  </ul>
+</nav>
+
+<div class="blog-hero">
+  <span class="blog-tag">📚 Recursos gratuitos</span>
+  <h1>Blog <span>FichaRA</span></h1>
+  <p>Todo lo que necesitas saber sobre control horario, fichaje digital y gestión de personal para PYMEs españolas.</p>
+</div>
+
+<div class="blog-body">
+  <div class="blog-grid">
+
+    <!-- DESTACADO -->
+    <a href="https://fichara.com/blog/ley-control-horario-empresas/" class="article-card destacado">
+      <div class="card-img">
+        <div class="card-icon">📋</div>
+      </div>
+      <div class="card-body">
+        <span class="card-tag">⭐ Más leído · Normativa laboral</span>
+        <div class="card-title">Ley de Control Horario 2025: Todo lo que necesita saber tu empresa</div>
+        <div class="card-desc">Desde mayo de 2019, todas las empresas están obligadas a registrar la jornada laboral. Las multas van de 751€ a 7.500€. Qué exige exactamente la ley, qué mira la Inspección y cómo cumplirlo sin complicaciones.</div>
+        <div class="card-leer">Leer artículo</div>
+      </div>
+    </a>
+
+    <!-- ARTÍCULO 2 -->
+    <a href="https://fichara.com/blog/mejores-apps-fichaje-pyme-espana/" class="article-card">
+      <div class="card-img">
+        <div class="card-icon">📊</div>
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Comparativa</span>
+        <div class="card-title">Las 5 Mejores Apps de Fichaje para PYMEs en España 2025</div>
+        <div class="card-desc">Comparativa honesta con precios reales. FichaRA, Sesame HR, Factorial, Woffu y Clockify. Cuál elegir según el tamaño de tu empresa.</div>
+        <div class="card-leer">Leer artículo</div>
+      </div>
+    </a>
+
+    <!-- ARTÍCULO 3 -->
+    <a href="https://fichara.com/blog/que-pasa-inspeccion-trabajo-fichajes/" class="article-card">
+      <div class="card-img">
+        <div class="card-icon">🔍</div>
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Inspección de Trabajo</span>
+        <div class="card-title">Qué Pasa Cuando Llega la Inspección y No Tienes los Fichajes</div>
+        <div class="card-desc">Qué revisa exactamente un inspector, cómo actuar si llegan a tu empresa y cuáles son las consecuencias reales de no tener el registro en regla.</div>
+        <div class="card-leer">Leer artículo</div>
+      </div>
+    </a>
+
+    <!-- ARTÍCULO 4 -->
+    <a href="https://fichara.com/blog/como-digitalizar-fichaje-empleados/" class="article-card">
+      <div class="card-img">
+        <div class="card-icon">🚀</div>
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Guía práctica</span>
+        <div class="card-title">Cómo Digitalizar el Fichaje de tus Empleados en 5 Pasos</div>
+        <div class="card-desc">Sin complicaciones ni grandes inversiones. Guía paso a paso para tener el fichaje digital en regla desde hoy mismo. Tarda menos de un día.</div>
+        <div class="card-leer">Leer artículo</div>
+      </div>
+    </a>
+
+    <!-- ARTÍCULO 5 -->
+    <a href="https://fichara.com/blog/multas-no-llevar-registro-jornada/" class="article-card">
+      <div class="card-img">
+        <div class="card-icon">💸</div>
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Sanciones laborales</span>
+        <div class="card-title">Multas por No Llevar el Registro de Jornada: Cuánto Te Puede Costar</div>
+        <div class="card-desc">Tabla completa de sanciones LISOS 2025. Desde 751€ hasta 225.018€. Cómo se calculan realmente y por qué el cálculo habitual es peligrosamente incorrecto.</div>
+        <div class="card-leer">Leer artículo</div>
+      </div>
+    </a>
+
+    <!-- ARTÍCULO 6 -->
+    <a href="https://fichara.com/blog/jornada-375-horas-fichaje-digital-obligatorio/" class="article-card">
+      <div class="card-img">
+        <div class="card-icon">📅</div>
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Reforma laboral 2025</span>
+        <div class="card-title">Jornada de 37,5 Horas y Fichaje Digital Obligatorio: Qué Debes Saber</div>
+        <div class="card-desc">Estado actualizado de las dos grandes reformas laborales. Qué está bloqueado, qué viene seguro y qué debes hacer ahora mismo en tu empresa.</div>
+        <div class="card-leer">Leer artículo</div>
+      </div>
+    </a>
+
+  </div>
+
+  <div class="blog-cta">
+    <h2>¿Listo para tenerlo todo en regla?</h2>
+    <p>Prueba FichaRA gratis. Sin registro, sin tarjeta. En 5 minutos ves cómo funciona todo.</p>
+    <a href="https://demofichara-production.up.railway.app" class="btn-red">Entrar a la demo gratis →</a>
+    <p style="margin-top:16px;font-size:14px;color:#666;">📞 669 926 158 · ✉️ administracion@fichara.com</p>
+  </div>
+</div>
+
+<footer>
+  <p><a href="https://fichara.com">FichaRA</a> — Gestión de personal para PYMEs · Utrera, Sevilla</p>
+  <p>© 2025 FichaRA · <a href="mailto:administracion@fichara.com">administracion@fichara.com</a> · 669 926 158</p>
+</footer>
+
+</body>
+</html>
