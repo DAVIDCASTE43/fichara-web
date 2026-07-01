@@ -38,12 +38,29 @@
   "url": "https://fichara.com",
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "Web, Android, iOS",
-  "offers": {
-    "@type": "Offer",
-    "price": "450",
-    "priceCurrency": "EUR",
-    "description": "Precio fijo anual para toda la empresa, empleados ilimitados"
-  },
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Hasta 249 trabajadores",
+      "price": "450",
+      "priceCurrency": "EUR",
+      "description": "Precio fijo anual para empresas de hasta 249 trabajadores"
+    },
+    {
+      "@type": "Offer",
+      "name": "De 250 a 499 trabajadores",
+      "price": "800",
+      "priceCurrency": "EUR",
+      "description": "Precio fijo anual para empresas de 250 a 499 trabajadores"
+    },
+    {
+      "@type": "Offer",
+      "name": "De 500 a 999 trabajadores",
+      "price": "1500",
+      "priceCurrency": "EUR",
+      "description": "Precio fijo anual para empresas de 500 a 999 trabajadores"
+    }
+  ],
   "creator": {
     "@type": "Person",
     "name": "David Castellano",
@@ -82,7 +99,7 @@
       "name": "¿Cuánto cuesta FichaRA?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "FichaRA tiene un precio fijo de 450€ al año para toda la empresa, con empleados ilimitados. Sin pagar por cada trabajador, sin módulos adicionales ni sorpresas en la factura."
+        "text": "FichaRA tiene un precio fijo anual según el tamaño de tu empresa: 450€/año hasta 249 trabajadores, 800€/año de 250 a 499 trabajadores, y 1.500€/año de 500 a 999 trabajadores. Sin módulos adicionales ni sorpresas en la factura."
       }
     },
     {
@@ -106,7 +123,7 @@
       "name": "¿Qué diferencia a FichaRA de Sesame HR o Factorial?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "FichaRA tiene un precio fijo anual de 450€ para toda la empresa, frente a los más de 1.500€ anuales que cobran Sesame HR o Factorial para equipos medianos. Además, FichaRA incluye todas las funcionalidades sin módulos adicionales de pago."
+        "text": "FichaRA tiene un precio fijo anual desde 450€ (hasta 249 trabajadores), frente a los más de 1.500€ anuales que cobran Sesame HR o Factorial para equipos medianos. Además, FichaRA incluye todas las funcionalidades sin módulos adicionales de pago."
       }
     }
   ]
@@ -413,6 +430,66 @@
   }
   .precio-list li:last-child { border-bottom: none; }
   .check { color: var(--rojo); font-size: 18px; font-weight: 900; }
+  .precio-tiers {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+    max-width: 1000px; margin: 0 auto 48px;
+  }
+  .precio-tier-card {
+    background: var(--negro); border-radius: 16px;
+    padding: 40px 28px;
+    border: 2px solid #222222;
+    position: relative;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .precio-tier-card:hover { transform: translateY(-4px); }
+  .precio-tier-card.destacado { border-color: var(--rojo); }
+  .precio-tier-badge {
+    position: absolute; top: -16px; left: 50%; transform: translateX(-50%);
+    background: var(--rojo); color: var(--blanco);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 5px 16px; border-radius: 20px; white-space: nowrap;
+  }
+  .precio-tier-range {
+    color: #888888; font-size: 14px; text-transform: uppercase; letter-spacing: 1px;
+    font-weight: 600; margin-bottom: 12px;
+  }
+  .precio-tier-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 56px; font-weight: 900; color: var(--blanco); line-height: 1;
+  }
+  .precio-tier-num sub { font-size: 16px; color: #888888; font-weight: 400; }
+  .precio-tier-note { color: #666666; font-size: 13px; margin-top: 8px; }
+  .precio-tiers {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+    max-width: 1000px; margin: 0 auto 48px;
+  }
+  .precio-tier-card {
+    background: var(--negro); border-radius: 16px;
+    padding: 40px 28px;
+    border: 2px solid #222222;
+    position: relative;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .precio-tier-card:hover { transform: translateY(-4px); }
+  .precio-tier-card.destacado { border-color: var(--rojo); }
+  .precio-tier-badge {
+    position: absolute; top: -16px; left: 50%; transform: translateX(-50%);
+    background: var(--rojo); color: var(--blanco);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 5px 16px; border-radius: 20px; white-space: nowrap;
+  }
+  .precio-tier-range {
+    color: #888888; font-size: 14px; text-transform: uppercase; letter-spacing: 1px;
+    font-weight: 600; margin-bottom: 12px;
+  }
+  .precio-tier-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 56px; font-weight: 900; color: var(--blanco); line-height: 1;
+  }
+  .precio-tier-num sub { font-size: 16px; color: #888888; font-weight: 400; }
+  .precio-tier-note { color: #666666; font-size: 13px; margin-top: 8px; }
 
   /* CTA FINAL */
   .cta-final {
@@ -472,6 +549,8 @@
     .pain-grid { grid-template-columns: 1fr; }
     .func-grid { grid-template-columns: 1fr 1fr; }
     .hero-stats { grid-template-columns: repeat(3,1fr); }
+    .precio-tiers { grid-template-columns: 1fr; }
+    .precio-tiers { grid-template-columns: 1fr; }
   }
   @media (max-width: 480px) {
     .func-grid { grid-template-columns: 1fr; }
@@ -508,7 +587,7 @@
         <a href="#funciones" class="btn-secondary">Ver funciones</a>
       </div>
       <div class="hero-stats">
-        <div class="stat"><div class="stat-num">450€</div><div class="stat-label">Precio fijo/año</div></div>
+        <div class="stat"><div class="stat-num">450€</div><div class="stat-label">Desde/año</div></div>
         <div class="stat"><div class="stat-num">5min</div><div class="stat-label">Para empezar</div></div>
         <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Legal y seguro</div></div>
       </div>
@@ -652,21 +731,37 @@
 <section class="precio" id="precio">
   <div class="section-tag">Precio</div>
   <h2>Simple. Fijo. <span>Sin sorpresas.</span></h2>
-  <p class="precio-lead">Un precio al año para toda tu empresa, sin importar cuántos empleados tengas.</p>
-  <div class="precio-card">
-    <div class="precio-badge">Precio por empresa</div>
-    <div class="precio-num"><sup>€</sup>450<sub>/año</sub></div>
-    <p class="precio-note">+ IVA · Renovación anual · Sin permanencia</p>
-    <ul class="precio-list">
-      <li><span class="check">✓</span> Empleados ilimitados</li>
-      <li><span class="check">✓</span> Fichaje digital legal</li>
-      <li><span class="check">✓</span> Vacaciones, permisos y bajas</li>
-      <li><span class="check">✓</span> Gestión documental completa</li>
-      <li><span class="check">✓</span> Portal del empleado incluido</li>
-      <li><span class="check">✓</span> Informes para Inspección</li>
-      <li><span class="check">✓</span> Soporte directo con el desarrollador</li>
-    </ul>
-    <a href="https://demofichara-production.up.railway.app" class="btn-primary" style="width:100%;text-align:center;">Probar demo sin registro</a>
+  <p class="precio-lead">Un precio anual por empresa según el número de trabajadores. Sin coste por usuario.</p>
+
+  <div class="precio-tiers">
+    <div class="precio-tier-card destacado">
+      <div class="precio-tier-badge">Más popular</div>
+      <div class="precio-tier-range">Hasta 249 trabajadores</div>
+      <div class="precio-tier-num">450€<sub>/año</sub></div>
+      <div class="precio-tier-note">+ IVA · Renovación anual</div>
+    </div>
+    <div class="precio-tier-card">
+      <div class="precio-tier-range">De 250 a 499 trabajadores</div>
+      <div class="precio-tier-num">800€<sub>/año</sub></div>
+      <div class="precio-tier-note">+ IVA · Renovación anual</div>
+    </div>
+    <div class="precio-tier-card">
+      <div class="precio-tier-range">De 500 a 999 trabajadores</div>
+      <div class="precio-tier-num">1.500€<sub>/año</sub></div>
+      <div class="precio-tier-note">+ IVA · Renovación anual</div>
+    </div>
+  </div>
+
+  <ul class="precio-list" style="max-width:500px;margin:0 auto;">
+    <li><span class="check">✓</span> Fichaje digital legal</li>
+    <li><span class="check">✓</span> Vacaciones, permisos y bajas</li>
+    <li><span class="check">✓</span> Gestión documental completa</li>
+    <li><span class="check">✓</span> Portal del empleado incluido</li>
+    <li><span class="check">✓</span> Informes para Inspección</li>
+    <li><span class="check">✓</span> Soporte directo con el desarrollador</li>
+  </ul>
+  <div style="margin-top:40px;">
+    <a href="https://demofichara-production.up.railway.app" class="btn-primary">Probar demo sin registro</a>
   </div>
 </section>
 
