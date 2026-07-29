@@ -3,14 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blog FichaRA | Gestión de Personal y Control Horario para PYMEs</title>
-<meta name="description" content="Guías, consejos y novedades sobre control horario, fichaje digital y gestión de personal para PYMEs españolas. Todo lo que necesitas saber para cumplir la ley.">
-<meta name="keywords" content="blog fichaje digital, control horario pyme, registro jornada laboral, gestión personal pyme, ley control horario España">
-<link rel="canonical" href="https://fichara.com/blog/">
-<meta property="og:title" content="Blog FichaRA — Control Horario y Gestión de Personal para PYMEs">
-<meta property="og:description" content="Guías prácticas sobre fichaje digital, normativa laboral y gestión de equipos para PYMEs españolas.">
-<meta property="og:url" content="https://fichara.com/blog/">
+<title>FichaRA vs Factorial vs Sesame HR: ¿Qué Pagas Realmente por Fichar? | FichaRA</title>
+<meta name="description" content="Comparativa real de precios entre FichaRA, Factorial y Sesame HR. Con un ejemplo de 20 trabajadores, la diferencia supera los 700€ al año. Descubre qué modelo te conviene.">
+<meta name="keywords" content="fichara vs factorial, fichara vs sesame hr, alternativa a factorial, alternativa a sesame hr, precio software fichaje pyme, comparativa fichaje digital 2026">
+<link rel="canonical" href="https://fichara.com/blog/fichara-vs-factorial-sesame-hr">
+<meta property="og:title" content="FichaRA vs Factorial vs Sesame HR: ¿Qué Pagas Realmente por Fichar?">
+<meta property="og:description" content="Con un ejemplo de 20 trabajadores, la diferencia de precio supera los 700€ al año. Comparativa real, sin letra pequeña.">
+<meta property="og:url" content="https://fichara.com/blog/fichara-vs-factorial-sesame-hr">
 <meta property="og:image" content="https://fichara.com/logo192.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "FichaRA vs Factorial vs Sesame HR: ¿Qué Pagas Realmente por Fichar?",
+  "description": "Comparativa real de precios entre FichaRA, Factorial y Sesame HR para pymes españolas, con ejemplo numérico para una plantilla de 20 trabajadores.",
+  "author": {"@type": "Person", "name": "David Castellano"},
+  "publisher": {"@type": "Organization", "name": "FichaRA", "url": "https://fichara.com"},
+  "datePublished": "2026-07-27",
+  "dateModified": "2026-07-27",
+  "mainEntityOfPage": "https://fichara.com/blog/fichara-vs-factorial-sesame-hr"
+}
+</script>
 
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -18,64 +32,60 @@
   * { margin:0; padding:0; box-sizing:border-box; }
   body { font-family:'Barlow',sans-serif; color:var(--texto); background:#fff; }
 
+  /* NAV */
   nav { background:var(--negro); padding:0 5vw; height:64px; display:flex; align-items:center; justify-content:space-between; border-bottom:2px solid var(--rojo); position:sticky; top:0; z-index:100; }
   .nav-logo { font-family:'Barlow Condensed',sans-serif; font-size:22px; font-weight:900; color:#fff; text-decoration:none; }
   .nav-logo em { color:var(--rojo); font-style:normal; }
-  nav ul { list-style:none; display:flex; gap:28px; align-items:center; }
-  nav ul a { color:#aaa; text-decoration:none; font-size:14px; font-weight:500; text-transform:uppercase; letter-spacing:0.5px; transition:color 0.2s; }
-  nav ul a:hover, nav ul a.active { color:#fff; }
-  .nav-cta { background:var(--rojo) !important; color:#fff !important; padding:8px 18px; border-radius:4px; font-weight:600 !important; }
+  .nav-cta { background:var(--rojo); color:#fff; padding:8px 18px; border-radius:4px; font-weight:600; font-size:14px; text-decoration:none; }
 
-  /* HERO */
-  .blog-hero { background:var(--negro); padding:80px 5vw 60px; text-align:center; border-bottom:2px solid var(--rojo); }
-  .blog-tag { display:inline-block; background:var(--rojo); color:#fff; font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; padding:5px 14px; border-radius:2px; margin-bottom:20px; }
-  .blog-hero h1 { font-family:'Barlow Condensed',sans-serif; font-size:clamp(36px,6vw,64px); font-weight:900; color:#fff; text-transform:uppercase; line-height:1.05; margin-bottom:16px; }
-  .blog-hero h1 span { color:var(--rojo); }
-  .blog-hero p { color:#888; font-size:18px; max-width:600px; margin:0 auto; }
+  /* HERO ARTÍCULO */
+  .article-hero { background:var(--negro); padding:80px 5vw 60px; text-align:center; }
+  .article-tag { display:inline-block; background:var(--rojo); color:#fff; font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; padding:5px 14px; border-radius:2px; margin-bottom:20px; }
+  .article-hero h1 { font-family:'Barlow Condensed',sans-serif; font-size:clamp(32px,5vw,58px); font-weight:900; color:#fff; line-height:1.05; text-transform:uppercase; max-width:900px; margin:0 auto 20px; }
+  .article-hero h1 span { color:var(--rojo); }
+  .article-meta { color:#888; font-size:14px; }
+  .article-meta strong { color:#aaa; }
 
-  /* ARTÍCULOS */
-  .blog-body { max-width:1100px; margin:0 auto; padding:60px 5vw; }
-  .blog-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:28px; }
+  /* CONTENIDO */
+  .article-body { max-width:820px; margin:0 auto; padding:60px 5vw; }
+  .article-body h2 { font-family:'Barlow Condensed',sans-serif; font-size:32px; font-weight:900; color:var(--negro); text-transform:uppercase; margin:48px 0 16px; border-left:5px solid var(--rojo); padding-left:16px; }
+  .article-body h3 { font-size:20px; font-weight:600; color:var(--negro); margin:32px 0 12px; }
+  .article-body p { font-size:17px; line-height:1.8; margin-bottom:20px; color:#444; }
+  .article-body ul, .article-body ol { margin:0 0 20px 24px; }
+  .article-body li { font-size:17px; line-height:1.8; margin-bottom:8px; color:#444; }
+  .article-body strong { color:var(--negro); }
 
-  .article-card { border:2px solid #eee; border-radius:12px; overflow:hidden; transition:border-color 0.2s, transform 0.2s; text-decoration:none; color:inherit; display:flex; flex-direction:column; }
-  .article-card:hover { border-color:var(--rojo); transform:translateY(-4px); }
-  .card-img { background:var(--negro); padding:32px 24px; min-height:120px; display:flex; align-items:center; }
-  .card-icon { font-size:48px; }
-  .card-body { padding:24px; flex:1; display:flex; flex-direction:column; }
-  .card-tag { display:inline-block; background:var(--gris); color:#666; font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:3px 10px; border-radius:10px; margin-bottom:12px; }
-  .card-title { font-family:'Barlow Condensed',sans-serif; font-size:22px; font-weight:900; color:var(--negro); text-transform:uppercase; line-height:1.15; margin-bottom:12px; }
-  .card-desc { font-size:15px; color:#666; line-height:1.6; flex:1; margin-bottom:16px; }
-  .card-leer { color:var(--rojo); font-size:14px; font-weight:700; text-transform:uppercase; letter-spacing:1px; display:flex; align-items:center; gap:6px; }
-  .card-leer::after { content:'→'; }
+  /* CAJAS */
+  .box-alerta { background:#FFF5F5; border-left:5px solid var(--rojo); border-radius:0 8px 8px 0; padding:24px 28px; margin:32px 0; }
+  .box-alerta .box-title { font-family:'Barlow Condensed',sans-serif; font-size:20px; font-weight:900; color:var(--rojo); text-transform:uppercase; margin-bottom:10px; }
+  .box-verde { background:#F0FFF4; border-left:5px solid #27AE60; border-radius:0 8px 8px 0; padding:24px 28px; margin:32px 0; }
+  .box-verde .box-title { font-family:'Barlow Condensed',sans-serif; font-size:20px; font-weight:900; color:#27AE60; text-transform:uppercase; margin-bottom:10px; }
+  .box-gris { background:var(--gris); border-radius:8px; padding:24px 28px; margin:32px 0; }
 
-  /* ARTÍCULO DESTACADO */
-  .article-card.destacado { grid-column:span 3; flex-direction:row; }
-  .article-card.destacado .card-img { min-width:280px; min-height:auto; }
-  .article-card.destacado .card-icon { font-size:72px; }
-  .article-card.destacado .card-title { font-size:30px; }
-  .article-card.destacado .card-desc { font-size:16px; }
+  /* TABLA */
+  .tabla-multas { width:100%; border-collapse:collapse; margin:24px 0; font-size:16px; }
+  .tabla-multas th { background:var(--negro); color:#fff; padding:14px 16px; text-align:left; font-family:'Barlow Condensed',sans-serif; font-size:18px; }
+  .tabla-multas td { padding:12px 16px; border-bottom:1px solid #eee; }
+  .tabla-multas tr:nth-child(even) td { background:#fafafa; }
+  .tag-leve { background:#FFF9E6; color:#B8860B; padding:3px 10px; border-radius:10px; font-size:13px; font-weight:700; }
+  .tag-grave { background:#FFF0F0; color:var(--rojo); padding:3px 10px; border-radius:10px; font-size:13px; font-weight:700; }
+  .tag-muygrave { background:#F5E6FF; color:#7B2FBE; padding:3px 10px; border-radius:10px; font-size:13px; font-weight:700; }
 
-  /* CTA */
-  .blog-cta { background:var(--negro); border-radius:12px; padding:48px; text-align:center; margin-top:60px; }
-  .blog-cta h2 { font-family:'Barlow Condensed',sans-serif; font-size:36px; font-weight:900; color:#fff; text-transform:uppercase; margin-bottom:12px; }
-  .blog-cta p { color:#aaa; font-size:17px; margin-bottom:28px; }
+  /* CTA INLINE */
+  .cta-inline { background:var(--negro); border-radius:12px; padding:40px; text-align:center; margin:48px 0; }
+  .cta-inline h3 { font-family:'Barlow Condensed',sans-serif; font-size:28px; font-weight:900; color:#fff; text-transform:uppercase; margin-bottom:12px; }
+  .cta-inline p { color:#aaa; font-size:16px; margin-bottom:24px; }
   .btn-red { background:var(--rojo); color:#fff; padding:14px 32px; border-radius:4px; font-family:'Barlow Condensed',sans-serif; font-size:18px; font-weight:700; text-transform:uppercase; text-decoration:none; display:inline-block; letter-spacing:1px; }
   .btn-red:hover { background:#E62020; }
 
-  footer { background:var(--negro); padding:40px 5vw; text-align:center; border-top:2px solid var(--rojo); margin-top:0; }
+  /* FOOTER */
+  footer { background:var(--negro); padding:40px 5vw; text-align:center; border-top:2px solid var(--rojo); }
   footer p { color:#999; font-size:14px; margin-bottom:8px; }
   footer a { color:var(--rojo); text-decoration:none; }
 
-  @media(max-width:900px) {
-    .blog-grid { grid-template-columns:1fr 1fr; }
-    .article-card.destacado { grid-column:span 2; flex-direction:column; }
-    .article-card.destacado .card-img { min-width:auto; }
-  }
-  @media(max-width:600px) {
-    .blog-grid { grid-template-columns:1fr; }
-    .article-card.destacado { grid-column:span 1; }
-    nav ul { display:none; }
-  }
+  /* BREADCRUMB */
+  .breadcrumb { background:var(--gris); padding:12px 5vw; font-size:13px; color:#888; }
+  .breadcrumb a { color:var(--rojo); text-decoration:none; }
 
   .skip-link {
     position: absolute; top: -40px; left: 8px; background: var(--rojo); color: #fff;
@@ -94,125 +104,109 @@
 
 <nav aria-label="Navegación principal">
   <a href="https://fichara.com" class="nav-logo">Ficha<em>RA</em></a>
-  <ul>
-    <li><a href="https://fichara.com/#problema">El problema</a></li>
-    <li><a href="https://fichara.com/#funciones">Funciones</a></li>
-    <li><a href="https://fichara.com/#precio">Precio</a></li>
-    <li><a href="https://fichara.com/blog/" class="active">Blog</a></li>
-    <li><a href="https://demofichara-production.up.railway.app" class="nav-cta">Ver demo</a></li>
-  </ul>
+  <a href="https://demofichara-production.up.railway.app" class="nav-cta">Probar demo gratis</a>
 </nav>
 
-<div class="blog-hero">
-  <span class="blog-tag">📚 Recursos gratuitos</span>
-  <h1>Blog <span>FichaRA</span></h1>
-  <p>Todo lo que necesitas saber sobre control horario, fichaje digital y gestión de personal para PYMEs españolas.</p>
+<div class="breadcrumb">
+  <a href="https://fichara.com">Inicio</a> › <a href="https://fichara.com/blog">Blog</a> › FichaRA vs Factorial vs Sesame HR
+</div>
+
+<div class="article-hero">
+  <span class="article-tag">💶 Comparativas</span>
+  <h1>FichaRA vs Factorial vs <span>Sesame HR:</span><br>¿Qué Pagas Realmente<br>por Fichar?</h1>
+  <p class="article-meta">Por <strong>David Castellano</strong> · FichaRA · Julio 2026 · 5 min de lectura</p>
 </div>
 
 <main id="contenido">
-<div class="blog-body">
-  <div class="blog-grid">
+<article class="article-body">
 
-    <!-- DESTACADO -->
-    <a href="https://fichara.com/blog/ley-control-horario-empresas/" class="article-card destacado">
-      <div class="card-img">
-        <div class="card-icon" aria-hidden="true">📋</div>
-      </div>
-      <div class="card-body">
-        <span class="card-tag">⭐ Más leído · Normativa laboral</span>
-        <div class="card-title">Ley de Control Horario 2025: Todo lo que necesita saber tu empresa</div>
-        <div class="card-desc">Desde mayo de 2019, todas las empresas están obligadas a registrar la jornada laboral. Las multas van de 751€ a 7.500€. Qué exige exactamente la ley, qué mira la Inspección y cómo cumplirlo sin complicaciones.</div>
-        <div class="card-leer">Leer artículo</div>
-      </div>
-    </a>
+  <p>Si estás buscando un software de fichaje digital para cumplir con la Ley de Registro de Jornada, seguramente ya te has encontrado con Factorial y Sesame HR en casi todas las comparativas. Son productos sólidos y muy conocidos en España. Pero hay una pregunta que casi nadie responde con números claros: <strong>¿cuánto vas a pagar realmente cuando tu plantilla crezca?</strong></p>
 
-    <!-- ARTÍCULO NUEVO: COMPARATIVA -->
-    <a href="https://fichara.com/blog/fichara-vs-factorial-sesame-hr/" class="article-card">
-      <div class="card-img">
-        <div class="card-icon" aria-hidden="true">💶</div>
-      </div>
-      <div class="card-body">
-        <span class="card-tag">🆕 Nuevo · Comparativas</span>
-        <div class="card-title">FichaRA vs Factorial vs Sesame HR: ¿Qué Pagas Realmente por Fichar?</div>
-        <div class="card-desc">Comparativa de precios reales con un ejemplo numérico: para una empresa de 20 trabajadores, la diferencia supera los 700€ al año. Descubre qué modelo de precio te conviene.</div>
-        <div class="card-leer">Leer artículo</div>
-      </div>
-    </a>
+  <p>Aquí lo calculamos con cifras reales, no con "consulta precio".</p>
 
-    <!-- ARTÍCULO 2 -->
-    <a href="https://fichara.com/blog/mejores-apps-fichaje-pyme-espana/" class="article-card">
-      <div class="card-img">
-        <div class="card-icon" aria-hidden="true">📊</div>
-      </div>
-      <div class="card-body">
-        <span class="card-tag">Comparativa</span>
-        <div class="card-title">Las 5 Mejores Apps de Fichaje para PYMEs en España 2025</div>
-        <div class="card-desc">Comparativa honesta con precios reales. FichaRA, Sesame HR, Factorial, Woffu y Clockify. Cuál elegir según el tamaño de tu empresa.</div>
-        <div class="card-leer">Leer artículo</div>
-      </div>
-    </a>
-
-    <!-- ARTÍCULO 3 -->
-    <a href="https://fichara.com/blog/que-pasa-inspeccion-trabajo-fichajes/" class="article-card">
-      <div class="card-img">
-        <div class="card-icon" aria-hidden="true">🔍</div>
-      </div>
-      <div class="card-body">
-        <span class="card-tag">Inspección de Trabajo</span>
-        <div class="card-title">Qué Pasa Cuando Llega la Inspección y No Tienes los Fichajes</div>
-        <div class="card-desc">Qué revisa exactamente un inspector, cómo actuar si llegan a tu empresa y cuáles son las consecuencias reales de no tener el registro en regla.</div>
-        <div class="card-leer">Leer artículo</div>
-      </div>
-    </a>
-
-    <!-- ARTÍCULO 4 -->
-    <a href="https://fichara.com/blog/como-digitalizar-fichaje-empleados/" class="article-card">
-      <div class="card-img">
-        <div class="card-icon" aria-hidden="true">🚀</div>
-      </div>
-      <div class="card-body">
-        <span class="card-tag">Guía práctica</span>
-        <div class="card-title">Cómo Digitalizar el Fichaje de tus Empleados en 5 Pasos</div>
-        <div class="card-desc">Sin complicaciones ni grandes inversiones. Guía paso a paso para tener el fichaje digital en regla desde hoy mismo. Tarda menos de un día.</div>
-        <div class="card-leer">Leer artículo</div>
-      </div>
-    </a>
-
-    <!-- ARTÍCULO 5 -->
-    <a href="https://fichara.com/blog/multas-no-llevar-registro-jornada/" class="article-card">
-      <div class="card-img">
-        <div class="card-icon" aria-hidden="true">💸</div>
-      </div>
-      <div class="card-body">
-        <span class="card-tag">Sanciones laborales</span>
-        <div class="card-title">Multas por No Llevar el Registro de Jornada: Cuánto Te Puede Costar</div>
-        <div class="card-desc">Tabla completa de sanciones LISOS 2025. Desde 751€ hasta 225.018€. Cómo se calculan realmente y por qué el cálculo habitual es peligrosamente incorrecto.</div>
-        <div class="card-leer">Leer artículo</div>
-      </div>
-    </a>
-
-    <!-- ARTÍCULO 6 -->
-    <a href="https://fichara.com/blog/jornada-375-horas-fichaje-digital-obligatorio/" class="article-card">
-      <div class="card-img">
-        <div class="card-icon" aria-hidden="true">📅</div>
-      </div>
-      <div class="card-body">
-        <span class="card-tag">Reforma laboral 2025</span>
-        <div class="card-title">Jornada de 37,5 Horas y Fichaje Digital Obligatorio: Qué Debes Saber</div>
-        <div class="card-desc">Estado actualizado de las dos grandes reformas laborales. Qué está bloqueado, qué viene seguro y qué debes hacer ahora mismo en tu empresa.</div>
-        <div class="card-leer">Leer artículo</div>
-      </div>
-    </a>
-
+  <div class="box-alerta">
+    <div class="box-title">💡 La diferencia que más importa</div>
+    <p style="margin:0;color:#444;">Factorial y Sesame HR cobran <strong>por empleado al mes</strong>. FichaRA cobra <strong>un precio fijo al año, por empresa</strong>, sin importar cuántos trabajadores tengas (hasta 249; luego hay tramos superiores). Ese modelo, más que cualquier funcionalidad, es lo que determina cuánto vas a pagar dentro de un año o de tres.</p>
   </div>
 
-  <div class="blog-cta">
-    <h2>¿Listo para tenerlo todo en regla?</h2>
-    <p>Prueba FichaRA gratis. Sin registro, sin tarjeta. En 5 minutos ves cómo funciona todo.</p>
-    <a href="https://demofichara-production.up.railway.app" class="btn-red">Entrar a la demo gratis →</a>
-    <p style="margin-top:16px;font-size:14px;color:#666;">📞 669 926 158 · ✉️ administracion@fichara.com</p>
+  <h2>Comparativa de precios, sin letra pequeña</h2>
+
+  <table class="tabla-multas">
+    <thead>
+      <tr><th></th><th>FichaRA</th><th>Factorial</th><th>Sesame HR</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Modelo de precio</td><td><strong>Fijo, por empresa</strong></td><td>Por empleado/mes</td><td>Por empleado/mes</td></tr>
+      <tr><td>Precio de entrada</td><td><strong>450€/año</strong> (hasta 249 empleados)</td><td>Desde ~5€/empleado/mes</td><td>Desde ~5,50€/empleado/mes</td></tr>
+      <tr><td>Mínimo mensual oculto</td><td><strong>No tiene</strong></td><td>No suele tener</td><td>Sí, ~82,50€/mes</td></tr>
+      <tr><td>¿Sube si contratas?</td><td><strong>No</strong>, dentro del mismo tramo</td><td>Sí, de forma lineal</td><td>Sí, de forma lineal</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Un ejemplo con números reales</h2>
+
+  <p>Imagina una empresa de <strong>20 trabajadores</strong> — un tamaño típico en construcción, hostelería o servicios:</p>
+
+  <ul>
+    <li><strong>Factorial</strong> (plan Essentials, ~5€/empleado/mes): 20 × 5€ = 100€/mes → <strong>1.200€/año</strong></li>
+    <li><strong>Sesame HR</strong> (plan Starter, ~5,50€/empleado/mes): 20 × 5,50€ = 110€/mes → <strong>1.320€/año</strong></li>
+    <li><strong>FichaRA</strong>: <strong>450€/año</strong>, punto. Da igual si tienes 5 trabajadores o 200.</li>
+  </ul>
+
+  <p>Con esta plantilla, FichaRA cuesta <strong>menos de la mitad</strong> que las otras dos opciones. Y la diferencia crece cuanto más grande sea tu equipo: con 50 trabajadores, Factorial o Sesame HR ya rondan los 3.000-3.500€/año, mientras que FichaRA sigue en 450€.</p>
+
+  <div class="cta-inline">
+    <h3>Compara con tu plantilla real</h3>
+    <p>Entra en la demo y haz tú mismo la cuenta con tu número de empleados.</p>
+    <a href="https://demofichara-production.up.railway.app" class="btn-red">Probar demo gratis →</a>
   </div>
-</div>
+
+  <h2>¿Entonces por qué existen Factorial y Sesame HR?</h2>
+
+  <p>Porque no compiten exactamente en lo mismo. Ambas son <strong>suites completas de RRHH</strong>: además de fichaje, incluyen reclutamiento, evaluación del desempeño, encuestas de clima laboral, organigramas, onboarding formal, y en el caso de Factorial, módulos de IA para automatizar procesos. Si tu empresa tiene un departamento de RRHH que necesita gestionar todo ese ciclo, tiene sentido pagar más por una plataforma más amplia.</p>
+
+  <p><strong>FichaRA no es eso.</strong> Está pensado para pymes que necesitan resolver el fichaje legal, las vacaciones, las bajas, la documentación y ahora también el control de gastos y las nóminas — sin pagar por reclutamiento, evaluaciones de desempeño o encuestas de clima que la mayoría de pymes de 10-50 empleados nunca llegan a usar.</p>
+
+  <div class="box-gris">
+    <h3 style="margin-top:0;">¿Y si trabajo por obras, centros o clientes distintos?</h3>
+    <p style="margin-bottom:0;">Ahí FichaRA tiene una ventaja que ni Factorial ni Sesame HR resuelven de forma nativa: el módulo de <strong>Empresas Cliente y Órdenes de Trabajo</strong>, donde cada operario imputa sus horas y gastos directamente a la obra, centro o OT en la que está trabajando.</p>
+  </div>
+
+  <h2>¿Para quién tiene sentido cada uno?</h2>
+
+  <div class="box-verde">
+    <div class="box-title">✅ Factorial o Sesame HR, si...</div>
+    <ul style="margin:0 0 0 20px;">
+      <li style="margin-bottom:8px;">Tienes o vas a tener un departamento de RRHH dedicado.</li>
+      <li style="margin-bottom:8px;">Necesitas reclutamiento, evaluación del desempeño o gestión del clima laboral integrados.</li>
+      <li style="margin-bottom:0;">El coste por empleado no es tu principal preocupación.</li>
+    </ul>
+  </div>
+
+  <div class="box-verde">
+    <div class="box-title">✅ FichaRA, si...</div>
+    <ul style="margin:0 0 0 20px;">
+      <li style="margin-bottom:8px;">Tu prioridad es cumplir la ley de fichaje sin complicarte con módulos que no vas a usar.</li>
+      <li style="margin-bottom:8px;">Tu plantilla crece con el tiempo y no quieres que la factura del software crezca al mismo ritmo.</li>
+      <li style="margin-bottom:8px;">Trabajas por proyectos, obras o clientes distintos y necesitas imputar horas y gastos a cada Orden de Trabajo.</li>
+      <li style="margin-bottom:0;">Prefieres hablar directamente con quien ha construido el producto, sin pasar por comercial ni tickets de soporte.</li>
+    </ul>
+  </div>
+
+  <h2>La cuenta que de verdad importa</h2>
+
+  <p>No se trata de qué plataforma tiene más funciones en el papel. Se trata de qué necesitas resolver realmente en los próximos 12-24 meses. Si tu prioridad es cumplir la normativa de fichaje al menor coste posible, sin pagar por herramientas de RRHH que no vas a tocar, la cuenta con FichaRA sale sola.</p>
+
+  <div class="cta-inline">
+    <h3>FichaRA — Precio fijo, sin sorpresas</h3>
+    <p>Demo gratuita. Sin registro. Sin tarjeta. Hablas directamente con el desarrollador.</p>
+    <a href="https://demofichara-production.up.railway.app" class="btn-red">Probar FichaRA gratis →</a>
+    <p style="margin-top:16px;font-size:14px;">📞 669 926 158 · ✉️ administracion@fichara.com · 🌐 fichara.com</p>
+  </div>
+
+  <p style="font-size:14px;color:#888;font-style:italic;">Fuentes de los precios de la competencia: tarifas públicas consultadas en 2026 en fuentes especializadas del sector (Skello, La Tienda del TPV, Ecosistema Startup). Los precios de terceros pueden variar; consulta siempre la web oficial del proveedor para la tarifa vigente.</p>
+
+</article>
 
 </main>
 
