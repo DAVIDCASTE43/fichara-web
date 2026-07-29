@@ -42,7 +42,7 @@
   .card-img { background:var(--negro); padding:32px 24px; min-height:120px; display:flex; align-items:center; }
   .card-icon { font-size:48px; }
   .card-body { padding:24px; flex:1; display:flex; flex-direction:column; }
-  .card-tag { display:inline-block; background:var(--gris); color:#888; font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:3px 10px; border-radius:10px; margin-bottom:12px; }
+  .card-tag { display:inline-block; background:var(--gris); color:#666; font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:3px 10px; border-radius:10px; margin-bottom:12px; }
   .card-title { font-family:'Barlow Condensed',sans-serif; font-size:22px; font-weight:900; color:var(--negro); text-transform:uppercase; line-height:1.15; margin-bottom:12px; }
   .card-desc { font-size:15px; color:#666; line-height:1.6; flex:1; margin-bottom:16px; }
   .card-leer { color:var(--rojo); font-size:14px; font-weight:700; text-transform:uppercase; letter-spacing:1px; display:flex; align-items:center; gap:6px; }
@@ -63,7 +63,7 @@
   .btn-red:hover { background:#E62020; }
 
   footer { background:var(--negro); padding:40px 5vw; text-align:center; border-top:2px solid var(--rojo); margin-top:0; }
-  footer p { color:#555; font-size:14px; margin-bottom:8px; }
+  footer p { color:#999; font-size:14px; margin-bottom:8px; }
   footer a { color:var(--rojo); text-decoration:none; }
 
   @media(max-width:900px) {
@@ -76,11 +76,23 @@
     .article-card.destacado { grid-column:span 1; }
     nav ul { display:none; }
   }
+
+  .skip-link {
+    position: absolute; top: -40px; left: 8px; background: var(--rojo); color: #fff;
+    padding: 10px 16px; border-radius: 4px; z-index: 200; text-decoration: none; font-weight: 700;
+  }
+  .skip-link:focus { top: 8px; }
+  a:focus-visible, button:focus-visible {
+    outline: 3px solid var(--rojo);
+    outline-offset: 2px;
+  }
 </style>
 </head>
 <body>
 
-<nav>
+<a href="#contenido" class="skip-link">Saltar al contenido principal</a>
+
+<nav aria-label="Navegación principal">
   <a href="https://fichara.com" class="nav-logo">Ficha<em>RA</em></a>
   <ul>
     <li><a href="https://fichara.com/#problema">El problema</a></li>
@@ -97,13 +109,14 @@
   <p>Todo lo que necesitas saber sobre control horario, fichaje digital y gestión de personal para PYMEs españolas.</p>
 </div>
 
+<main id="contenido">
 <div class="blog-body">
   <div class="blog-grid">
 
     <!-- DESTACADO -->
     <a href="https://fichara.com/blog/ley-control-horario-empresas/" class="article-card destacado">
       <div class="card-img">
-        <div class="card-icon">📋</div>
+        <div class="card-icon" aria-hidden="true">📋</div>
       </div>
       <div class="card-body">
         <span class="card-tag">⭐ Más leído · Normativa laboral</span>
@@ -116,7 +129,7 @@
     <!-- ARTÍCULO NUEVO: COMPARATIVA -->
     <a href="https://fichara.com/blog/fichara-vs-factorial-sesame-hr/" class="article-card">
       <div class="card-img">
-        <div class="card-icon">💶</div>
+        <div class="card-icon" aria-hidden="true">💶</div>
       </div>
       <div class="card-body">
         <span class="card-tag">🆕 Nuevo · Comparativas</span>
@@ -129,7 +142,7 @@
     <!-- ARTÍCULO 2 -->
     <a href="https://fichara.com/blog/mejores-apps-fichaje-pyme-espana/" class="article-card">
       <div class="card-img">
-        <div class="card-icon">📊</div>
+        <div class="card-icon" aria-hidden="true">📊</div>
       </div>
       <div class="card-body">
         <span class="card-tag">Comparativa</span>
@@ -142,7 +155,7 @@
     <!-- ARTÍCULO 3 -->
     <a href="https://fichara.com/blog/que-pasa-inspeccion-trabajo-fichajes/" class="article-card">
       <div class="card-img">
-        <div class="card-icon">🔍</div>
+        <div class="card-icon" aria-hidden="true">🔍</div>
       </div>
       <div class="card-body">
         <span class="card-tag">Inspección de Trabajo</span>
@@ -155,7 +168,7 @@
     <!-- ARTÍCULO 4 -->
     <a href="https://fichara.com/blog/como-digitalizar-fichaje-empleados/" class="article-card">
       <div class="card-img">
-        <div class="card-icon">🚀</div>
+        <div class="card-icon" aria-hidden="true">🚀</div>
       </div>
       <div class="card-body">
         <span class="card-tag">Guía práctica</span>
@@ -168,7 +181,7 @@
     <!-- ARTÍCULO 5 -->
     <a href="https://fichara.com/blog/multas-no-llevar-registro-jornada/" class="article-card">
       <div class="card-img">
-        <div class="card-icon">💸</div>
+        <div class="card-icon" aria-hidden="true">💸</div>
       </div>
       <div class="card-body">
         <span class="card-tag">Sanciones laborales</span>
@@ -181,7 +194,7 @@
     <!-- ARTÍCULO 6 -->
     <a href="https://fichara.com/blog/jornada-375-horas-fichaje-digital-obligatorio/" class="article-card">
       <div class="card-img">
-        <div class="card-icon">📅</div>
+        <div class="card-icon" aria-hidden="true">📅</div>
       </div>
       <div class="card-body">
         <span class="card-tag">Reforma laboral 2025</span>
@@ -200,6 +213,8 @@
     <p style="margin-top:16px;font-size:14px;color:#666;">📞 669 926 158 · ✉️ administracion@fichara.com</p>
   </div>
 </div>
+
+</main>
 
 <footer>
   <p><a href="https://fichara.com">FichaRA</a> — Gestión de personal para PYMEs · Utrera, Sevilla</p>
