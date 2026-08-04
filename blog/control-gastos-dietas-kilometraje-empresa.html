@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Control de Gastos de Empresa: Dietas, Kilometraje y Tickets Sin Perder Ninguno | FichaRA</title>
+<meta name="description" content="Cómo controlar dietas, kilometraje y tickets de tu equipo sin depender de WhatsApp ni Excel. Qué debe incluir un buen sistema de control de gastos para pymes.">
+<meta name="keywords" content="control de gastos empresa, control de dietas trabajadores, gestión de kilometraje, tickets de gastos app, control de gastos pyme, software control de gastos">
+<link rel="canonical" href="https://fichara.com/blog/control-gastos-dietas-kilometraje-empresa">
+<meta property="og:title" content="Control de Gastos de Empresa: Dietas, Kilometraje y Tickets Sin Perder Ninguno">
+<meta property="og:description" content="Cómo controlar dietas, kilometraje y tickets de tu equipo sin depender de WhatsApp ni Excel.">
+<meta property="og:url" content="https://fichara.com/blog/control-gastos-dietas-kilometraje-empresa">
+<meta property="og:image" content="https://fichara.com/logo192.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Control de Gastos de Empresa: Dietas, Kilometraje y Tickets Sin Perder Ninguno",
+  "description": "Guía sobre cómo controlar los gastos de tu equipo (dietas, kilometraje, tickets) sin depender de WhatsApp ni Excel, y qué debe tener un buen sistema para pymes.",
+  "author": {"@type": "Person", "name": "David Castellano"},
+  "publisher": {"@type": "Organization", "name": "FichaRA", "url": "https://fichara.com"},
+  "datePublished": "2026-08-04",
+  "dateModified": "2026-08-04",
+  "mainEntityOfPage": "https://fichara.com/blog/control-gastos-dietas-kilometraje-empresa"
+}
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --rojo:#CC1B1B; --negro:#0F0F0F; --gris:#F5F5F5; --texto:#333333; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Barlow',sans-serif; color:var(--texto); background:#fff; }
+
+  nav { background:var(--negro); padding:0 5vw; height:64px; display:flex; align-items:center; justify-content:space-between; border-bottom:2px solid var(--rojo); position:sticky; top:0; z-index:100; }
+  .nav-logo { font-family:'Barlow Condensed',sans-serif; font-size:22px; font-weight:900; color:#fff; text-decoration:none; }
+  .nav-logo em { color:var(--rojo); font-style:normal; }
+  .nav-cta { background:var(--rojo); color:#fff; padding:8px 18px; border-radius:4px; font-weight:600; font-size:14px; text-decoration:none; }
+
+  .article-hero { background:var(--negro); padding:80px 5vw 60px; text-align:center; }
+  .article-tag { display:inline-block; background:var(--rojo); color:#fff; font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; padding:5px 14px; border-radius:2px; margin-bottom:20px; }
+  .article-hero h1 { font-family:'Barlow Condensed',sans-serif; font-size:clamp(32px,5vw,58px); font-weight:900; color:#fff; line-height:1.05; text-transform:uppercase; max-width:900px; margin:0 auto 20px; }
+  .article-hero h1 span { color:var(--rojo); }
+  .article-meta { color:#888; font-size:14px; }
+  .article-meta strong { color:#aaa; }
+
+  .article-body { max-width:820px; margin:0 auto; padding:60px 5vw; }
+  .article-body h2 { font-family:'Barlow Condensed',sans-serif; font-size:32px; font-weight:900; color:var(--negro); text-transform:uppercase; margin:48px 0 16px; border-left:5px solid var(--rojo); padding-left:16px; }
+  .article-body h3 { font-size:20px; font-weight:600; color:var(--negro); margin:32px 0 12px; }
+  .article-body p { font-size:17px; line-height:1.8; margin-bottom:20px; color:#444; }
+  .article-body ul, .article-body ol { margin:0 0 20px 24px; }
+  .article-body li { font-size:17px; line-height:1.8; margin-bottom:8px; color:#444; }
+  .article-body strong { color:var(--negro); }
+
+  .box-alerta { background:#FFF5F5; border-left:5px solid var(--rojo); border-radius:0 8px 8px 0; padding:24px 28px; margin:32px 0; }
+  .box-alerta .box-title { font-family:'Barlow Condensed',sans-serif; font-size:20px; font-weight:900; color:var(--rojo); text-transform:uppercase; margin-bottom:10px; }
+  .box-verde { background:#F0FFF4; border-left:5px solid #27AE60; border-radius:0 8px 8px 0; padding:24px 28px; margin:32px 0; }
+  .box-verde .box-title { font-family:'Barlow Condensed',sans-serif; font-size:20px; font-weight:900; color:#27AE60; text-transform:uppercase; margin-bottom:10px; }
+  .box-gris { background:var(--gris); border-radius:8px; padding:24px 28px; margin:32px 0; }
+
+  .tabla-multas { width:100%; border-collapse:collapse; margin:24px 0; font-size:16px; }
+  .tabla-multas th { background:var(--negro); color:#fff; padding:14px 16px; text-align:left; font-family:'Barlow Condensed',sans-serif; font-size:18px; }
+  .tabla-multas td { padding:12px 16px; border-bottom:1px solid #eee; }
+  .tabla-multas tr:nth-child(even) td { background:#fafafa; }
+
+  .cta-inline { background:var(--negro); border-radius:12px; padding:40px; text-align:center; margin:48px 0; }
+  .cta-inline h3 { font-family:'Barlow Condensed',sans-serif; font-size:28px; font-weight:900; color:#fff; text-transform:uppercase; margin-bottom:12px; }
+  .cta-inline p { color:#aaa; font-size:16px; margin-bottom:24px; }
+  .btn-red { background:var(--rojo); color:#fff; padding:14px 32px; border-radius:4px; font-family:'Barlow Condensed',sans-serif; font-size:18px; font-weight:700; text-transform:uppercase; text-decoration:none; display:inline-block; letter-spacing:1px; }
+  .btn-red:hover { background:#E62020; }
+
+  footer { background:var(--negro); padding:40px 5vw; text-align:center; border-top:2px solid var(--rojo); }
+  footer p { color:#999; font-size:14px; margin-bottom:8px; }
+  footer a { color:var(--rojo); text-decoration:none; }
+
+  .breadcrumb { background:var(--gris); padding:12px 5vw; font-size:13px; color:#888; }
+  .breadcrumb a { color:var(--rojo); text-decoration:none; }
+
+  .skip-link {
+    position: absolute; top: -40px; left: 8px; background: var(--rojo); color: #fff;
+    padding: 10px 16px; border-radius: 4px; z-index: 200; text-decoration: none; font-weight: 700;
+  }
+  .skip-link:focus { top: 8px; }
+  a:focus-visible, button:focus-visible {
+    outline: 3px solid var(--rojo);
+    outline-offset: 2px;
+  }
+</style>
+</head>
+<body>
+
+<a href="#contenido" class="skip-link">Saltar al contenido principal</a>
+
+<nav aria-label="Navegación principal">
+  <a href="https://fichara.com" class="nav-logo">Ficha<em>RA</em></a>
+  <a href="https://demofichara-production.up.railway.app" class="nav-cta">Probar demo gratis</a>
+</nav>
+
+<div class="breadcrumb">
+  <a href="https://fichara.com">Inicio</a> › <a href="https://fichara.com/blog">Blog</a> › Control de Gastos de Empresa
+</div>
+
+<div class="article-hero">
+  <span class="article-tag" aria-hidden="true">🧾 Gestión de gastos</span>
+  <h1>Control de Gastos: Dietas, <span>Kilometraje y Tickets</span> Sin Perder Ninguno</h1>
+  <p class="article-meta">Por <strong>David Castellano</strong> · FichaRA · Agosto 2026 · 4 min de lectura</p>
+</div>
+
+<main id="contenido">
+<article class="article-body">
+
+  <p>"Guárdame el ticket que luego te lo doy" es probablemente la frase que más veces se repite en cualquier pyme con trabajadores que se desplazan, hacen dietas o usan su coche para el trabajo. Y casi siempre termina igual: el ticket se pierde, se rompe, o llega un mes después mezclado con otros diez en una bolsa.</p>
+
+  <p>El resultado no es solo un dolor de cabeza administrativo. Es dinero que la empresa no recupera, o que se paga sin ningún control real de a qué correspondía.</p>
+
+  <div class="box-alerta">
+    <div class="box-title">💡 El problema no es la falta de honestidad</div>
+    <p style="margin:0;color:#444;">Casi nunca es un problema de confianza con el equipo. Es un problema de <strong>proceso</strong>: pedirle a alguien que guarde un papel físico durante semanas y luego lo entregue a tiempo es pedirle algo que casi nadie cumple de forma consistente, por mucha buena voluntad que tenga.</p>
+  </div>
+
+  <h2>Qué debe resolver un buen sistema de control de gastos</h2>
+
+  <p>No basta con "hacer una foto al ticket". Un sistema que funcione de verdad en el día a día de una pyme necesita cubrir varias cosas a la vez:</p>
+
+  <ul>
+    <li><strong>Registro en el momento</strong>: el trabajador sube el gasto con el móvil justo cuando ocurre, no al final de la semana intentando recordar.</li>
+    <li><strong>Categorías claras</strong>: dietas, kilometraje, alojamiento, transporte — cada tipo de gasto necesita su propio criterio de cálculo.</li>
+    <li><strong>Precio por kilómetro personalizable</strong>: no todos los trabajadores tienen el mismo acuerdo de compensación por desplazamiento.</li>
+    <li><strong>Aprobación centralizada</strong>: el administrador ve todos los gastos pendientes en un solo sitio, sin depender de recibir cada ticket por WhatsApp.</li>
+    <li><strong>Trazabilidad</strong>: saber quién registró qué gasto, cuándo, y si fue aprobado o rechazado.</li>
+  </ul>
+
+  <h2>Cómo lo resuelve FichaRA</h2>
+
+  <p>El módulo de gastos de FichaRA está pensado para que el trabajador registre el gasto en el momento, con foto del ticket incluida, y quede automáticamente a la espera de aprobación. Nada de bolsas de papeles ni Excel compartido.</p>
+
+  <div class="box-verde">
+    <div class="box-title">✅ Lo que incluye</div>
+    <ul style="margin:0 0 0 20px;">
+      <li style="margin-bottom:8px;">Registro de dietas, kilometraje, alojamiento y transporte con foto del ticket.</li>
+      <li style="margin-bottom:8px;">Precio por kilómetro y por hora extra configurable, individual por cada trabajador.</li>
+      <li style="margin-bottom:8px;">Imputación opcional a una Orden de Trabajo o cliente concreto, si tu empresa factura por proyecto.</li>
+      <li style="margin-bottom:0;">Informes de gastos listos para pasar a la gestoría o incluir en el cierre de nómina del mes.</li>
+    </ul>
+  </div>
+
+  <h2>Un cambio pequeño con impacto grande</h2>
+
+  <p>Digitalizar el control de gastos no es un proyecto complicado. No requiere formación larga ni cambiar de proveedor contable. El cambio real está en mover el registro del gasto al momento en que ocurre, en vez de esperar a que alguien lo recuerde después. Ese único cambio es el que evita que se pierdan tickets, que se paguen gastos sin justificar, o que el cierre de mes se convierta en una persecución de recibos.</p>
+
+  <div class="cta-inline">
+    <h3>Prueba el control de gastos de FichaRA</h3>
+    <p>Demo gratuita. Sin registro. Sin tarjeta. Ve cómo funciona en 5 minutos.</p>
+    <a href="https://demofichara-production.up.railway.app" class="btn-red">Probar FichaRA gratis →</a>
+    <p style="margin-top:16px;font-size:14px;">📞 669 926 158 · ✉️ administracion@fichara.com · 🌐 fichara.com</p>
+  </div>
+
+</article>
+</main>
+
+<footer>
+  <p><a href="https://fichara.com">FichaRA</a> — Gestión de personal para PYMEs · Utrera, Sevilla</p>
+  <p>© 2026 FichaRA · <a href="mailto:administracion@fichara.com">administracion@fichara.com</a> · 669 926 158</p>
+</footer>
+
+</body>
+</html>
