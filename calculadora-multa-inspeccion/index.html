@@ -1,0 +1,257 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora: ¿Cuánto te Podría Costar una Inspección de Trabajo? | FichaRA</title>
+<meta name="description" content="Calcula en segundos cuánto podrías pagar de multa si la Inspección de Trabajo revisa tu empresa y no tienes el registro de jornada en regla. Herramienta gratuita.">
+<meta name="keywords" content="calculadora multa inspección trabajo, cuánto cuesta no fichar, multa registro jornada, sanción LISOS calculadora, riesgo inspección trabajo pyme">
+<link rel="canonical" href="https://fichara.com/calculadora-multa-inspeccion/">
+<meta property="og:title" content="Calculadora: ¿Cuánto te Podría Costar una Inspección de Trabajo?">
+<meta property="og:description" content="Calcula en segundos el rango de multa si la Inspección de Trabajo revisa tu empresa y no tienes el registro de jornada en regla.">
+<meta property="og:url" content="https://fichara.com/calculadora-multa-inspeccion/">
+<meta property="og:image" content="https://fichara.com/logo192.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Calculadora de multa por Inspección de Trabajo",
+  "url": "https://fichara.com/calculadora-multa-inspeccion/",
+  "applicationCategory": "BusinessApplication",
+  "description": "Herramienta gratuita para estimar el rango de multa por no llevar el registro de jornada en regla, según la LISOS.",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}
+}
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --rojo:#CC1B1B; --negro:#0F0F0F; --gris:#F5F5F5; --texto:#333333; --verde:#27AE60; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Barlow',sans-serif; color:var(--texto); background:#fff; }
+
+  .skip-link {
+    position: absolute; top: -40px; left: 8px; background: var(--rojo); color: #fff;
+    padding: 10px 16px; border-radius: 4px; z-index: 200; text-decoration: none; font-weight: 700;
+  }
+  .skip-link:focus { top: 8px; }
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
+    outline: 3px solid var(--rojo);
+    outline-offset: 2px;
+  }
+
+  nav { background:var(--negro); padding:0 5vw; height:64px; display:flex; align-items:center; justify-content:space-between; border-bottom:2px solid var(--rojo); position:sticky; top:0; z-index:100; }
+  .nav-logo { font-family:'Barlow Condensed',sans-serif; font-size:22px; font-weight:900; color:#fff; text-decoration:none; }
+  .nav-logo em { color:var(--rojo); font-style:normal; }
+  .nav-cta { background:var(--rojo); color:#fff; padding:8px 18px; border-radius:4px; font-weight:600; font-size:14px; text-decoration:none; }
+
+  .breadcrumb { background:var(--gris); padding:12px 5vw; font-size:13px; color:#888; }
+  .breadcrumb a { color:var(--rojo); text-decoration:none; }
+
+  .hero { background:var(--negro); padding:70px 5vw 50px; text-align:center; }
+  .hero-tag { display:inline-block; background:var(--rojo); color:#fff; font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; padding:5px 14px; border-radius:2px; margin-bottom:20px; }
+  .hero h1 { font-family:'Barlow Condensed',sans-serif; font-size:clamp(30px,4.6vw,52px); font-weight:900; color:#fff; line-height:1.1; text-transform:uppercase; max-width:800px; margin:0 auto 16px; }
+  .hero h1 span { color:var(--rojo); }
+  .hero p { color:#aaa; font-size:17px; max-width:600px; margin:0 auto; }
+
+  .calc-wrap { max-width:700px; margin:-40px auto 0; padding:0 5vw 80px; position:relative; z-index:5; }
+  .calc-card { background:#fff; border-radius:16px; padding:40px; box-shadow:0 20px 60px rgba(0,0,0,0.15); border:1px solid #eee; }
+
+  .campo { margin-bottom:28px; }
+  .campo label { display:block; font-weight:700; color:var(--negro); margin-bottom:10px; font-size:16px; }
+  .campo input[type="number"] {
+    width:100%; padding:14px 16px; font-size:18px; border:2px solid #ddd; border-radius:8px;
+    font-family:'Barlow',sans-serif;
+  }
+  .campo input[type="number"]:focus { border-color: var(--rojo); }
+
+  .radio-group { display:flex; flex-direction:column; gap:10px; }
+  .radio-option {
+    display:flex; align-items:center; gap:12px; padding:14px 16px; border:2px solid #ddd; border-radius:8px;
+    cursor:pointer; transition:border-color 0.15s, background 0.15s;
+  }
+  .radio-option:hover { border-color: var(--rojo); }
+  .radio-option input[type="radio"] { width:18px; height:18px; accent-color: var(--rojo); flex-shrink:0; }
+  .radio-option.selected { border-color: var(--rojo); background:#FFF5F5; }
+  .radio-option span { font-size:15px; }
+
+  .btn-calcular {
+    width:100%; background:var(--rojo); color:#fff; border:none; padding:16px; border-radius:8px;
+    font-family:'Barlow Condensed',sans-serif; font-size:20px; font-weight:700; letter-spacing:1px;
+    text-transform:uppercase; cursor:pointer; transition:background 0.2s;
+  }
+  .btn-calcular:hover { background:#E62020; }
+
+  .resultado { margin-top:32px; padding:28px; border-radius:12px; display:none; }
+  .resultado.visible { display:block; }
+  .resultado.riesgo-alto { background:#FFF0F0; border:2px solid var(--rojo); }
+  .resultado.riesgo-ok { background:#F0FFF4; border:2px solid var(--verde); }
+  .resultado-titulo { font-family:'Barlow Condensed',sans-serif; font-size:24px; font-weight:900; margin-bottom:12px; text-transform:uppercase; }
+  .riesgo-alto .resultado-titulo { color:var(--rojo); }
+  .riesgo-ok .resultado-titulo { color:var(--verde); }
+  .resultado-num { font-family:'Barlow Condensed',sans-serif; font-size:44px; font-weight:900; color:var(--negro); margin:10px 0; }
+  .resultado p { font-size:15px; color:#444; line-height:1.6; margin-bottom:12px; }
+  .resultado .nota { font-size:13px; color:#888; font-style:italic; }
+
+  .cta-inline { background:var(--negro); border-radius:12px; padding:28px; text-align:center; margin-top:20px; }
+  .cta-inline p { color:#fff; font-size:16px; margin-bottom:16px; font-weight:600; }
+  .btn-red { background:var(--rojo); color:#fff; padding:12px 28px; border-radius:4px; font-family:'Barlow Condensed',sans-serif; font-size:16px; font-weight:700; text-transform:uppercase; text-decoration:none; display:inline-block; letter-spacing:1px; }
+  .btn-red:hover { background:#E62020; }
+
+  .info-legal { max-width:700px; margin:0 auto; padding:0 5vw 60px; font-size:13px; color:#999; line-height:1.6; }
+
+  footer { background:var(--negro); padding:40px 5vw; text-align:center; border-top:2px solid var(--rojo); }
+  footer p { color:#999; font-size:14px; margin-bottom:8px; }
+  footer a { color:var(--rojo); text-decoration:none; }
+
+  @media (max-width:600px) {
+    .calc-card { padding:24px; }
+    .calc-wrap { margin-top:-24px; }
+  }
+</style>
+</head>
+<body>
+
+<a href="#contenido" class="skip-link">Saltar al contenido principal</a>
+
+<nav aria-label="Navegación principal">
+  <a href="https://fichara.com" class="nav-logo">Ficha<em>RA</em></a>
+  <a href="https://demofichara-production.up.railway.app" class="nav-cta">Probar demo gratis</a>
+</nav>
+
+<div class="breadcrumb">
+  <a href="https://fichara.com">Inicio</a> › Calculadora de Multa por Inspección
+</div>
+
+<div class="hero">
+  <span class="hero-tag">🧮 Herramienta gratuita</span>
+  <h1>¿Cuánto te Podría Costar <span>una Inspección?</span></h1>
+  <p>Responde 2 preguntas y calcula el rango de multa si la Inspección de Trabajo revisa tu empresa hoy mismo.</p>
+</div>
+
+<main id="contenido">
+<div class="calc-wrap">
+  <div class="calc-card">
+
+    <div class="campo">
+      <label for="num-trabajadores">¿Cuántos trabajadores tiene tu empresa?</label>
+      <input type="number" id="num-trabajadores" min="1" max="9999" value="10" aria-describedby="ayuda-trabajadores">
+      <span id="ayuda-trabajadores" style="display:none;">Introduce el número de trabajadores por cuenta ajena.</span>
+    </div>
+
+    <div class="campo">
+      <label id="label-registro">¿Cómo registras la jornada de tu equipo ahora mismo?</label>
+      <div class="radio-group" role="radiogroup" aria-labelledby="label-registro">
+        <label class="radio-option" data-valor="ninguno">
+          <input type="radio" name="registro" value="ninguno">
+          <span>No tengo ningún sistema de registro</span>
+        </label>
+        <label class="radio-option" data-valor="papel">
+          <input type="radio" name="registro" value="papel">
+          <span>Papel, Excel o WhatsApp</span>
+        </label>
+        <label class="radio-option" data-valor="digital">
+          <input type="radio" name="registro" value="digital">
+          <span>Sistema digital fiable (fichaje digital)</span>
+        </label>
+      </div>
+    </div>
+
+    <button class="btn-calcular" id="btn-calcular" type="button">Calcular mi riesgo</button>
+
+    <div class="resultado" id="resultado" aria-live="polite">
+      <div class="resultado-titulo" id="resultado-titulo"></div>
+      <div class="resultado-num" id="resultado-num"></div>
+      <p id="resultado-texto"></p>
+      <p class="nota" id="resultado-nota"></p>
+
+      <div class="cta-inline" id="cta-inline">
+        <p id="cta-texto">Con FichaRA tienes el registro de jornada resuelto desde 450€/año.</p>
+        <a href="https://demofichara-production.up.railway.app" class="btn-red">Probar demo gratis →</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="info-legal">
+  <p><strong>Nota legal:</strong> esta herramienta ofrece una estimación orientativa basada en los rangos de sanción del artículo 7.5 de la LISOS (Ley de Infracciones y Sanciones del Orden Social) para infracciones relacionadas con el registro de jornada. El importe final de cualquier sanción lo determina la Inspección de Trabajo y Seguridad Social caso por caso, y puede depender de otros factores (reincidencia, número de trabajadores afectados, gravedad apreciada, etc.). Esto no constituye asesoramiento legal.</p>
+</div>
+</main>
+
+<footer>
+  <p><a href="https://fichara.com">FichaRA</a> — Gestión de personal para PYMEs · Utrera, Sevilla</p>
+  <p>© 2026 FichaRA · <a href="mailto:administracion@fichara.com">administracion@fichara.com</a> · 669 926 158</p>
+</footer>
+
+<script>
+  const opciones = document.querySelectorAll('.radio-option');
+  opciones.forEach(op => {
+    op.addEventListener('click', () => {
+      opciones.forEach(o => o.classList.remove('selected'));
+      op.classList.add('selected');
+      op.querySelector('input').checked = true;
+    });
+  });
+
+  document.getElementById('btn-calcular').addEventListener('click', () => {
+    const numTrabajadores = parseInt(document.getElementById('num-trabajadores').value) || 1;
+    const registroEl = document.querySelector('input[name="registro"]:checked');
+
+    if (!registroEl) {
+      alert('Selecciona cómo registras la jornada ahora mismo.');
+      return;
+    }
+
+    const registro = registroEl.value;
+    const resultado = document.getElementById('resultado');
+    const titulo = document.getElementById('resultado-titulo');
+    const num = document.getElementById('resultado-num');
+    const texto = document.getElementById('resultado-texto');
+    const nota = document.getElementById('resultado-nota');
+    const ctaInline = document.getElementById('cta-inline');
+
+    resultado.classList.remove('riesgo-alto', 'riesgo-ok');
+
+    if (registro === 'digital') {
+      resultado.classList.add('riesgo-ok');
+      titulo.textContent = '✅ Riesgo bajo';
+      num.textContent = '0€ estimado';
+      texto.textContent = 'Si tu sistema digital cumple con los requisitos legales (registro diario, fiable, con al menos 4 años de conservación y acceso inmediato), tu riesgo de sanción por este motivo es bajo. Sigue así.';
+      nota.textContent = '';
+      ctaInline.style.display = 'none';
+    } else {
+      resultado.classList.add('riesgo-alto');
+      ctaInline.style.display = 'block';
+
+      // Rango base por infracción grave (LISOS art. 7.5): 751€ - 7.500€ por empresa
+      const minBase = 751;
+      const maxBase = 7500;
+
+      // Escenario "peor caso" con la reforma en tramitación: multa por trabajador afectado
+      const minPorTrabajador = minBase * numTrabajadores;
+      const maxPorTrabajador = maxBase * numTrabajadores;
+
+      const fmt = (n) => n.toLocaleString('es-ES');
+
+      if (registro === 'ninguno') {
+        titulo.textContent = '⚠️ Riesgo alto';
+      } else {
+        titulo.textContent = '⚠️ Riesgo alto (registro no fiable)';
+      }
+
+      num.textContent = fmt(minBase) + '€ – ' + fmt(maxBase) + '€';
+
+      texto.textContent = 'Esa es la sanción actual por infracción grave (no llevar registro, o llevarlo de forma no fiable), aplicada por empresa. Con la reforma en tramitación que aplicaría la multa por cada trabajador afectado, el rango para tu empresa (' + numTrabajadores + (numTrabajadores === 1 ? ' trabajador' : ' trabajadores') + ') podría llegar a ' + fmt(minPorTrabajador) + '€ – ' + fmt(maxPorTrabajador) + '€.';
+
+      nota.textContent = 'Rango basado en el artículo 7.5 de la LISOS. El escenario "por trabajador" corresponde a una reforma en tramitación en 2026, aún no vigente en todos los casos.';
+    }
+
+    resultado.classList.add('visible');
+    resultado.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+</script>
+
+</body>
+</html>
