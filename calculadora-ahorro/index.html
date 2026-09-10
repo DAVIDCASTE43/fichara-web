@@ -1,0 +1,240 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de Ahorro: FichaRA vs Software de Fichaje por Empleado | FichaRA</title>
+<meta name="description" content="Calcula en segundos cuánto te ahorras al año con FichaRA frente a software de fichaje que cobra por empleado. Introduce tu plantilla y compara.">
+<meta name="keywords" content="calculadora ahorro software fichaje, precio fichaje por empleado, cuánto cuesta fichaje pyme, comparar precio software rrhh">
+<link rel="canonical" href="https://fichara.com/calculadora-ahorro/">
+<meta property="og:title" content="Calculadora de Ahorro: FichaRA vs Software de Fichaje por Empleado">
+<meta property="og:description" content="Introduce tu número de empleados y calcula cuánto te ahorras al año frente a software que cobra por empleado.">
+<meta property="og:url" content="https://fichara.com/calculadora-ahorro/">
+<meta property="og:image" content="https://fichara.com/logo192.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Calculadora de ahorro FichaRA",
+  "url": "https://fichara.com/calculadora-ahorro/",
+  "applicationCategory": "BusinessApplication",
+  "description": "Herramienta gratuita para calcular el ahorro anual de FichaRA frente a software de fichaje que cobra por empleado.",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}
+}
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --rojo:#CC1B1B; --negro:#0F0F0F; --gris:#F5F5F5; --texto:#333333; --verde:#27AE60; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Barlow',sans-serif; color:var(--texto); background:#fff; }
+
+  .skip-link {
+    position: absolute; top: -40px; left: 8px; background: var(--rojo); color: #fff;
+    padding: 10px 16px; border-radius: 4px; z-index: 200; text-decoration: none; font-weight: 700;
+  }
+  .skip-link:focus { top: 8px; }
+  a:focus-visible, button:focus-visible, input:focus-visible {
+    outline: 3px solid var(--rojo);
+    outline-offset: 2px;
+  }
+
+  nav { background:var(--negro); padding:0 5vw; height:64px; display:flex; align-items:center; justify-content:space-between; border-bottom:2px solid var(--rojo); position:sticky; top:0; z-index:100; }
+  .nav-logo { font-family:'Barlow Condensed',sans-serif; font-size:22px; font-weight:900; color:#fff; text-decoration:none; }
+  .nav-logo em { color:var(--rojo); font-style:normal; }
+  .nav-cta { background:var(--rojo); color:#fff; padding:8px 18px; border-radius:4px; font-weight:600; font-size:14px; text-decoration:none; }
+
+  .breadcrumb { background:var(--gris); padding:12px 5vw; font-size:13px; color:#888; }
+  .breadcrumb a { color:var(--rojo); text-decoration:none; }
+
+  .hero { background:var(--negro); padding:70px 5vw 50px; text-align:center; }
+  .hero-tag { display:inline-block; background:var(--rojo); color:#fff; font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; padding:5px 14px; border-radius:2px; margin-bottom:20px; }
+  .hero h1 { font-family:'Barlow Condensed',sans-serif; font-size:clamp(30px,4.6vw,52px); font-weight:900; color:#fff; line-height:1.1; text-transform:uppercase; max-width:800px; margin:0 auto 16px; }
+  .hero h1 span { color:var(--rojo); }
+  .hero p { color:#aaa; font-size:17px; max-width:600px; margin:0 auto; }
+
+  .calc-wrap { max-width:820px; margin:-40px auto 0; padding:0 5vw 80px; position:relative; z-index:5; }
+  .calc-card { background:#fff; border-radius:16px; padding:40px; box-shadow:0 20px 60px rgba(0,0,0,0.15); border:1px solid #eee; }
+
+  .campo { margin-bottom:10px; }
+  .campo label { display:block; font-weight:700; color:var(--negro); margin-bottom:10px; font-size:16px; }
+  .slider-row { display:flex; align-items:center; gap:16px; }
+  input[type="range"] { flex:1; accent-color: var(--rojo); height:6px; }
+  .num-empleados-display {
+    font-family:'Barlow Condensed',sans-serif; font-size:32px; font-weight:900; color:var(--rojo);
+    min-width:70px; text-align:right;
+  }
+
+  .resultados { margin-top:36px; }
+  .tabla-resultado { width:100%; border-collapse:collapse; margin-bottom:24px; }
+  .tabla-resultado th { background:var(--negro); color:#fff; padding:12px 14px; text-align:left; font-family:'Barlow Condensed',sans-serif; font-size:16px; }
+  .tabla-resultado td { padding:12px 14px; border-bottom:1px solid #eee; font-size:15px; }
+  .tabla-resultado tr.fila-fichara td { background:#FFF5F5; font-weight:700; color:var(--negro); }
+  .tabla-resultado tr.fila-fichara td:first-child { border-left:4px solid var(--rojo); }
+
+  .ahorro-destacado {
+    background:#F0FFF4; border:2px solid var(--verde); border-radius:12px; padding:28px; text-align:center; margin-bottom:24px;
+  }
+  .ahorro-destacado.informativo { background:#F5F5F5; border-color:#999; }
+  .ahorro-destacado.informativo .num { color: var(--negro); }
+  .ahorro-destacado .label { font-size:15px; color:#444; margin-bottom:8px; }
+  .ahorro-destacado .num { font-family:'Barlow Condensed',sans-serif; font-size:clamp(26px,5vw,48px); font-weight:900; color:var(--verde); }
+  .ahorro-destacado .sub { font-size:14px; color:#666; margin-top:8px; }
+
+  .cta-inline { background:var(--negro); border-radius:12px; padding:28px; text-align:center; }
+  .cta-inline p { color:#fff; font-size:16px; margin-bottom:16px; font-weight:600; }
+  .btn-red { background:var(--rojo); color:#fff; padding:12px 28px; border-radius:4px; font-family:'Barlow Condensed',sans-serif; font-size:16px; font-weight:700; text-transform:uppercase; text-decoration:none; display:inline-block; letter-spacing:1px; }
+  .btn-red:hover { background:#E62020; }
+
+  .info-legal { max-width:820px; margin:0 auto; padding:0 5vw 60px; font-size:13px; color:#999; line-height:1.6; }
+
+  footer { background:var(--negro); padding:40px 5vw; text-align:center; border-top:2px solid var(--rojo); }
+  footer p { color:#999; font-size:14px; margin-bottom:8px; }
+  footer a { color:var(--rojo); text-decoration:none; }
+
+  @media (max-width:600px) {
+    .calc-card { padding:24px; }
+    .calc-wrap { margin-top:-24px; }
+    .tabla-resultado { font-size:13px; }
+    .tabla-resultado th, .tabla-resultado td { padding:8px 10px; }
+  }
+</style>
+</head>
+<body>
+
+<a href="#contenido" class="skip-link">Saltar al contenido principal</a>
+
+<nav aria-label="Navegación principal">
+  <a href="https://fichara.com" class="nav-logo">Ficha<em>RA</em></a>
+  <a href="https://demofichara-production.up.railway.app" class="nav-cta">Probar demo gratis</a>
+</nav>
+
+<div class="breadcrumb">
+  <a href="https://fichara.com">Inicio</a> › Calculadora de Ahorro
+</div>
+
+<div class="hero">
+  <span class="hero-tag">💶 Herramienta gratuita</span>
+  <h1>¿Cuánto te <span>Ahorrarías</span> al Año?</h1>
+  <p>Mueve el número de empleados y compara al instante el coste anual frente a software que cobra por empleado.</p>
+</div>
+
+<main id="contenido">
+<div class="calc-wrap">
+  <div class="calc-card">
+
+    <div class="campo">
+      <label for="slider-empleados">Número de empleados</label>
+      <div class="slider-row">
+        <input type="range" id="slider-empleados" min="1" max="300" value="20">
+        <div class="num-empleados-display" id="num-empleados-display">20</div>
+      </div>
+    </div>
+
+    <div class="resultados">
+      <table class="tabla-resultado">
+        <thead>
+          <tr><th>Proveedor</th><th>Coste anual estimado</th></tr>
+        </thead>
+        <tbody id="tabla-body">
+          <!-- filas generadas por JS -->
+        </tbody>
+      </table>
+
+      <div class="ahorro-destacado">
+        <div class="label">Ahorras hasta</div>
+        <div class="num" id="ahorro-num">0€/año</div>
+        <div class="sub" id="ahorro-sub"></div>
+      </div>
+
+      <div class="cta-inline">
+        <p>Ese ahorro es real desde el primer año, y no deja de crecer si tu equipo aumenta.</p>
+        <a href="https://demofichara-production.up.railway.app" class="btn-red">Probar demo gratis →</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="info-legal">
+  <p><strong>Nota:</strong> los precios de Factorial, Sesame HR y Bizneo HR son estimaciones basadas en tarifas públicas de sus planes de entrada, consultadas en fuentes especializadas del sector en 2026. Pueden variar según el plan contratado, promociones vigentes o negociación directa con el proveedor. Consulta siempre la web oficial de cada uno para la tarifa exacta. El precio de FichaRA (450€/año hasta 249 empleados, 800€/año de 250 a 499, 1.500€/año de 500 a 999) es el vigente en fichara.com.</p>
+</div>
+</main>
+
+<footer>
+  <p><a href="https://fichara.com">FichaRA</a> — Gestión de personal para PYMEs · Utrera, Sevilla</p>
+  <p>© 2026 FichaRA · <a href="mailto:administracion@fichara.com">administracion@fichara.com</a> · 669 926 158</p>
+</footer>
+
+<script>
+  const slider = document.getElementById('slider-empleados');
+  const display = document.getElementById('num-empleados-display');
+  const tablaBody = document.getElementById('tabla-body');
+  const ahorroNum = document.getElementById('ahorro-num');
+  const ahorroSub = document.getElementById('ahorro-sub');
+
+  function precioFichaRA(n) {
+    if (n <= 249) return 450;
+    if (n <= 499) return 800;
+    return 1500;
+  }
+
+  function precioFactorial(n) { return n * 5 * 12; }
+
+  function precioSesame(n) {
+    const mensual = Math.max(n * 5.5, 82.5);
+    return mensual * 12;
+  }
+
+  function precioBizneo(n) { return (55 + n * 6) * 12; }
+
+  function fmt(n) {
+    return Math.round(n).toLocaleString('es-ES') + '€';
+  }
+
+  function actualizar() {
+    const n = parseInt(slider.value);
+    display.textContent = n;
+
+    const fichara = precioFichaRA(n);
+    const factorial = precioFactorial(n);
+    const sesame = precioSesame(n);
+    const bizneo = precioBizneo(n);
+
+    const filas = [
+      { nombre: 'FichaRA', precio: fichara, destacada: true },
+      { nombre: 'Factorial (estimado)', precio: factorial, destacada: false },
+      { nombre: 'Sesame HR (estimado)', precio: sesame, destacada: false },
+      { nombre: 'Bizneo HR (estimado)', precio: bizneo, destacada: false }
+    ];
+
+    tablaBody.innerHTML = filas.map(f =>
+      `<tr class="${f.destacada ? 'fila-fichara' : ''}"><td>${f.nombre}</td><td>${fmt(f.precio)}/año</td></tr>`
+    ).join('');
+
+    const maxCompetencia = Math.max(factorial, sesame, bizneo);
+    const minCompetencia = Math.min(factorial, sesame, bizneo);
+    const ahorro = maxCompetencia - fichara;
+    const masCaro = filas.filter(f => !f.destacada).sort((a,b) => b.precio - a.precio)[0];
+    const masBarato = filas.filter(f => !f.destacada).sort((a,b) => a.precio - b.precio)[0];
+
+    const cajaResultado = document.querySelector('.ahorro-destacado');
+    if (fichara <= minCompetencia) {
+      cajaResultado.classList.remove('informativo');
+      ahorroNum.textContent = fmt(minCompetencia - fichara) + '/año';
+      ahorroSub.textContent = `Incluso frente a ${masBarato.nombre.replace(' (estimado)','')}, la opción más barata de las tres, con ${n} ${n === 1 ? 'empleado' : 'empleados'}.`;
+    } else {
+      cajaResultado.classList.add('informativo');
+      ahorroNum.textContent = 'Depende de tu plantilla';
+      ahorroSub.textContent = `Con ${n} ${n === 1 ? 'empleado' : 'empleados'}, ${masBarato.nombre.replace(' (estimado)','')} podría salir algo más barato ahora mismo. Pero el precio de FichaRA no sube al crecer: en cuanto amplíes equipo, pasa a ser la opción más económica frente a todas, y se mantiene igual aunque llegues a 249.`;
+    }
+  }
+
+  slider.addEventListener('input', actualizar);
+  actualizar();
+</script>
+
+</body>
+</html>
