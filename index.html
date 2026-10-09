@@ -36,37 +36,79 @@
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "name": "FichaRA",
-  "description": "Plataforma de gestión de personal para PYMEs españolas: fichaje legal, control de gastos, rentabilidad por obra u Orden de Trabajo, nóminas, vacaciones y documentos.",
+  "alternateName": "FichaRA - Fichaje, Gastos y Gestión de Personal",
+  "description": "Plataforma de gestión de personal para PYMEs españolas: fichaje legal, control de gastos, rentabilidad por obra u Orden de Trabajo, nóminas, vacaciones y documentos. Desde 450 €/año con empleados ilimitados dentro del tramo.",
   "url": "https://fichara.com",
   "applicationCategory": "BusinessApplication",
+  "applicationSubCategory": "Gestión de personal y control horario",
   "operatingSystem": "Web, Android, iOS",
-  "offers": [
-    {
-      "@type": "Offer",
-      "name": "Hasta 249 trabajadores",
-      "price": "450",
-      "priceCurrency": "EUR",
-      "description": "Precio fijo anual para empresas de hasta 249 trabajadores"
-    },
-    {
-      "@type": "Offer",
-      "name": "De 250 a 499 trabajadores",
-      "price": "700",
-      "priceCurrency": "EUR",
-      "description": "Precio fijo anual para empresas de 250 a 499 trabajadores"
-    },
-    {
-      "@type": "Offer",
-      "name": "De 500 a 999 trabajadores",
-      "price": "1500",
-      "priceCurrency": "EUR",
-      "description": "Precio fijo anual para empresas de 500 a 999 trabajadores"
-    }
-  ],
+  "inLanguage": "es-ES",
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "EUR",
+    "lowPrice": "450",
+    "highPrice": "1500",
+    "offerCount": "3",
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Hasta 249 trabajadores",
+        "url": "https://fichara.com/#precio",
+        "price": "450",
+        "priceCurrency": "EUR",
+        "priceValidUntil": "2027-12-31",
+        "availability": "https://schema.org/InStock",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "450",
+          "priceCurrency": "EUR",
+          "billingDuration": "P1Y",
+          "billingIncrement": 1,
+          "unitCode": "ANN"
+        },
+        "description": "Precio fijo anual, todos los módulos incluidos, hasta 249 trabajadores"
+      },
+      {
+        "@type": "Offer",
+        "name": "De 250 a 499 trabajadores",
+        "url": "https://fichara.com/#precio",
+        "price": "800",
+        "priceCurrency": "EUR",
+        "priceValidUntil": "2027-12-31",
+        "availability": "https://schema.org/InStock",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "800",
+          "priceCurrency": "EUR",
+          "billingDuration": "P1Y",
+          "billingIncrement": 1,
+          "unitCode": "ANN"
+        },
+        "description": "Precio fijo anual, todos los módulos incluidos, de 250 a 499 trabajadores"
+      },
+      {
+        "@type": "Offer",
+        "name": "De 500 a 999 trabajadores",
+        "url": "https://fichara.com/#precio",
+        "price": "1500",
+        "priceCurrency": "EUR",
+        "priceValidUntil": "2027-12-31",
+        "availability": "https://schema.org/InStock",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "1500",
+          "priceCurrency": "EUR",
+          "billingDuration": "P1Y",
+          "billingIncrement": 1,
+          "unitCode": "ANN"
+        },
+        "description": "Precio fijo anual, todos los módulos incluidos, de 500 a 999 trabajadores"
+      }
+    ]
+  },
   "creator": {
     "@type": "Person",
     "name": "David Castellano",
-    "telephone": "+34669926158",
     "email": "administracion@fichara.com",
     "address": {
       "@type": "PostalAddress",
@@ -74,11 +116,6 @@
       "addressRegion": "Sevilla",
       "addressCountry": "ES"
     }
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5",
-    "ratingCount": "1"
   }
 }
 </script>
