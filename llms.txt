@@ -1,0 +1,50 @@
+# FichaRA
+
+> FichaRA es un software español de fichaje digital y gestión de personal para pymes. Reúne en una sola herramienta el registro de jornada legal, el control de gastos, la rentabilidad por obra u orden de trabajo (OT), las nóminas, las vacaciones y la firma de documentos. Se paga con un precio fijo anual por empresa, sin coste por empleado.
+
+Datos clave:
+
+- Precio fijo anual, sin planes mensuales y sin pagar por trabajador: Básico hasta 249 trabajadores (450 €/año), Medio hasta 499 (800 €/año) y Premium hasta 999 (1.500 €/año). Todos los módulos incluidos.
+- Pensado para pymes de construcción, empresas de servicios (limpieza, mantenimiento), talleres mecánicos y talleres de chapa y pintura.
+- Cumple la normativa española de registro de jornada.
+- Disponible en web y como app Android.
+- Hay una demo gratuita para probarlo sin registrarse.
+- Contacto: administracion@fichara.com
+
+## Producto
+
+- [Página principal](https://fichara.com/): qué es FichaRA, funciones, precios y contacto
+- [Funciones](https://fichara.com/#funciones): fichaje, gastos, OTs, nóminas, vacaciones y documentos
+- [Precios](https://fichara.com/#precio): planes Básico, Medio y Premium con precio fijo anual
+- [Demo gratuita](https://demofichara-production.up.railway.app/): entorno de prueba con todas las funciones
+
+## Soluciones por sector
+
+- [Empresas de construcción](https://fichara.com/fichaje-empresas-construccion/): registro de jornada y control de horas, dietas y kilometraje por obra
+- [Empresas de servicios](https://fichara.com/fichaje-empresas-servicios/): control de horas y gastos por cliente o centro (limpieza, mantenimiento)
+- [Talleres mecánicos](https://fichara.com/fichaje-talleres-mecanicos/): control de horas y gastos por reparación
+- [Talleres de chapa y pintura](https://fichara.com/fichaje-talleres-chapa-pintura/): control de horas y gastos por reparación
+
+## Herramientas gratuitas
+
+- [Calculadora de ahorro](https://fichara.com/calculadora-ahorro/): cuánto se ahorra con FichaRA frente a software que cobra por empleado
+- [Calculadora de multa por inspección](https://fichara.com/calculadora-multa-inspeccion/): estimación de la multa por no tener el registro de jornada en regla
+
+## Blog
+
+- [Ley de control horario](https://fichara.com/blog/ley-control-horario-empresas/): qué exige la normativa de registro de jornada en España y cómo cumplirla
+- [Multas por no llevar el registro de jornada](https://fichara.com/blog/multas-no-llevar-registro-jornada/): tabla de sanciones y cómo evitarlas
+- [Qué pasa si llega la Inspección de Trabajo](https://fichara.com/blog/que-pasa-inspeccion-trabajo-fichajes/): qué revisa un inspector y cómo actuar
+- [Jornada de 37,5 horas y fichaje digital](https://fichara.com/blog/jornada-375-horas-fichaje-digital-obligatorio/): situación de la reducción de jornada y obligaciones para pymes
+- [Cómo digitalizar el fichaje en 5 pasos](https://fichara.com/blog/como-digitalizar-fichaje-empleados/): guía práctica para implantar el control horario digital
+- [FichaRA frente a Factorial, Sesame HR, Bizneo y Woffu](https://fichara.com/blog/fichara-vs-competidores-precio-2026/): comparativa de precios con un ejemplo de 20 trabajadores
+- [Rentabilidad por obra y órdenes de trabajo](https://fichara.com/blog/rentabilidad-por-obra-ordenes-trabajo/): cómo calcular el coste real de cada proyecto
+- [Control de gastos, dietas y kilometraje](https://fichara.com/blog/control-gastos-dietas-kilometraje-empresa/): cómo gestionar los tickets del equipo sin Excel ni WhatsApp
+- [Automatizar el cierre de nóminas](https://fichara.com/blog/automatizar-nominas-pyme/): cómo agilizar las nóminas mensuales en una pyme
+
+## Optional
+
+- [Blog completo](https://fichara.com/blog/): todas las guías y artículos
+- [Política de privacidad](https://fichara.com/privacidad.html)
+- [Aviso legal](https://fichara.com/aviso-legal.html)
+- [Condiciones de servicio](https://fichara.com/condiciones.html)
