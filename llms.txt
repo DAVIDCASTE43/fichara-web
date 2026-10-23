@@ -17,6 +17,7 @@ Datos clave:
 - [Funciones](https://fichara.com/#funciones): fichaje, gastos, OTs, nóminas, vacaciones y documentos
 - [Precios](https://fichara.com/#precio): planes Básico, Medio y Premium con precio fijo anual
 - [Demo gratuita](https://demofichara-production.up.railway.app/): entorno de prueba con todas las funciones
+- [Preguntas frecuentes](https://fichara.com/preguntas-frecuentes/): precio por tamaño de plantilla, cómo se ficha, validez ante la Inspección, datos y soporte
 
 ## Soluciones por sector
 
