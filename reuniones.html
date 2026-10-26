@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="FichaRA reúne fichaje legal, gastos y gestión de personal para pymes. Precio fijo anual por empresa, sin pagar por empleado." />
+  <title>FichaRA | Control de equipo sin papel</title>
+  <link rel="canonical" href="https://fichara.com/reuniones.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.11.3/lib/p5.min.js"></script>
+  <script>p5.disableFriendlyErrors = true;</script>
+  <style>
+    /* Colores de marca FichaRA (mismos que index.html) */
+    :root { --ink:#0F0F0F; --paper:#fafafa; --soft:#F5F5F5; --line:#dddddd; --red:#CC1B1B; --red-dark:#991212; --muted:#555555; --white:#ffffff; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--ink); background:var(--paper); font-family:Barlow, Arial, sans-serif; }
+    a { color:inherit; text-decoration:none; }
+    h1,h2,h3,.brand,.price,.plan-price { font-family:'Barlow Condensed', Arial Narrow, sans-serif; }
+    .wrap { width:min(1160px, calc(100% - 40px)); margin:auto; }
+    nav { height:78px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--line); }
+    .brand { font-size:28px; font-weight:800; letter-spacing:-.5px; } .brand b { color:var(--red); font-style:italic; }
+    .nav-note { font-size:13px; font-weight:600; color:var(--muted); text-transform:uppercase; letter-spacing:.08em; }
+    .top-cta, .button { display:inline-flex; align-items:center; justify-content:center; min-height:46px; padding:0 20px; border-radius:5px; font-weight:700; font-size:15px; transition:transform .18s ease, background .18s ease; }
+    .top-cta { background:var(--ink); color:white; } .button:hover,.top-cta:hover { transform:translateY(-2px); }
+    .hero { display:grid; grid-template-columns:1.05fr .95fr; gap:54px; align-items:center; padding:74px 0 68px; }
+    .eyebrow { display:flex; gap:8px; align-items:center; color:var(--red); font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:.09em; }
+    .dot { width:8px; height:8px; background:var(--red); border-radius:50%; box-shadow:0 0 0 4px rgba(204,27,27,.18); }
+    h1 { margin:18px 0 20px; max-width:680px; font-size:clamp(46px,6.2vw,82px); line-height:.95; letter-spacing:-.02em; text-transform:uppercase; }
+    h1 em { color:var(--red); font-style:normal; }
+    .hero p { max-width:580px; font-size:19px; line-height:1.55; color:#444; }
+    .hero-actions { display:flex; align-items:center; gap:16px; margin-top:28px; flex-wrap:wrap; }
+    .button.primary { color:white; background:var(--red); } .button.primary:hover { background:var(--red-dark); }
+    .button.ghost { color:var(--ink); border:2px solid var(--ink); }
+    .small-proof { margin-top:20px; font-size:14px; color:var(--muted); }
+    .hero-art { position:relative; min-height:430px; border:1px solid var(--line); overflow:hidden; background:linear-gradient(135deg,#1b1b1b,#2a2a2a); box-shadow:12px 12px 0 rgba(204,27,27,.12); }
+    #sketch { position:absolute; inset:0; } #sketch canvas { width:100%!important; height:100%!important; display:block; }
+    .art-label { position:absolute; z-index:2; bottom:20px; left:20px; padding:11px 13px; background:rgba(255,255,255,.95); font-size:13px; font-weight:700; letter-spacing:.04em; }
+    .strip { background:var(--ink); color:var(--paper); padding:26px 0; border-top:4px solid var(--red); }
+    .strip-inner { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; } .strip-item strong { display:block; font-size:18px; } .strip-item span { display:block; margin-top:4px; color:#bdbdbd; font-size:14px; }
+    section { padding:88px 0; } .section-kicker { color:var(--red); font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:.09em; }
+    h2 { margin:12px 0 38px; max-width:760px; font-size:clamp(34px,4.4vw,56px); line-height:1; text-transform:uppercase; }
+    .pain { display:grid; grid-template-columns:.75fr 1.25fr; gap:42px; border-top:1px solid var(--line); padding-top:26px; } .pain-side { font-size:18px; line-height:1.55; color:var(--muted); }
+    .pain-list { list-style:none; padding:0; margin:0; } .pain-list li { padding:20px 0; border-bottom:1px solid var(--line); display:grid; grid-template-columns:44px 1fr; gap:15px; align-items:start; font-size:18px; line-height:1.45; } .count { font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:20px; color:var(--red); }
+    .solution { background:var(--soft); } .modules { display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid #cfcfcf; border-left:1px solid #cfcfcf; } .module { min-height:170px; padding:23px; border-right:1px solid #cfcfcf; border-bottom:1px solid #cfcfcf; background:var(--white); } .module h3 { margin:0 0 10px; font-size:22px; text-transform:uppercase; } .module p { margin:0; color:#555; font-size:15px; line-height:1.5; }
+    .plans { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+    .plan { position:relative; border:1px solid var(--line); background:var(--white); padding:30px 26px; display:flex; flex-direction:column; }
+    .plan.featured { border:2px solid var(--red); box-shadow:10px 10px 0 rgba(204,27,27,.10); }
+    .badge { position:absolute; top:-13px; left:24px; background:var(--red); color:white; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; padding:4px 10px; border-radius:3px; }
+    .plan-size { font-size:15px; font-weight:600; color:var(--muted); }
+    .plan-price { margin:10px 0 4px; font-size:60px; font-weight:800; line-height:1; }
+    .plan-price small { font-family:Barlow,sans-serif; font-size:16px; font-weight:600; color:var(--muted); }
+    .plan-note { font-size:14px; color:var(--muted); }
+    .included { margin-top:30px; display:grid; grid-template-columns:1fr 1fr; gap:30px; align-items:center; border-top:1px solid var(--line); padding-top:28px; }
+    .included ul { list-style:none; padding:0; margin:0; columns:2; column-gap:24px; } .included li { padding:5px 0; font-size:15px; } .included li::before { content:'✓ '; color:var(--red); font-weight:800; }
+    .included p { margin:0 0 14px; color:var(--muted); font-size:15px; line-height:1.55; }
+    .final { padding:88px 0 100px; } .final-box { padding:50px; color:white; background:var(--ink); border-left:8px solid var(--red); } .final h2 { margin:0 0 20px; } .final p { max-width:640px; color:#cfcfcf; font-size:17px; line-height:1.55; }
+    .contact-row { display:flex; flex-wrap:wrap; gap:14px; margin-top:24px; }
+    .button.light { background:white; color:var(--ink); }
+    footer { padding:28px 0 42px; border-top:1px solid var(--line); display:flex; justify-content:space-between; gap:20px; font-size:14px; color:var(--muted); flex-wrap:wrap; }
+    footer a { text-decoration:underline; text-underline-offset:3px; }
+    @media(max-width:860px){ .plans{grid-template-columns:1fr} .included{grid-template-columns:1fr} }
+    @media(max-width:760px){ .wrap{width:min(100% - 28px,1160px)} nav{height:66px}.nav-note{display:none}.top-cta{min-height:40px;padding:0 13px;font-size:13px}.hero{grid-template-columns:1fr;gap:30px;padding:52px 0}.hero-art{min-height:320px}.strip-inner,.pain{grid-template-columns:1fr}.strip-inner{gap:18px}.modules{grid-template-columns:1fr}.final-box{padding:30px}.hero-actions{align-items:stretch;flex-direction:column}.pain-list li{font-size:16px}.included ul{columns:1} footer{display:block;line-height:1.9} }
+    @media(prefers-reduced-motion:reduce){ *{scroll-behavior:auto!important;transition:none!important} }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="wrap"><nav><a class="brand" href="https://fichara.com/">Ficha<b>RA</b></a><span class="nav-note">Fichaje legal · gastos · personal</span><a class="top-cta" href="#contacto">Hablar con David</a></nav></div>
+
+    <div class="wrap hero" id="inicio">
+      <div>
+        <div class="eyebrow"><span class="dot"></span> Para pymes que quieren tenerlo todo en orden</div>
+        <h1>Tu equipo trabaja.<br><em>Tu control también.</em></h1>
+        <p>FichaRA reúne fichaje legal, gastos, vacaciones, nóminas y documentos. Una sola herramienta para dejar de perseguir papeles, Excels y mensajes.</p>
+        <div class="hero-actions"><a class="button primary" href="#contacto">Pedir una demostración</a><a class="button ghost" href="https://demofichara-production.up.railway.app">Probar la demo sin registro</a></div>
+        <div class="small-proof">Hablas directamente con David, quien desarrolla el producto.</div>
+      </div>
+      <div class="hero-art" aria-label="Visualización del equipo en orden"><div id="sketch"></div><div class="art-label">HOY · 4 PERSONAS · TODO EN REGLA</div></div>
+    </div>
+
+    <div class="strip"><div class="wrap strip-inner"><div class="strip-item"><strong>Fichaje legal</strong><span>Registro de jornada exportable para Inspección.</span></div><div class="strip-item"><strong>Un precio por empresa</strong><span>Sin coste por cada empleado.</span></div><div class="strip-item"><strong>En cinco minutos</strong><span>Empieza sin formación complicada.</span></div></div></div>
+
+    <section class="wrap"><div class="section-kicker">El problema</div><h2>El papel funciona hasta que alguien te pide pruebas.</h2><div class="pain"><div class="pain-side">Si llevas los fichajes por WhatsApp, Excel o papel, encontrar la información cuando la necesitas toma tiempo. Y cuando llega una inspección, no hay margen.</div><ol class="pain-list"><li><span class="count">01</span><span>No sabes con certeza qué horas se han registrado ni si puedes demostrarlas.</span></li><li><span class="count">02</span><span>Los gastos y las horas no quedan asociados a cada obra, cliente u Orden de Trabajo.</span></li><li><span class="count">03</span><span>Cerrar el mes significa reunir información desde varios sitios.</span></li></ol></div></section>
+
+    <section class="solution"><div class="wrap"><div class="section-kicker">La solución</div><h2>Todo lo que tu equipo necesita, sin añadir herramientas.</h2><div class="modules"><article class="module"><h3>Fichaje digital</h3><p>Entrada y salida con PIN, móvil u ordenador.</p></article><article class="module"><h3>Gastos y OT</h3><p>Imputa horas y gastos a obras, clientes o contratos.</p></article><article class="module"><h3>Vacaciones y bajas</h3><p>Solicitudes, aprobaciones y registro en el mismo sitio.</p></article><article class="module"><h3>Nóminas</h3><p>Resumen mensual de horas extra, festivos y gastos.</p></article><article class="module"><h3>Documentos</h3><p>Contratos y nóminas disponibles para cada empleado.</p></article><article class="module"><h3>Informes legales</h3><p>Exporta el registro de jornada cuando lo necesites.</p></article></div></div></section>
+
+    <section class="wrap" id="precio">
+      <div class="section-kicker">Precio claro</div>
+      <h2>Un precio fijo al año. Según el tamaño de tu empresa.</h2>
+      <div class="plans">
+        <article class="plan featured"><span class="badge">Más popular</span><div class="plan-size">Hasta 249 trabajadores</div><div class="plan-price">450€ <small>/ año + IVA</small></div><div class="plan-note">Renovación anual</div></article>
+        <article class="plan"><div class="plan-size">De 250 a 499 trabajadores</div><div class="plan-price">800€ <small>/ año + IVA</small></div><div class="plan-note">Renovación anual</div></article>
+        <article class="plan"><div class="plan-size">De 500 a 999 trabajadores</div><div class="plan-price">1.500€ <small>/ año + IVA</small></div><div class="plan-note">Renovación anual</div></article>
+      </div>
+      <div class="included">
+        <ul><li>Fichaje digital legal</li><li>Vacaciones, permisos y bajas</li><li>Gastos y Órdenes de Trabajo</li><li>Gestión documental</li><li>Portal del empleado</li><li>Informes para Inspección</li><li>Soporte directo con el desarrollador</li></ul>
+        <div><p>Todos los planes incluyen todos los módulos. No pagas por usuario. ¿Más de 999 trabajadores? Te preparo una propuesta a medida.</p><a class="button primary" href="#contacto">Ver si encaja para mi empresa</a></div>
+      </div>
+    </section>
+
+    <section class="wrap final" id="contacto"><div class="final-box"><div class="section-kicker">Una conversación, no una centralita</div><h2>Cuéntame cómo llevas ahora el control de tu equipo.</h2><p>En una demostración ves si FichaRA encaja con tu forma de trabajar antes de cambiar nada. Llámame, escríbeme o pruébala tú mismo.</p>
+      <div class="contact-row"><a class="button primary" href="tel:+34669926158">Llamar · 669 926 158</a><a class="button light" href="mailto:administracion@fichara.com?subject=Quiero%20una%20demostraci%C3%B3n%20de%20FichaRA">Escribir un email</a><a class="button light" href="https://demofichara-production.up.railway.app">Probar la demo</a></div>
+    </div></section>
+  </main>
+
+  <footer class="wrap">
+    <span>© 2026 FichaRA · Utrera, Sevilla</span>
+    <span><a href="https://fichara.com/aviso-legal.html">Aviso legal</a> · <a href="https://fichara.com/privacidad.html">Privacidad</a> · <a href="https://fichara.com/condiciones.html">Condiciones</a></span>
+  </footer>
+
+<script>
+  const sketch = p => {
+    let people = [], t = 0;
+    p.setup = () => { const host = document.getElementById('sketch'); p.createCanvas(host.clientWidth, host.clientHeight).parent('sketch'); p.pixelDensity(1); p.noStroke(); for(let i=0;i<4;i++) people.push({x:p.random(.14,.84),y:p.random(.18,.72),s:p.random(26,36),phase:p.random(p.TWO_PI),name:['A','L','M','J'][i]}); };
+    p.draw = () => { t += .012; p.clear(); const w=p.width,h=p.height;
+      p.stroke(255,255,255,18); p.strokeWeight(1); for(let x=0;x<w;x+=28){p.line(x,0,x,h)} for(let y=0;y<h;y+=28){p.line(0,y,w,y)}
+      p.stroke(204,27,27,90); p.strokeWeight(1.2); for(let i=0;i<people.length;i++){for(let j=i+1;j<people.length;j++){let a=people[i],b=people[j];p.line(a.x*w,a.y*h,b.x*w,b.y*h)}}
+      p.noStroke(); people.forEach(d=>{const pulse=Math.sin(t+d.phase)*4; const x=d.x*w+Math.sin(t*.6+d.phase)*14,y=d.y*h+Math.cos(t*.55+d.phase)*9; p.fill(255,255,255,240);p.circle(x,y,d.s+pulse);p.fill(17,17,17);p.textAlign(p.CENTER,p.CENTER);p.textStyle(p.BOLD);p.textSize(14);p.text(d.name,x,y+1);p.fill(204,27,27);p.circle(x+d.s*.44,y-d.s*.44,10);});
+      p.fill(255,255,255,150);p.textAlign(p.LEFT,p.TOP);p.textStyle(p.BOLD);p.textSize(11);p.text('REGISTRO ACTIVO',22,22); };
+    p.windowResized=()=>{const host=document.getElementById('sketch');p.resizeCanvas(host.clientWidth,host.clientHeight)};
+  }; new p5(sketch);
+</script>
+</body>
+</html>
