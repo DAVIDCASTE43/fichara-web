@@ -13,8 +13,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fichara.com/blog/</loc>
-    <lastmod>2026-10-26</lastmod>
+    <loc>https://fichara.com/blog/</loc><lastmod>2026-11-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -108,4 +107,5 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+<url><loc>https://fichara.com/blog/parte-diario-obra-fichaje-sin-duplicar-datos/</loc><lastmod>2026-11-10</lastmod></url>
 </urlset>

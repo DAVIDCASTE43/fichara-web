@@ -6,7 +6,7 @@
       "title": "Parte diario de obra y fichaje: cómo organizarlos sin repetir datos",
       "description": "Una propuesta para separar jornada, tareas e incidencias de obra, revisar diferencias y evitar que la cuadrilla escriba dos veces lo mismo.",
       "category": "Construcción",
-      "status": "ready",
+      "status": "published",
       "intro": [
         "¿El encargado pide las horas en el parte y administración vuelve a pedirlas para revisar los fichajes? Antes de añadir otro formulario, conviene decidir qué pregunta responde cada registro. Este artículo propone una organización interna; no establece obligaciones legales ni presenta el parte como sustituto del registro de jornada.",
         "La idea es sencilla: registrar cada dato donde corresponda y utilizar una referencia común para relacionarlo. El fichaje describe la entrada y la salida; el parte explica qué se ha hecho, dónde y qué queda pendiente. No necesitan contar exactamente la misma historia."
@@ -49,22 +49,59 @@
         }
       ],
       "sources": [
-        {"title": "FichaRA funciones", "url": "https://fichara.com/#funciones"}
+        {
+          "title": "FichaRA funciones",
+          "url": "https://fichara.com/#funciones"
+        }
       ],
       "related": [
-        {"title": "¿Sabes si una obra o proyecto te está dando pérdidas?", "url": "https://fichara.com/blog/rentabilidad-por-obra-ordenes-trabajo/"}
+        {
+          "title": "¿Sabes si una obra o proyecto te está dando pérdidas?",
+          "url": "https://fichara.com/blog/rentabilidad-por-obra-ordenes-trabajo/"
+        }
       ],
       "worksheet": {
         "filename": "lista-parte-obra-fichaje.csv",
         "rows": [
-          ["Comprobación", "Responsable", "Estado", "Próxima acción"],
-          ["Identificador de obra compartido", "", "Pendiente", ""],
-          ["Campos de jornada y actividad separados", "", "Pendiente", ""],
-          ["Criterio para desplazamientos y esperas", "", "Pendiente", ""],
-          ["Diferencias consultadas con la cuadrilla", "", "Pendiente", ""],
-          ["Pendientes de obra con responsable", "", "Pendiente", ""]
+          [
+            "Comprobación",
+            "Responsable",
+            "Estado",
+            "Próxima acción"
+          ],
+          [
+            "Identificador de obra compartido",
+            "",
+            "Pendiente",
+            ""
+          ],
+          [
+            "Campos de jornada y actividad separados",
+            "",
+            "Pendiente",
+            ""
+          ],
+          [
+            "Criterio para desplazamientos y esperas",
+            "",
+            "Pendiente",
+            ""
+          ],
+          [
+            "Diferencias consultadas con la cuadrilla",
+            "",
+            "Pendiente",
+            ""
+          ],
+          [
+            "Pendientes de obra con responsable",
+            "",
+            "Pendiente",
+            ""
+          ]
         ]
-      }
+      },
+      "published_on": "2026-11-10"
     },
     {
       "slug": "revisar-orden-reparacion-antes-cierre-taller",
@@ -115,21 +152,62 @@
         }
       ],
       "sources": [
-        {"title": "FichaRA funciones", "url": "https://fichara.com/#funciones"}
+        {
+          "title": "FichaRA funciones",
+          "url": "https://fichara.com/#funciones"
+        }
       ],
       "related": [
-        {"title": "¿Sabes si una obra o proyecto te está dando pérdidas?", "url": "https://fichara.com/blog/rentabilidad-por-obra-ordenes-trabajo/"}
+        {
+          "title": "¿Sabes si una obra o proyecto te está dando pérdidas?",
+          "url": "https://fichara.com/blog/rentabilidad-por-obra-ordenes-trabajo/"
+        }
       ],
       "worksheet": {
         "filename": "lista-cierre-orden-reparacion.csv",
         "rows": [
-          ["Revisión", "Resultado", "Responsable", "Pendiente"],
-          ["Identificación de orden y vehículo", "Por revisar", "", ""],
-          ["Tareas previstas y efectuadas", "Por revisar", "", ""],
-          ["Aclaración de trabajos adicionales", "Por revisar", "", ""],
-          ["Horas asignadas a la reparación", "Por revisar", "", ""],
-          ["Materiales utilizados y descartados", "Por revisar", "", ""],
-          ["Decisión de cierre interno", "Por revisar", "", ""]
+          [
+            "Revisión",
+            "Resultado",
+            "Responsable",
+            "Pendiente"
+          ],
+          [
+            "Identificación de orden y vehículo",
+            "Por revisar",
+            "",
+            ""
+          ],
+          [
+            "Tareas previstas y efectuadas",
+            "Por revisar",
+            "",
+            ""
+          ],
+          [
+            "Aclaración de trabajos adicionales",
+            "Por revisar",
+            "",
+            ""
+          ],
+          [
+            "Horas asignadas a la reparación",
+            "Por revisar",
+            "",
+            ""
+          ],
+          [
+            "Materiales utilizados y descartados",
+            "Por revisar",
+            "",
+            ""
+          ],
+          [
+            "Decisión de cierre interno",
+            "Por revisar",
+            "",
+            ""
+          ]
         ]
       }
     },
@@ -183,22 +261,68 @@
         }
       ],
       "sources": [
-        {"title": "FichaRA funciones", "url": "https://fichara.com/#funciones"}
+        {
+          "title": "FichaRA funciones",
+          "url": "https://fichara.com/#funciones"
+        }
       ],
       "related": [
-        {"title": "Cómo digitalizar el fichaje de tus empleados en 5 pasos", "url": "https://fichara.com/blog/como-digitalizar-fichaje-empleados/"}
+        {
+          "title": "Cómo digitalizar el fichaje de tus empleados en 5 pasos",
+          "url": "https://fichara.com/blog/como-digitalizar-fichaje-empleados/"
+        }
       ],
       "worksheet": {
         "filename": "lista-sustituciones-limpieza.csv",
         "rows": [
-          ["Comprobación", "Responsable", "Confirmación", "Pendiente"],
-          ["Centro y franja identificados", "", "Pendiente", ""],
-          ["Disponibilidad y aceptación consultadas", "", "Pendiente", ""],
-          ["Solapamientos revisados", "", "Pendiente", ""],
-          ["Instrucciones y materiales preparados", "", "Pendiente", ""],
-          ["Acceso o llaves confirmados", "", "Pendiente", ""],
-          ["Cambio comunicado y recibido", "", "Pendiente", ""],
-          ["Incidencias posteriores revisadas", "", "Pendiente", ""]
+          [
+            "Comprobación",
+            "Responsable",
+            "Confirmación",
+            "Pendiente"
+          ],
+          [
+            "Centro y franja identificados",
+            "",
+            "Pendiente",
+            ""
+          ],
+          [
+            "Disponibilidad y aceptación consultadas",
+            "",
+            "Pendiente",
+            ""
+          ],
+          [
+            "Solapamientos revisados",
+            "",
+            "Pendiente",
+            ""
+          ],
+          [
+            "Instrucciones y materiales preparados",
+            "",
+            "Pendiente",
+            ""
+          ],
+          [
+            "Acceso o llaves confirmados",
+            "",
+            "Pendiente",
+            ""
+          ],
+          [
+            "Cambio comunicado y recibido",
+            "",
+            "Pendiente",
+            ""
+          ],
+          [
+            "Incidencias posteriores revisadas",
+            "",
+            "Pendiente",
+            ""
+          ]
         ]
       }
     },
@@ -252,22 +376,76 @@
         }
       ],
       "sources": [
-        {"title": "FichaRA funciones", "url": "https://fichara.com/#funciones"}
+        {
+          "title": "FichaRA funciones",
+          "url": "https://fichara.com/#funciones"
+        }
       ],
       "related": [
-        {"title": "Cómo digitalizar el fichaje de tus empleados en 5 pasos", "url": "https://fichara.com/blog/como-digitalizar-fichaje-empleados/"}
+        {
+          "title": "Cómo digitalizar el fichaje de tus empleados en 5 pasos",
+          "url": "https://fichara.com/blog/como-digitalizar-fichaje-empleados/"
+        }
       ],
       "worksheet": {
         "filename": "lista-demo-control-horario.csv",
         "rows": [
-          ["Necesidad", "Prioridad", "Prueba solicitada", "Resultado", "Próximo paso"],
-          ["Caso habitual de fichaje", "Imprescindible", "Mostrar circuito completo", "Pendiente", ""],
-          ["Incidencia con datos ficticios", "Por definir", "Mostrar gestión y revisión", "Pendiente", ""],
-          ["Permisos y acceso por perfil", "Por definir", "Demostrar o documentar", "Pendiente", ""],
-          ["Funcionamiento sin conexión", "Por definir", "Confirmar condiciones y límites", "Pendiente", ""],
-          ["Acceso y exportación de datos", "Por definir", "Demostrar formato y alcance", "Pendiente", ""],
-          ["Soporte y condiciones", "Imprescindible", "Entregar por escrito", "Pendiente", ""],
-          ["Necesidades fuera de alcance", "Por definir", "Delimitar expresamente", "Pendiente", ""]
+          [
+            "Necesidad",
+            "Prioridad",
+            "Prueba solicitada",
+            "Resultado",
+            "Próximo paso"
+          ],
+          [
+            "Caso habitual de fichaje",
+            "Imprescindible",
+            "Mostrar circuito completo",
+            "Pendiente",
+            ""
+          ],
+          [
+            "Incidencia con datos ficticios",
+            "Por definir",
+            "Mostrar gestión y revisión",
+            "Pendiente",
+            ""
+          ],
+          [
+            "Permisos y acceso por perfil",
+            "Por definir",
+            "Demostrar o documentar",
+            "Pendiente",
+            ""
+          ],
+          [
+            "Funcionamiento sin conexión",
+            "Por definir",
+            "Confirmar condiciones y límites",
+            "Pendiente",
+            ""
+          ],
+          [
+            "Acceso y exportación de datos",
+            "Por definir",
+            "Demostrar formato y alcance",
+            "Pendiente",
+            ""
+          ],
+          [
+            "Soporte y condiciones",
+            "Imprescindible",
+            "Entregar por escrito",
+            "Pendiente",
+            ""
+          ],
+          [
+            "Necesidades fuera de alcance",
+            "Por definir",
+            "Delimitar expresamente",
+            "Pendiente",
+            ""
+          ]
         ]
       }
     }

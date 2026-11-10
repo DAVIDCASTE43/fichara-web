@@ -49,3 +49,5 @@ Datos clave:
 - [Política de privacidad](https://fichara.com/privacidad.html)
 - [Aviso legal](https://fichara.com/aviso-legal.html)
 - [Condiciones de servicio](https://fichara.com/condiciones.html)
+
+- [Parte diario de obra y fichaje: cómo organizarlos sin repetir datos](https://fichara.com/blog/parte-diario-obra-fichaje-sin-duplicar-datos/): Una propuesta para separar jornada, tareas e incidencias de obra, revisar diferencias y evitar que la cuadrilla escriba dos veces lo mismo.
