@@ -1,0 +1,275 @@
+{
+  "version": 1,
+  "articles": [
+    {
+      "slug": "parte-diario-obra-fichaje-sin-duplicar-datos",
+      "title": "Parte diario de obra y fichaje: cómo organizarlos sin repetir datos",
+      "description": "Una propuesta para separar jornada, tareas e incidencias de obra, revisar diferencias y evitar que la cuadrilla escriba dos veces lo mismo.",
+      "category": "Construcción",
+      "status": "ready",
+      "intro": [
+        "¿El encargado pide las horas en el parte y administración vuelve a pedirlas para revisar los fichajes? Antes de añadir otro formulario, conviene decidir qué pregunta responde cada registro. Este artículo propone una organización interna; no establece obligaciones legales ni presenta el parte como sustituto del registro de jornada.",
+        "La idea es sencilla: registrar cada dato donde corresponda y utilizar una referencia común para relacionarlo. El fichaje describe la entrada y la salida; el parte explica qué se ha hecho, dónde y qué queda pendiente. No necesitan contar exactamente la misma historia."
+      ],
+      "sections": [
+        {
+          "heading": "Repartir los datos antes de repartir formularios",
+          "paragraphs": [
+            "Como propuesta de trabajo, reserva el parte para la obra, la tarea realizada, los materiales pendientes y las incidencias que condicionan el día siguiente. Evita copiar ahí todas las entradas y salidas si ya se recogen en otro lugar. Asigna a cada obra un identificador estable que reconozcan cuadrilla, encargado y oficina.",
+            "Distingue también el tiempo asignado a una tarea del conjunto de la jornada. Un desplazamiento, una espera o una actividad interna pueden necesitar una categoría propia en vuestro seguimiento. Una diferencia debe servir para preguntar, no para rellenar huecos atribuyendo horas a una obra al azar."
+          ]
+        },
+        {
+          "heading": "Ejemplo ficticio: una cuadrilla cambia de obra",
+          "paragraphs": [
+            "Ejemplo ficticio, sin resultados de ahorro atribuidos: Reformas del Patio empieza en una vivienda de Utrera y después acude a otro trabajo. El encargado deja un parte por obra con las tareas y los pendientes. Administración consulta el registro de jornada por separado y revisa la distribución de actividad usando las mismas referencias de obra.",
+            "Al comprobarlo aparece un tramo sin asignar. En vez de cambiar la salida para que todo cuadre, preguntan a la cuadrilla: estaban recogiendo material. Registran la explicación en su procedimiento interno y acuerdan dónde clasificar esa actividad en adelante. El criterio queda escrito para la siguiente revisión."
+          ]
+        },
+        {
+          "heading": "Lista de comprobación para probar mañana",
+          "paragraphs": [
+            "Prueba el circuito con una jornada y revisa si cada persona sabe qué debe aportar. No hace falta cambiar todas las obras a la vez."
+          ],
+          "bullets": [
+            "Elegir una referencia única por obra y comunicarla al equipo.",
+            "Separar los campos de jornada de los campos de actividad.",
+            "Nombrar quién redacta el parte y quién revisa las diferencias.",
+            "Definir cómo anotar desplazamientos, esperas y tareas internas.",
+            "Consultar las discrepancias sin alterar registros para forzar coincidencias.",
+            "Dejar cada pendiente con responsable y próxima acción."
+          ]
+        },
+        {
+          "heading": "Preguntas para cerrar el circuito",
+          "paragraphs": [
+            "¿Qué dato copiamos hoy dos veces? ¿Quién puede explicar una diferencia? ¿La oficina identifica una obra sin llamar al encargado? ¿Qué información necesita realmente quien organiza el trabajo de mañana? Si un campo no ayuda a ninguna decisión, revisa si merece seguir en el parte.",
+            "Según su web, FichaRA permite fichar con PIN, móvil u ordenador e imputar horas y gastos a órdenes de trabajo o clientes.[1] Si te encaja este enfoque, puedes llevar un parte anonimizado a una demo de FichaRA y comprobar cómo relacionar ambos registros. La eliminación de duplicidades en vuestro circuito debe demostrarse, no darse por hecha."
+          ]
+        }
+      ],
+      "sources": [
+        {"title": "FichaRA funciones", "url": "https://fichara.com/#funciones"}
+      ],
+      "related": [
+        {"title": "¿Sabes si una obra o proyecto te está dando pérdidas?", "url": "https://fichara.com/blog/rentabilidad-por-obra-ordenes-trabajo/"}
+      ],
+      "worksheet": {
+        "filename": "lista-parte-obra-fichaje.csv",
+        "rows": [
+          ["Comprobación", "Responsable", "Estado", "Próxima acción"],
+          ["Identificador de obra compartido", "", "Pendiente", ""],
+          ["Campos de jornada y actividad separados", "", "Pendiente", ""],
+          ["Criterio para desplazamientos y esperas", "", "Pendiente", ""],
+          ["Diferencias consultadas con la cuadrilla", "", "Pendiente", ""],
+          ["Pendientes de obra con responsable", "", "Pendiente", ""]
+        ]
+      }
+    },
+    {
+      "slug": "revisar-orden-reparacion-antes-cierre-taller",
+      "title": "Qué revisar en una orden de reparación antes de cerrarla en el taller",
+      "description": "Lista práctica para revisar tareas, horas, materiales y pendientes antes del cierre interno de una orden de reparación en un taller.",
+      "category": "Talleres",
+      "status": "ready",
+      "intro": [
+        "Un vehículo puede estar listo para salir y su orden de reparación seguir teniendo preguntas abiertas. ¿Se anotó la última intervención? ¿Hay un material pendiente de aclarar? ¿La persona que prepara la documentación entiende lo que ha dejado el equipo técnico?",
+        "Esta propuesta organiza una revisión interna antes del cierre administrativo. No sustituye los procedimientos técnicos, de seguridad o de atención al cliente del taller, ni pretende definir requisitos legales. Su objetivo es dejar claro qué está terminado y qué necesita todavía una decisión."
+      ],
+      "sections": [
+        {
+          "heading": "Separar terminado, revisado y pendiente",
+          "paragraphs": [
+            "Puedes trabajar con tres estados internos: trabajo técnico terminado, información revisada y orden cerrada. No son funciones que debas presuponer en una aplicación; son acuerdos de equipo que puedes probar con tu soporte actual. Decide quién cambia cada estado y qué comprueba antes de hacerlo.",
+            "En la revisión, contrasta la intervención prevista con la efectuada. Identifica las tareas adicionales y busca dónde quedó documentada su autorización según vuestro procedimiento. Revisa después horas, materiales y gastos asociados. Una casilla vacía no significa necesariamente cero: puede significar que falta preguntar a quien hizo el trabajo."
+          ]
+        },
+        {
+          "heading": "Ejemplo ficticio: la pieza que no se utilizó",
+          "paragraphs": [
+            "Ejemplo ficticio, sin cifras de ahorro: Taller Arroyo termina una reparación y deja el vehículo preparado. Al revisar la orden, la persona de recepción encuentra una pieza anotada que finalmente no se montó. El técnico confirma el cambio de intervención y el responsable aclara el destino de la pieza antes de dar por revisada la información.",
+            "En esa misma orden hay una anotación de tiempo poco clara. No la sustituyen por la jornada completa del mecánico: preguntan qué actividad corresponde a esa reparación. El resto del día pudo dedicarse a otros vehículos o tareas del taller. La revisión busca una explicación, no un total artificialmente perfecto."
+          ]
+        },
+        {
+          "heading": "Checklist de revisión antes del cierre interno",
+          "paragraphs": [
+            "Adapta estos puntos a vuestro trabajo y utiliza la misma lista durante una prueba. Si algo queda pendiente, conserva un responsable y una próxima acción en vez de cerrar por inercia."
+          ],
+          "bullets": [
+            "Confirmar que se está revisando la orden y el vehículo correctos.",
+            "Contrastar tareas previstas, realizadas y descartadas.",
+            "Localizar las aclaraciones sobre intervenciones adicionales.",
+            "Revisar horas asignadas sin confundirlas con toda la jornada.",
+            "Comprobar materiales utilizados, no utilizados y pendientes de aclarar.",
+            "Separar dudas administrativas de verificaciones técnicas.",
+            "Anotar quién resuelve cada pendiente y cuándo se vuelve a revisar."
+          ]
+        },
+        {
+          "heading": "Qué preguntar al equipo y qué comprobar en una demo",
+          "paragraphs": [
+            "¿Quién puede dar por revisada una orden? ¿Qué sucede si el técnico ya ha terminado su turno? ¿Dónde se ve una aclaración sin buscar entre conversaciones? ¿Cuándo se reabre un pendiente? Son preguntas para acordar un método, no para añadir controles sin dueño.",
+            "FichaRA presenta en su web la imputación de horas y gastos a órdenes de trabajo o clientes.[1] Puedes llevar una orden ficticia a una demo y comprobar esa parte del circuito. No presupongas que sustituye el programa de taller, gestiona recambios o factura: plantea esas necesidades como preguntas y pide que se delimite qué se resuelve y qué queda fuera."
+          ]
+        }
+      ],
+      "sources": [
+        {"title": "FichaRA funciones", "url": "https://fichara.com/#funciones"}
+      ],
+      "related": [
+        {"title": "¿Sabes si una obra o proyecto te está dando pérdidas?", "url": "https://fichara.com/blog/rentabilidad-por-obra-ordenes-trabajo/"}
+      ],
+      "worksheet": {
+        "filename": "lista-cierre-orden-reparacion.csv",
+        "rows": [
+          ["Revisión", "Resultado", "Responsable", "Pendiente"],
+          ["Identificación de orden y vehículo", "Por revisar", "", ""],
+          ["Tareas previstas y efectuadas", "Por revisar", "", ""],
+          ["Aclaración de trabajos adicionales", "Por revisar", "", ""],
+          ["Horas asignadas a la reparación", "Por revisar", "", ""],
+          ["Materiales utilizados y descartados", "Por revisar", "", ""],
+          ["Decisión de cierre interno", "Por revisar", "", ""]
+        ]
+      }
+    },
+    {
+      "slug": "organizar-sustituciones-empresa-limpieza",
+      "title": "Cómo organizar una sustitución en una empresa de limpieza",
+      "description": "Una propuesta para coordinar sustituciones de limpieza: disponibilidad, acceso al centro, instrucciones, confirmación y revisión posterior.",
+      "category": "Empresas de servicios",
+      "status": "ready",
+      "intro": [
+        "Una sustitución no termina cuando alguien acepta ir a un centro. Falta confirmar que puede acceder, conoce las tareas y sabe a quién avisar si encuentra un problema. Resolver esas preguntas antes del servicio evita depender de instrucciones dispersas.",
+        "El siguiente circuito es una propuesta organizativa para empresas de limpieza, no una obligación ni una regla sobre disponibilidad laboral. Adáptalo a las condiciones aplicables y a los acuerdos del equipo. No confundas un hueco en el cuadrante con una persona disponible para cubrirlo."
+      ],
+      "sections": [
+        {
+          "heading": "Preparar una ficha de servicio, no un historial personal",
+          "paragraphs": [
+            "Recoge lo necesario para realizar el servicio: centro, franja prevista, tareas prioritarias, materiales, forma de acceso y contacto operativo. Propón que una persona mantenga esa ficha y compruebe que las instrucciones siguen sirviendo. El sustituto necesita saber qué hacer; no necesita detalles personales sobre la ausencia que origina el cambio.",
+            "Separa tres decisiones: quién podría cubrir el servicio, quién confirma que lo acepta y quién comunica el cambio al centro cuando proceda. Valora disponibilidad real, compatibilidad con otros servicios y preparación necesaria. No des por resuelto el acceso porque alguien haya trabajado allí hace tiempo."
+          ]
+        },
+        {
+          "heading": "Ejemplo ficticio: una llave pendiente",
+          "paragraphs": [
+            "Ejemplo ficticio, sin promesas de ahorro: Limpiezas del Sur debe cubrir un servicio en una oficina. La coordinadora consulta a una trabajadora que conoce las tareas y confirma con ella la disponibilidad. Antes de cerrar el cambio, revisan la ficha y detectan que la llave la conserva otra persona.",
+            "La coordinadora acuerda una entrega y pide confirmación de recepción. También explica qué zona tiene prioridad y a quién llamar si el acceso falla. Tras el servicio, recoge una incidencia sobre material que faltaba y actualiza la ficha. No interpreta el fichaje como prueba suficiente de que todas las tareas se hicieron: la revisión del servicio sigue siendo un paso distinto."
+          ]
+        },
+        {
+          "heading": "Checklist para confirmar la cobertura",
+          "paragraphs": [
+            "Puedes usar esta lista en una hoja compartida o en el soporte que ya utilicéis. La herramienta importa menos que distinguir una propuesta de sustitución de una cobertura confirmada."
+          ],
+          "bullets": [
+            "Identificar centro, fecha y franja que necesitan cobertura.",
+            "Consultar disponibilidad sin darla por supuesta.",
+            "Revisar posibles solapamientos con otros servicios.",
+            "Confirmar preparación, instrucciones y materiales necesarios.",
+            "Acordar entrega de llaves o acceso por el canal adecuado.",
+            "Obtener la aceptación y nombrar un contacto operativo.",
+            "Comunicar el cambio a quien corresponda y comprobar su recepción.",
+            "Recoger incidencias al terminar y actualizar la ficha de servicio."
+          ]
+        },
+        {
+          "heading": "Preguntas que conviene resolver antes de la próxima ausencia",
+          "paragraphs": [
+            "¿Quién coordina cuando falta la persona habitual? ¿Cómo distinguimos una consulta de una asignación aceptada? ¿Quién custodia las instrucciones de acceso? ¿Qué ocurre si nadie puede cubrir? ¿Cómo sabremos que el centro recibió el aviso? Deja una respuesta operativa para cada pregunta y evita prometer cobertura antes de confirmarla.",
+            "La web de FichaRA describe fichaje desde móvil u ordenador y gestión de vacaciones.[1] Si quieres valorar su encaje, lleva una sustitución ficticia a una demo y pregunta cómo consultar la información necesaria. No des por hecho que asigna sustitutos, comprueba solapamientos o planifica rutas: son necesidades que debes contrastar expresamente antes de decidir."
+          ]
+        }
+      ],
+      "sources": [
+        {"title": "FichaRA funciones", "url": "https://fichara.com/#funciones"}
+      ],
+      "related": [
+        {"title": "Cómo digitalizar el fichaje de tus empleados en 5 pasos", "url": "https://fichara.com/blog/como-digitalizar-fichaje-empleados/"}
+      ],
+      "worksheet": {
+        "filename": "lista-sustituciones-limpieza.csv",
+        "rows": [
+          ["Comprobación", "Responsable", "Confirmación", "Pendiente"],
+          ["Centro y franja identificados", "", "Pendiente", ""],
+          ["Disponibilidad y aceptación consultadas", "", "Pendiente", ""],
+          ["Solapamientos revisados", "", "Pendiente", ""],
+          ["Instrucciones y materiales preparados", "", "Pendiente", ""],
+          ["Acceso o llaves confirmados", "", "Pendiente", ""],
+          ["Cambio comunicado y recibido", "", "Pendiente", ""],
+          ["Incidencias posteriores revisadas", "", "Pendiente", ""]
+        ]
+      }
+    },
+    {
+      "slug": "checklist-comprador-demo-app-control-horario",
+      "title": "Qué llevar a una demo de una app de control horario: checklist del comprador",
+      "description": "Prepara una demo con casos ficticios, preguntas concretas y criterios de decisión para comprobar si una app encaja en tu empresa.",
+      "category": "Guías de compra",
+      "status": "ready",
+      "intro": [
+        "Una demo sirve para comprobar un circuito de trabajo, no solo para mirar pantallas. Si llegas con un caso definido, podrás distinguir lo que has visto funcionar de lo que queda por confirmar. Esta guía propone un método de evaluación, sin rankings ni recomendaciones basadas en precios.",
+        "Lleva información ficticia o anonimizada. No necesitas compartir nóminas, documentos de identidad, contraseñas ni datos personales de la plantilla para explicar cómo trabajáis. Describe perfiles y situaciones, y reserva cualquier dato real para un proceso acordado con las garantías correspondientes."
+      ],
+      "sections": [
+        {
+          "heading": "Preparar una página con vuestro circuito",
+          "paragraphs": [
+            "Anota quién ficha, desde dónde, con qué dispositivo y quién revisa después. Añade cómo se comunican las incidencias y qué información necesita administración al final del periodo. Selecciona un caso habitual y una excepción: una salida olvidada, un cambio de centro o una tarea repartida entre clientes.",
+            "Clasifica cada necesidad como imprescindible, conveniente o fuera de alcance. Escribe también qué aceptarías como prueba: ver una operación completa, obtener una explicación documentada o realizar una prueba posterior. Si hay una integración necesaria, no basta con escuchar que se puede conectar: pide concretar sistema, datos, responsables y condiciones."
+          ]
+        },
+        {
+          "heading": "Ejemplo ficticio: una demo con cambio de cliente",
+          "paragraphs": [
+            "Ejemplo ficticio, sin cifras de ahorro: Servicios Azahar lleva a la sesión un empleado inventado que trabaja para dos clientes. Quiere ver el fichaje y entender cómo se asigna la actividad. Después plantea una salida olvidada y pregunta quién puede intervenir, qué información conserva el sistema y cómo se revisa el resultado.",
+            "La persona de administración toma notas en tres columnas: demostrado, pendiente de confirmar y no incluido. Si no se puede mostrar una operación, la deja pendiente; no la convierte en una función contratada. El equipo termina la demo con dudas concretas, no con una aprobación basada solo en la apariencia de la pantalla."
+          ]
+        },
+        {
+          "heading": "Checklist para llevar y completar durante la sesión",
+          "paragraphs": [
+            "Utiliza la misma lista si evalúas distintas opciones. No cambies los criterios a mitad de la prueba solo porque una presentación resulte más vistosa."
+          ],
+          "bullets": [
+            "Describir perfiles, centros, dispositivos y condiciones de conexión.",
+            "Preparar un caso habitual y una excepción con datos ficticios.",
+            "Pedir que se muestre el circuito desde el fichaje hasta su revisión.",
+            "Preguntar por permisos, rectificaciones y consulta del historial.",
+            "Contrastar acceso a los datos, exportación y salida del servicio.",
+            "Solicitar condiciones de implantación, soporte y contratación por escrito.",
+            "Registrar cada necesidad como demostrada, pendiente o no incluida.",
+            "Acordar quién resolverá las dudas y qué prueba falta antes de decidir."
+          ]
+        },
+        {
+          "heading": "Preguntas para decidir sin dar funciones por supuestas",
+          "paragraphs": [
+            "¿Puede completar la tarea quien la usará cada día? ¿Qué sucede si falta conexión? ¿Qué puede ver cada perfil? ¿Quién ayuda si algo falla? ¿Qué trabajo seguirá fuera de la aplicación? Preguntar no equivale a afirmar que una función existe: exige una respuesta concreta y registra sus límites.",
+            "FichaRA anuncia fichaje con PIN, móvil u ordenador y un portal del empleado.[1] Si esas funciones encajan con tu lista, puedes probar su demo con el caso preparado. Decide después qué has comprobado y qué necesita otra validación; una demo no sustituye la revisión de condiciones ni acredita por sí sola cumplimiento legal."
+          ]
+        }
+      ],
+      "sources": [
+        {"title": "FichaRA funciones", "url": "https://fichara.com/#funciones"}
+      ],
+      "related": [
+        {"title": "Cómo digitalizar el fichaje de tus empleados en 5 pasos", "url": "https://fichara.com/blog/como-digitalizar-fichaje-empleados/"}
+      ],
+      "worksheet": {
+        "filename": "lista-demo-control-horario.csv",
+        "rows": [
+          ["Necesidad", "Prioridad", "Prueba solicitada", "Resultado", "Próximo paso"],
+          ["Caso habitual de fichaje", "Imprescindible", "Mostrar circuito completo", "Pendiente", ""],
+          ["Incidencia con datos ficticios", "Por definir", "Mostrar gestión y revisión", "Pendiente", ""],
+          ["Permisos y acceso por perfil", "Por definir", "Demostrar o documentar", "Pendiente", ""],
+          ["Funcionamiento sin conexión", "Por definir", "Confirmar condiciones y límites", "Pendiente", ""],
+          ["Acceso y exportación de datos", "Por definir", "Demostrar formato y alcance", "Pendiente", ""],
+          ["Soporte y condiciones", "Imprescindible", "Entregar por escrito", "Pendiente", ""],
+          ["Necesidades fuera de alcance", "Por definir", "Delimitar expresamente", "Pendiente", ""]
+        ]
+      }
+    }
+  ]
+}
