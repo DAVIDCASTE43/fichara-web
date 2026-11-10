@@ -1,0 +1,78 @@
+name: Contenido editorial FichaRA sin servicios de pago
+
+on:
+  schedule:
+    - cron: '17 9 * * 2,5'
+  workflow_dispatch:
+    inputs:
+      publicar:
+        description: 'Publicar un artículo preparado (false solo comprueba la cola)'
+        type: boolean
+        required: true
+        default: false
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: fichara-editorial
+  cancel-in-progress: false
+
+jobs:
+  editorial:
+    if: github.repository == 'DAVIDCASTE43/fichara-web' && github.event.repository.private == false
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      GH_TOKEN: ${{ github.token }}
+      PUBLICAR: ${{ github.event_name == 'schedule' || inputs.publicar }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Pruebas del publicador sin red
+        run: python3 -B -W error::ResourceWarning -m unittest discover -s .github/scripts -p 'test_*.py' -v
+      - name: Comprobar acceso y tipo de Pages antes de modificar archivos
+        if: env.PUBLICAR == 'true'
+        run: |
+          build_type=$(gh api "repos/$GITHUB_REPOSITORY/pages" --jq '.build_type')
+          if [ "$build_type" != "legacy" ]; then
+            echo "Se necesita revisión del tipo de Pages; no se cambia su configuración ni se publica contenido." >&2
+            exit 1
+          fi
+      - name: Preparar un artículo o comprobar la cola
+        id: preparar
+        run: |
+          if [ "$PUBLICAR" = "true" ]; then
+            python3 .github/scripts/content_publisher.py --apply > .content-run.json
+          else
+            python3 .github/scripts/content_publisher.py > .content-run.json
+          fi
+          cat .content-run.json
+          echo "status=$(python3 -c 'import json;print(json.load(open(".content-run.json"))["status"])')" >> "$GITHUB_OUTPUT"
+          cat .content-run.json >> "$GITHUB_STEP_SUMMARY"
+      - name: Guardar y subir solo los archivos preparados
+        if: steps.preparar.outputs.status == 'published_to_repository'
+        run: |
+          python3 -c 'import json,subprocess;d=json.load(open(".content-run.json"));subprocess.run(["git","add","--",*d["files_planned"]],check=True)'
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Publicar guía práctica de FichaRA desde la cola editorial"
+          git push origin HEAD:main
+      - name: Solicitar publicación de GitHub Pages
+        if: steps.preparar.outputs.status == 'published_to_repository'
+        run: |
+          build_type=$(gh api "repos/$GITHUB_REPOSITORY/pages" --jq '.build_type')
+          if [ "$build_type" != "legacy" ]; then
+            echo "El repositorio no usa publicación Pages por rama. Revisar manualmente; no cambiar la configuración existente." >&2
+            exit 1
+          fi
+          gh api --method POST "repos/$GITHUB_REPOSITORY/pages/builds" --silent
+      - name: Verificar el HTML público antes de declarar éxito
+        if: steps.preparar.outputs.status == 'published_to_repository'
+        run: python3 .github/scripts/verify_content_deployment.py .content-run.json
+      - name: Avisar a IndexNow de las páginas publicadas
+        if: steps.preparar.outputs.status == 'published_to_repository'
+        run: |
+          BEFORE=$(git rev-parse HEAD^) AFTER=$(git rev-parse HEAD) python3 .github/scripts/seo.py indexnow
