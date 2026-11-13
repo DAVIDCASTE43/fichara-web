@@ -13,7 +13,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fichara.com/blog/</loc><lastmod>2026-11-10</lastmod>
+    <loc>https://fichara.com/blog/</loc><lastmod>2026-11-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -108,4 +108,5 @@
     <priority>0.8</priority>
   </url>
 <url><loc>https://fichara.com/blog/parte-diario-obra-fichaje-sin-duplicar-datos/</loc><lastmod>2026-11-10</lastmod></url>
+<url><loc>https://fichara.com/blog/revisar-orden-reparacion-antes-cierre-taller/</loc><lastmod>2026-11-13</lastmod></url>
 </urlset>

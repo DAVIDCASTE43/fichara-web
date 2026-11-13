@@ -51,3 +51,5 @@ Datos clave:
 - [Condiciones de servicio](https://fichara.com/condiciones.html)
 
 - [Parte diario de obra y fichaje: cómo organizarlos sin repetir datos](https://fichara.com/blog/parte-diario-obra-fichaje-sin-duplicar-datos/): Una propuesta para separar jornada, tareas e incidencias de obra, revisar diferencias y evitar que la cuadrilla escriba dos veces lo mismo.
+
+- [Qué revisar en una orden de reparación antes de cerrarla en el taller](https://fichara.com/blog/revisar-orden-reparacion-antes-cierre-taller/): Lista práctica para revisar tareas, horas, materiales y pendientes antes del cierre interno de una orden de reparación en un taller.

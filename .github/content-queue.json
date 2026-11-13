@@ -108,7 +108,7 @@
       "title": "Qué revisar en una orden de reparación antes de cerrarla en el taller",
       "description": "Lista práctica para revisar tareas, horas, materiales y pendientes antes del cierre interno de una orden de reparación en un taller.",
       "category": "Talleres",
-      "status": "ready",
+      "status": "published",
       "intro": [
         "Un vehículo puede estar listo para salir y su orden de reparación seguir teniendo preguntas abiertas. ¿Se anotó la última intervención? ¿Hay un material pendiente de aclarar? ¿La persona que prepara la documentación entiende lo que ha dejado el equipo técnico?",
         "Esta propuesta organiza una revisión interna antes del cierre administrativo. No sustituye los procedimientos técnicos, de seguridad o de atención al cliente del taller, ni pretende definir requisitos legales. Su objetivo es dejar claro qué está terminado y qué necesita todavía una decisión."
@@ -209,7 +209,8 @@
             ""
           ]
         ]
-      }
+      },
+      "published_on": "2026-11-13"
     },
     {
       "slug": "organizar-sustituciones-empresa-limpieza",
