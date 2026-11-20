@@ -116,4 +116,22 @@
     <lastmod>2026-11-20</lastmod></url>
 <url><loc>https://fichara.com/blog/checklist-comprador-demo-app-control-horario/</loc>
     <lastmod>2026-11-20</lastmod></url>
+  <url>
+    <loc>https://fichara.com/fichaje-utrera/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fichara.com/fichaje-sevilla/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fichara.com/fichaje-dos-hermanas/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
