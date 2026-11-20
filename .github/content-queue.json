@@ -333,7 +333,7 @@
       "title": "Qué llevar a una demo de una app de control horario: checklist del comprador",
       "description": "Prepara una demo con casos ficticios, preguntas concretas y criterios de decisión para comprobar si una app encaja en tu empresa.",
       "category": "Guías de compra",
-      "status": "ready",
+      "status": "published",
       "intro": [
         "Una demo sirve para comprobar un circuito de trabajo, no solo para mirar pantallas. Si llegas con un caso definido, podrás distinguir lo que has visto funcionar de lo que queda por confirmar. Esta guía propone un método de evaluación, sin rankings ni recomendaciones basadas en precios.",
         "Lleva información ficticia o anonimizada. No necesitas compartir nóminas, documentos de identidad, contraseñas ni datos personales de la plantilla para explicar cómo trabajáis. Describe perfiles y situaciones, y reserva cualquier dato real para un proceso acordado con las garantías correspondientes."
@@ -449,7 +449,8 @@
             ""
           ]
         ]
-      }
+      },
+      "published_on": "2026-11-20"
     }
   ]
 }
