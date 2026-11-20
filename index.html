@@ -458,6 +458,41 @@
   .func-title { font-family: 'Barlow Condensed', sans-serif; font-size: 20px; font-weight: 700; color: var(--blanco); text-transform: uppercase; margin-bottom: 8px; }
   .func-text { font-size: 14px; color: #888888; line-height: 1.6; }
 
+  /* FICHA DE FUNCIÓN (ventana emergente) */
+  .func-click { cursor: pointer; }
+  .func-click:focus-visible { outline: 2px solid var(--rojo); outline-offset: 3px; }
+  .func-more { margin-top: 14px; font-family: 'Barlow Condensed', sans-serif; font-size: 15px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--rojo); }
+  .fm-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.78); z-index: 1000; display: none; align-items: flex-start; justify-content: center; overflow-y: auto; padding: 4vh 16px; }
+  .fm-overlay.open { display: flex; }
+  .fm-box { position: relative; background: #1A1A1A; border: 1px solid #2A2A2A; border-radius: 12px; width: 100%; max-width: 960px; padding: 40px 40px 32px; color: #DDDDDD; }
+  .fm-close { position: absolute; top: 12px; right: 14px; width: 40px; height: 40px; border-radius: 50%; border: none; background: #2A2A2A; color: #FFFFFF; font-size: 22px; line-height: 1; cursor: pointer; }
+  .fm-close:hover { background: var(--rojo); }
+  .fm-icon { font-size: 30px; margin-bottom: 6px; }
+  .fm-title { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(30px, 5vw, 44px); font-weight: 900; color: #FFFFFF; text-transform: uppercase; line-height: 1.05; margin-bottom: 12px; }
+  .fm-lead { font-size: 18px; line-height: 1.6; color: #CCCCCC; margin-bottom: 20px; max-width: 760px; }
+  .fm-list { list-style: none; margin: 0 0 8px; padding: 0; max-width: 760px; }
+  .fm-list li { position: relative; padding: 6px 0 6px 26px; font-size: 16px; line-height: 1.55; color: #BBBBBB; }
+  .fm-list li::before { content: "✓"; position: absolute; left: 0; color: var(--rojo); font-weight: 900; }
+  .fm-nota { margin-top: 14px; font-size: 14px; color: #888888; max-width: 760px; }
+  .fm-shots { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 28px; align-items: flex-start; }
+  .fm-shot { margin: 0; flex: 1 1 380px; min-width: 0; }
+  .fm-shot.mov { flex: 0 0 auto; width: 230px; }
+  .fm-shot img { display: block; width: 100%; height: auto; border-radius: 8px; border: 1px solid #333333; background: #F4F1EE; cursor: zoom-in; }
+  .fm-shot figcaption { font-size: 13px; color: #888888; margin-top: 8px; line-height: 1.4; }
+  .fm-foot { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between; margin-top: 30px; padding-top: 22px; border-top: 1px solid #2A2A2A; }
+  .fm-cta { display: flex; flex-wrap: wrap; gap: 12px; }
+  .fm-btn { display: inline-block; padding: 12px 22px; border-radius: 6px; font-family: 'Barlow Condensed', sans-serif; font-size: 17px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; cursor: pointer; border: 2px solid var(--rojo); background: var(--rojo); color: #FFFFFF; }
+  .fm-btn.sec { background: transparent; color: #FFFFFF; border-color: #555555; }
+  .fm-btn:hover { filter: brightness(1.12); }
+  .fm-nav { display: flex; gap: 8px; }
+  .fm-nav button { background: #2A2A2A; color: #FFFFFF; border: none; border-radius: 6px; padding: 10px 14px; font-size: 14px; cursor: pointer; }
+  .fm-nav button:hover { background: #3A3A3A; }
+  .fm-zoom { position: fixed; inset: 0; z-index: 1100; background: rgba(0,0,0,0.92); display: none; align-items: center; justify-content: center; padding: 16px; cursor: zoom-out; }
+  .fm-zoom.open { display: flex; }
+  .fm-zoom img { max-width: 100%; max-height: 100%; border-radius: 6px; }
+  body.fm-lock { overflow: hidden; }
+  @media (max-width: 640px) { .fm-box { padding: 32px 18px 22px; } .fm-shot.mov { width: 100%; max-width: 260px; margin: 0 auto; } .fm-foot { flex-direction: column; align-items: stretch; } .fm-nav { justify-content: space-between; } }
+
   /* PRECIO */
   .precio {
     background: var(--blanco); padding: 100px 5vw;
@@ -760,62 +795,62 @@
     <h2>Todo lo que necesitas. <span>Nada que no uses.</span></h2>
     <p class="funciones-lead">Fichaje legal, control de gastos, rentabilidad por obra u Orden de Trabajo, nóminas, vacaciones y documentos. Seis módulos, un mismo panel, un único precio.</p>
     <div class="func-grid">
-      <div class="func-card fade-in">
+      <div class="func-card fade-in func-click" data-func="fichaje" role="button" tabindex="0" aria-haspopup="dialog" aria-label="Ver cómo es: Fichaje digital">
         <div class="func-icon" aria-hidden="true">🕐</div>
         <div class="func-title">Fichaje digital</div>
         <div class="func-text">Registro de entrada y salida con PIN, móvil u ordenador. Válido legalmente para la Inspección de Trabajo.</div>
       </div>
-      <div class="func-card fade-in">
+      <div class="func-card fade-in func-click" data-func="ot" role="button" tabindex="0" aria-haspopup="dialog" aria-label="Ver cómo es: Empresas cliente y OT">
         <div class="func-icon" aria-hidden="true">🏢</div>
         <div class="func-title">Empresas cliente y OT</div>
         <div class="func-text">Imputa horas y gastos a cada Orden de Trabajo o cliente. Ideal si facturas por proyecto o contrato.</div>
       </div>
-      <div class="func-card fade-in">
+      <div class="func-card fade-in func-click" data-func="gastos" role="button" tabindex="0" aria-haspopup="dialog" aria-label="Ver cómo es: Control de gastos">
         <div class="func-icon" aria-hidden="true">🧾</div>
         <div class="func-title">Control de gastos</div>
         <div class="func-text">Dietas, kilometraje, alojamiento y transporte, con foto del ticket. Precio por km u hora extra personalizable por trabajador.</div>
       </div>
-      <div class="func-card fade-in">
+      <div class="func-card fade-in func-click" data-func="nominas" role="button" tabindex="0" aria-haspopup="dialog" aria-label="Ver cómo es: Nóminas">
         <div class="func-icon" aria-hidden="true">💶</div>
         <div class="func-title">Nóminas</div>
         <div class="func-text">Sube nóminas en bloque y genera el resumen mensual de saldo por trabajador: horas extra, festivos y gastos, listo para la gestoría.</div>
       </div>
-      <div class="func-card fade-in">
+      <div class="func-card fade-in func-click" data-func="vacaciones" role="button" tabindex="0" aria-haspopup="dialog" aria-label="Ver cómo es: Vacaciones y permisos">
         <div class="func-icon" aria-hidden="true">🏖️</div>
         <div class="func-title">Vacaciones y permisos</div>
         <div class="func-text">El empleado solicita, tú apruebas con un clic. Todo queda registrado automáticamente.</div>
       </div>
-      <div class="func-card fade-in">
+      <div class="func-card fade-in func-click" data-func="bajas" role="button" tabindex="0" aria-haspopup="dialog" aria-label="Ver cómo es: Bajas médicas">
         <div class="func-icon" aria-hidden="true">🏥</div>
         <div class="func-title">Bajas médicas</div>
         <div class="func-text">Gestión de partes de baja y alta, con registro de días y visibilidad total para el administrador.</div>
       </div>
-      <div class="func-card fade-in">
+      <div class="func-card fade-in func-click" data-func="documental" role="button" tabindex="0" aria-haspopup="dialog" aria-label="Ver cómo es: Gestión documental">
         <div class="func-icon" aria-hidden="true">📁</div>
         <div class="func-title">Gestión documental</div>
         <div class="func-text">Sube nóminas, contratos y documentos. El empleado los descarga desde su portal sin necesidad de papel.</div>
       </div>
-      <div class="func-card fade-in">
+      <div class="func-card fade-in func-click" data-func="calendario" role="button" tabindex="0" aria-haspopup="dialog" aria-label="Ver cómo es: Calendario de horas">
         <div class="func-icon" aria-hidden="true">📅</div>
         <div class="func-title">Calendario de horas</div>
         <div class="func-text">Vista mensual de horas trabajadas y calendario visual de ausencias, con festivos, vacaciones y fines de semana diferenciados.</div>
       </div>
-      <div class="func-card fade-in">
+      <div class="func-card fade-in func-click" data-func="portal" role="button" tabindex="0" aria-haspopup="dialog" aria-label="Ver cómo es: Portal del empleado">
         <div class="func-icon" aria-hidden="true">📱</div>
         <div class="func-title">Portal del empleado</div>
         <div class="func-text">Cada trabajador tiene su acceso para ver sus fichajes, solicitar días y descargar documentos. Sin formación.</div>
       </div>
-      <div class="func-card fade-in">
+      <div class="func-card fade-in func-click" data-func="informes" role="button" tabindex="0" aria-haspopup="dialog" aria-label="Ver cómo es: Informes legales">
         <div class="func-icon" aria-hidden="true">📋</div>
         <div class="func-title">Informes legales</div>
         <div class="func-text">Exporta los informes de jornada listos para presentar ante Inspección de Trabajo en cualquier momento.</div>
       </div>
-      <div class="func-card fade-in">
+      <div class="func-card fade-in func-click" data-func="migracion" role="button" tabindex="0" aria-haspopup="dialog" aria-label="Ver cómo es: Migración sin fricción">
         <div class="func-icon" aria-hidden="true">🔄</div>
         <div class="func-title">Migración sin fricción</div>
         <div class="func-text">Importa tu histórico de fichajes desde Sesame, Factorial u otro sistema mediante plantilla CSV/Excel, sin perder datos.</div>
       </div>
-      <div class="func-card fade-in">
+      <div class="func-card fade-in func-click" data-func="android" role="button" tabindex="0" aria-haspopup="dialog" aria-label="Ver cómo es: App Android nativa">
         <div class="func-icon" aria-hidden="true">📲</div>
         <div class="func-title">App Android nativa</div>
         <div class="func-text">Ficha directamente desde el móvil con la app nativa, sin depender del navegador ni de accesos directos manuales.</div>
@@ -893,6 +928,30 @@
   <p style="color:#888;font-size:12px;">Desarrollado con ❤️ en Utrera</p>
 </footer>
 
+<!-- FICHA DE FUNCIÓN -->
+<div class="fm-overlay" id="fm-overlay" aria-hidden="true">
+  <div class="fm-box" role="dialog" aria-modal="true" aria-labelledby="fm-title" tabindex="-1">
+    <button class="fm-close" type="button" id="fm-close" aria-label="Cerrar">×</button>
+    <div class="fm-icon" id="fm-icon" aria-hidden="true"></div>
+    <h3 class="fm-title" id="fm-title"></h3>
+    <p class="fm-lead" id="fm-lead"></p>
+    <ul class="fm-list" id="fm-list"></ul>
+    <p class="fm-nota" id="fm-nota"></p>
+    <div class="fm-shots" id="fm-shots"></div>
+    <div class="fm-foot">
+      <div class="fm-cta">
+        <a class="fm-btn" href="#contacto" id="fm-contacto">Pedir información</a>
+        <a class="fm-btn sec" href="https://demofichara-production.up.railway.app" target="_blank" rel="noopener">Probar la demo</a>
+      </div>
+      <div class="fm-nav">
+        <button type="button" id="fm-prev">← Anterior</button>
+        <button type="button" id="fm-next">Siguiente →</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="fm-zoom" id="fm-zoom" aria-hidden="true"><img id="fm-zoom-img" alt=""></div>
+
 <script>
   // Scroll animations
   const observer = new IntersectionObserver((entries) => {
@@ -911,6 +970,159 @@
       nav.style.boxShadow = 'none';
     }
   });
+
+  // FICHAS DE FUNCIÓN: al pulsar una función se abre su detalle con capturas reales de la demo
+  (function () {
+    var M = '/media/funciones/';
+    var F = {
+      fichaje: { icon: '🕐', title: 'Fichaje digital',
+        lead: 'El trabajador ficha su entrada y su salida en segundos, desde el móvil o el ordenador, con su email y un PIN de 4 dígitos.',
+        list: ['Entrada y salida con un toque, con una nota o incidencia opcional ("llegada tarde", por ejemplo).',
+               'Paradas de desayuno, almuerzo y otra parada, con su inicio y su fin.',
+               'Opcional: fichaje por código QR en un puesto fijo del centro y ubicación al fichar, informando antes por escrito a la plantilla.',
+               'Los fichajes no se pueden borrar. Toda corrección exige un motivo y queda registrada con quién la hizo y cuándo.'],
+        shots: [[M+'fichaje-movil.webp','Pantalla de fichaje del trabajador: salida, paradas y cambio de orden de trabajo.',1],
+                [M+'fichajes-admin.webp','El administrador ve todos los fichajes y puede filtrarlos por fechas y trabajador.']] },
+      ot: { icon: '🏢', title: 'Empresas cliente y órdenes de trabajo',
+        lead: 'Si prestas servicios a otras empresas, sabes cuántas horas y cuánto dinero cuesta cada cliente o cada trabajo.',
+        list: ['El trabajador indica la orden de trabajo (OT) al fichar y todo su tiempo se imputa solo a ese trabajo.',
+               'Puede cambiar de OT durante la jornada sin fichar la salida.',
+               'Solo cuenta el tiempo efectivo: las paradas se descuentan de las horas de la OT.',
+               'Panel "En directo": quién está en cada trabajo, si está en una parada y cuántas horas lleva frente a las previstas.',
+               'Gastos por OT e informes por cliente en Excel y PDF.'],
+        nota: 'Módulo opcional, pensado para limpieza, mantenimiento, talleres, obras y empresas que facturan por proyecto.',
+        shots: [[M+'ot-directo.webp','Panel "En directo" con las órdenes de trabajo en curso y los trabajadores en cada una.'],
+                [M+'ot-gastos.webp','Gastos aprobados y pendientes de cada orden de trabajo.']] },
+      gastos: { icon: '🧾', title: 'Control de gastos',
+        lead: 'Se acabaron los tickets en papel y las hojas de cálculo: cada gasto llega con su foto y listo para aprobar.',
+        list: ['El trabajador registra dietas, kilometraje, material, alojamiento u otros gastos y adjunta la foto o el PDF del ticket.',
+               'En dietas y kilometraje el importe se calcula con las tarifas de la empresa.',
+               'El administrador aprueba o rechaza cada gasto. Los aprobados entran en el saldo del mes.',
+               'Cada gasto se puede asignar a una orden de trabajo.'],
+        shots: [[M+'gastos-movil.webp','El trabajador registra un gasto desde el móvil.',1],
+                [M+'ot-gastos.webp','El administrador ve los gastos aprobados y pendientes.']] },
+      nominas: { icon: '💶', title: 'Nóminas',
+        lead: 'Repartes las nóminas en un solo paso y, a final de mes, tienes el resumen del saldo de cada trabajador.',
+        list: ['Subes un archivo ZIP con un PDF por trabajador y FichaRA envía cada nómina a su dueño, por notificación y por email.',
+               'Cada trabajador solo ve la suya en "Mis documentos". Opcionalmente puedes pedirle que firme la recepción.',
+               'Saldo total por trabajador: horas extra, festivos, nocturnas, gastos aprobados y días de baja, listos para la gestoría.',
+               'Se descarga en Excel o PDF.'],
+        nota: 'FichaRA no calcula las nóminas: reparte las que sube la empresa y resume las horas y los gastos.',
+        shots: [[M+'nominas-subida.webp','Subida masiva de nóminas: un ZIP, un PDF por trabajador.'],
+                [M+'gastos-saldo.webp','Saldo mensual por trabajador para preparar la nómina.']] },
+      vacaciones: { icon: '🏖️', title: 'Vacaciones y permisos',
+        lead: 'El empleado solicita desde su móvil y tú apruebas con un clic. Todo queda registrado.',
+        list: ['El trabajador elige el tipo (vacaciones, permiso, cambio de turno, material...) y las fechas.',
+               'Apruebas o rechazas con una respuesta opcional y el trabajador recibe el aviso.',
+               'El saldo de días se descuenta solo (30 días de vacaciones por defecto, ajustable por trabajador).',
+               'Calendario con las ausencias de todo el equipo.'],
+        shots: [[M+'vacaciones-solicitudes.webp','Solicitudes pendientes para aprobar o rechazar.'],
+                [M+'vacaciones-ausencias.webp','Días asignados, usados y disponibles de cada trabajador.'],
+                [M+'portal-solicitar.webp','El trabajador hace la solicitud desde su móvil.',1]] },
+      bajas: { icon: '🏥', title: 'Bajas médicas',
+        lead: 'Anotas las bajas y las altas, con sus días, y tienes visibilidad de quién falta y desde cuándo.',
+        list: ['Cada baja aparece en el calendario de la empresa.',
+               'El aviso de "no fichó ayer" no salta para quien está de baja.',
+               'En el envío mensual a la asesoría las bajas van solo como número de días, sin indicar el tipo, porque es un dato de salud.'],
+        shots: [[M+'calendario-ausencias.webp','Calendario de ausencias del equipo: vacaciones, permisos y bajas.']] },
+      documental: { icon: '📁', title: 'Gestión documental',
+        lead: 'Contratos, normas internas y nóminas en un solo sitio. El trabajador los descarga desde su móvil, sin papel.',
+        list: ['Subes un documento a un trabajador concreto o a toda la plantilla.',
+               'El trabajador también puede subir los suyos (partes de baja, justificantes...).',
+               'Puedes pedir que el trabajador firme el documento dibujando su firma con el dedo.',
+               'Cada firma genera una huella digital (SHA-256) del documento original y del firmado, junto con la fecha, la IP, el dispositivo y un justificante en PDF. Si alguien modifica el documento después, la huella deja de coincidir.'],
+        shots: [[M+'docs-admin.webp','El administrador sube un documento y puede exigir la firma.'],
+                [M+'docs-movil.webp','El trabajador ve y sube documentos desde su portal.',1]] },
+      calendario: { icon: '📅', title: 'Calendario de horas',
+        lead: 'Un calendario día a día por trabajador con todo lo necesario para preparar la nómina.',
+        list: ['Horas normales, extras, en festivo y nocturnas de cada día, y el tiempo de paradas como información.',
+               'Festivos, fines de semana y días de horas extra diferenciados.',
+               'Se descarga en Excel o PDF, y cada día 1 se genera un archivo mensual automático.',
+               'Calendario de ausencias del equipo con vacaciones, permisos y bajas.'],
+        shots: [[M+'horas-calendario.webp','Calendario de horas de un trabajador con extras, festivos y nocturnas.'],
+                [M+'calendario-ausencias.webp','Calendario de ausencias de toda la empresa.']] },
+      portal: { icon: '📱', title: 'Portal del empleado',
+        lead: 'Cada trabajador tiene su propio acceso para ver lo suyo y hacer sus gestiones sin llamar a nadie. No necesita formación.',
+        list: ['Mis fichajes: sus entradas, salidas y paradas por fechas.',
+               'Solicitar vacaciones, permisos, material u otras peticiones y ver su estado.',
+               'Gastos con foto del ticket, documentos y nóminas.',
+               'Ausencias, calendario laboral y balance de horas.',
+               'Cambiar su PIN.'],
+        shots: [[M+'portal-solicitar.webp','Nueva solicitud.',1],[M+'portal-fichajes.webp','Mis fichajes.',1],[M+'portal-calendario.webp','Calendario laboral.',1]] },
+      informes: { icon: '📋', title: 'Informes legales',
+        lead: 'Los registros de jornada y el historial de cambios, listos para enseñarlos cuando te los pidan.',
+        list: ['Excel y PDF de fichajes, horas y gastos en cualquier momento.',
+               'Informe de integridad: comprueba que ningún fichaje ha cambiado sin quedar anotado.',
+               'Historial de modificaciones con el valor anterior, el nuevo, quién lo hizo y cuándo.',
+               'Acceso de solo lectura para la Inspección de Trabajo o la representación de los trabajadores, con un PIN que caduca a los 30 días y que puedes revocar.'],
+        nota: 'Los registros de jornada deben conservarse al menos 4 años y se pueden exportar cuando quieras.',
+        shots: [[M+'informes-integridad.webp','Informe de integridad e historial del registro de jornada.'],
+                [M+'fichajes-admin.webp','Exportación a Excel y PDF desde la pestaña de fichajes.']] },
+      android: { icon: '📲', title: 'App Android nativa',
+        lead: 'Ficha directamente desde el móvil con la app nativa de FichaRA, sin depender del navegador ni de accesos directos manuales.',
+        list: ['Disponible para móviles Android.',
+               'En iPhone no hay app nativa: se usa FichaRA desde el navegador, con las mismas funciones de fichaje y portal del trabajador.'],
+        shots: [] },
+      migracion: { icon: '🔄', title: 'Migración sin fricción',
+        lead: 'Si ya llevabas el registro en otro sistema o en una hoja de cálculo, no empiezas de cero.',
+        list: ['Importas tu histórico con una plantilla CSV o Excel: trabajador, fecha y hora de entrada, fecha y hora de salida y nota.',
+               'Hasta 5.000 registros por importación.',
+               'Cada fichaje importado queda marcado como "Importado de sistema anterior" y con la fecha de la importación, para que el origen de cada dato sea siempre transparente.'],
+        nota: 'Solo para fichajes reales que ya existían en tu sistema anterior.',
+        shots: [[M+'migracion-importar.webp','Importación de fichajes desde otro sistema.']] }
+    };
+    var order = ['fichaje','ot','gastos','nominas','vacaciones','bajas','documental','calendario','portal','informes','migracion','android'];
+    var ov = document.getElementById('fm-overlay'), box = ov.querySelector('.fm-box');
+    var zoom = document.getElementById('fm-zoom'), zimg = document.getElementById('fm-zoom-img');
+    var cur = null, lastFocus = null;
+    document.querySelectorAll('.func-click').forEach(function (c) {
+      var m = document.createElement('div'); m.className = 'func-more'; m.setAttribute('aria-hidden', 'true'); m.textContent = 'Ver cómo es →'; c.appendChild(m);
+      c.addEventListener('click', function () { openF(c.getAttribute('data-func')); });
+      c.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openF(c.getAttribute('data-func')); } });
+    });
+    function render(k) {
+      var f = F[k]; cur = k;
+      document.getElementById('fm-icon').textContent = f.icon;
+      document.getElementById('fm-title').textContent = f.title;
+      document.getElementById('fm-lead').textContent = f.lead;
+      var ul = document.getElementById('fm-list'); ul.innerHTML = '';
+      f.list.forEach(function (t) { var li = document.createElement('li'); li.textContent = t; ul.appendChild(li); });
+      var n = document.getElementById('fm-nota'); n.textContent = f.nota || ''; n.style.display = f.nota ? '' : 'none';
+      var sh = document.getElementById('fm-shots'); sh.innerHTML = '';
+      f.shots.forEach(function (s) {
+        var fig = document.createElement('figure'); fig.className = 'fm-shot' + (s[2] ? ' mov' : '');
+        var im = document.createElement('img'); im.src = s[0]; im.alt = s[1]; im.loading = 'lazy';
+        im.addEventListener('click', function () { zimg.src = im.src; zimg.alt = im.alt; zoom.classList.add('open'); });
+        var cap = document.createElement('figcaption'); cap.textContent = s[1];
+        fig.appendChild(im); fig.appendChild(cap); sh.appendChild(fig);
+      });
+      ov.scrollTop = 0;
+    }
+    function openF(k) {
+      lastFocus = document.activeElement; render(k);
+      ov.classList.add('open'); ov.setAttribute('aria-hidden', 'false'); document.body.classList.add('fm-lock');
+      box.focus();
+    }
+    function closeF() {
+      zoom.classList.remove('open'); ov.classList.remove('open'); ov.setAttribute('aria-hidden', 'true'); document.body.classList.remove('fm-lock');
+      if (lastFocus && lastFocus.focus) lastFocus.focus();
+    }
+    function step(d) { var i = order.indexOf(cur); render(order[(i + d + order.length) % order.length]); }
+    document.getElementById('fm-close').addEventListener('click', closeF);
+    document.getElementById('fm-prev').addEventListener('click', function () { step(-1); });
+    document.getElementById('fm-next').addEventListener('click', function () { step(1); });
+    document.getElementById('fm-contacto').addEventListener('click', closeF);
+    ov.addEventListener('click', function (e) { if (e.target === ov) closeF(); });
+    zoom.addEventListener('click', function () { zoom.classList.remove('open'); });
+    document.addEventListener('keydown', function (e) {
+      if (!ov.classList.contains('open')) return;
+      if (e.key === 'Escape') { if (zoom.classList.contains('open')) zoom.classList.remove('open'); else closeF(); }
+      else if (e.key === 'ArrowRight') step(1); else if (e.key === 'ArrowLeft') step(-1);
+      else if (e.key === 'Tab') { var fo = box.querySelectorAll('button,a[href]'); if (!fo.length) return; var a = fo[0], z = fo[fo.length - 1];
+        if (e.shiftKey && (document.activeElement === a || document.activeElement === box)) { e.preventDefault(); z.focus(); }
+        else if (!e.shiftKey && document.activeElement === z) { e.preventDefault(); a.focus(); } }
+    });
+  })();
 </script>
 </body>
 </html>
